@@ -1,0 +1,251 @@
+package openehr.test;
+
+import java.util.*;
+
+import org.openehr.rm.datatypes.text.*;
+import se.cambio.cds.model.facade.execution.vo.ArchetypeReference;
+import se.cambio.cds.model.facade.execution.vo.ElementInstance;
+import se.cambio.cds.model.facade.execution.vo.ContainerInstance;
+import org.openehr.rm.datatypes.quantity.DvQuantity;
+import org.openehr.rm.datatypes.text.DvText;
+import org.openehr.rm.datatypes.text.DvCodedText;
+import org.openehr.rm.datatypes.basic.DataValue;
+
+import org.opencds.vmr.v1_0.internal.*;
+import org.opencds.vmr.v1_0.internal.concepts.*;
+
+
+declare org.drools.factmodel.MapCore  //what is this for
+end
+
+//----------------------------------------------------------//
+
+declare trait TDiagnosis //openEHR-EHR-EVALUATION.problem-diagnosis.v1
+@propertyReactive
+	diagnosis : DvText //this is a text data type
+    elmName : String = "Diagnosis"
+end
+
+declare trait TSecondaryDiagnosis extends TDiagnosis
+@propertyReactive
+    value : String = "Secondary Diagnoses"
+    elmName : String = "Secondary Diagnoses"
+    codeString : String = "gt0011"
+    terminologyIdName : String = "local"
+    terminologyIdVersion : String
+end
+
+
+declare trait TStatus
+@propertyReactive
+	status : DvText
+    elmName : String
+end
+
+declare trait TLocation //This is a cluster
+@propertyReactive
+	bodySite : DvText
+	locationDescription : DvText
+    elmName : String
+end
+
+declare trait TRelatedProblem //This is a cluster
+@propertyReactive
+	clinicalDescription : DvText
+	relatedProblem : DvText
+    elmName : String
+end
+
+declare trait TRelatedProblems //This is a cluster
+@propertyReactive
+	relatedProblem : List
+	// List<TRelatedProblem]>//not possible to have list of traits in a generic form
+	//so there must be a rule to add traits to the list later
+    elmName : String
+end
+
+declare trait TRecommendation //openEHR-EHR-EVALUATION.recommendation.v1
+@propertyReactive
+    recommendation : DvText
+end
+
+declare trait TRationale
+@propertyReactive
+    rationale : DvText
+    elmName : String
+end
+
+declare trait TRate //openEHR-EHR-OBSERVATION.respiration.v1
+@propertyReactive
+	rate : DvQuantity //this is a quantity data type
+    elmName : String
+end
+
+declare trait TRhythm
+@propertyReactive
+    rhythm : DvText
+    elmName : String
+end
+
+declare trait TDepth
+@propertyReactive
+    depth : DvText
+    elmName : String
+end
+
+declare trait TDescription
+@propertyReactive
+    description : DvText
+    elmName : String
+end
+
+declare trait TAbnormalRespiratoryPattern
+@propertyReactive
+    abnormalRespiratoryPattern : DvCodedText
+    elmName : String = "Abnormal respiratory pattern"
+//    dataValue : DataValue //DvCodedText
+end
+
+declare trait TAcuteRespiratoryFailure extends TAbnormalRespiratoryPattern
+@propertyReactive
+    value : String = "Acute respiratory failure"
+    elmName : String = "Acute respiratory failure"
+    codeString : String = "at0057"
+    terminologyIdName : String = "local"
+    terminologyIdVersion : String
+end
+
+//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
+
+declare DataTypeMapping
+    vocabulary  : String
+    codeMap     : Map
+end
+
+rule "Init Mock DataType Mapping"
+salience 100000
+when
+then
+    Map map = new HashMap();
+        //new rule mapper//
+        map.put( "openEHR-EHR-OBSERVATION.respiration.v1/data[at0001]/events[at0002]/data[at0003]/items[at0004]",
+            TRate.class );
+        map.put( "openEHR-EHR-OBSERVATION.respiration.v1/data[at0001]/events[at0002]/data[at0003]/items[at0005]",
+            TRhythm.class );
+        map.put( "openEHR-EHR-OBSERVATION.respiration.v1/data[at0001]/events[at0002]/data[at0003]/items[at0016]",
+            TDepth.class );
+        map.put( "openEHR-EHR-OBSERVATION.respiration.v1/data[at0001]/events[at0002]/data[at0003]/items[at0024]",
+            TDescription.class );
+        map.put( "openEHR-EHR-OBSERVATION.respiration.v1/data[at0001]/events[at0002]/data[at0003]/items[at0009]",
+            TAbnormalRespiratoryPattern.class );
+
+        map.put( "openEHR-EHR-EVALUATION.problem-diagnosis.v1/data[at0001]/items[at0002.1]",
+            TDiagnosis.class );
+
+    DataTypeMapping m1 = new DataTypeMapping( "EHR", map );
+    insert( m1 );
+
+    map = new HashMap();
+        //new rule mapper//
+        map.put( "openEHR-EHR-EVALUATION.recommendation.v1/data[at0001]/items[at0002]",
+            TRecommendation.class );
+
+    DataTypeMapping m2 = new DataTypeMapping( "CDS", map );
+    insert( m2 );
+
+    System.out.println("All mock maps are created.");
+    ArchetypeElementsList atList = new ArchetypeElementsList();
+    insert( atList );
+    System.out.println("Archetype element list is created.");
+end
+
+declare ArchetypeElementsList //this keep a list of doned archetype elements to avoid repetitive don
+    atElements  : List = new LinkedList()
+end
+
+
+
+rule "Map Initializer for every archetype that is used in the inserted facts"
+salience 1000
+no-loop
+when
+    $archetypeReference : ArchetypeReference($idd : idDomain, $ida : idArchetype)
+    not Map( this[ "archetypeName" ] == $ida)
+then
+    Map<String, String> map = new HashMap();
+    map.put("archetypeName", $ida);
+    map.put("domainName", $idd);
+    insert( map );
+    System.out.println("Trait Map for Archetype: " + $ida);
+end
+
+rule "Don with Map 1"
+no-loop
+when
+    $archetypeReference : ArchetypeReference($idd : idDomain, $ida : idArchetype)
+    $elm : ElementInstance(
+        $code : id,
+        archetypeReference == $archetypeReference )
+    $al : ArchetypeElementsList( atElements.contains( $code ) == false )//check if this element instance is already donned
+    DataTypeMapping( vocabulary == $idd, $map : codeMap, codeMap[ $code ] != null )//in order to map an appropriate element item
+    $mp : Map( this[ "archetypeName" ] ==  $ida ) // the related Archetype Map
+then
+    $mp.put("elementIns", $elm); //add elementInstance to the representative Archetype Map
+    update($mp);
+    Object x1 = don( $elm, (Class) $map.get( $code ) );
+    Object obj = don($mp, (Class) $map.get( $code ));
+    modify( $al ){ //to avoid repetitive firing of this rule
+        getAtElements().add( $code );
+    }
+    System.out.println("><><1><><" + obj);
+end
+
+rule "Don with Map 1 complementary for TAcuteRespiratoryFailure"
+no-loop
+when
+    $elm : ElementInstance( this isA TAbnormalRespiratoryPattern, $dv : dataValue,
+        dataValue#DvCodedText.(
+            $cs : definingCode!.codeString == "at0057",
+            $tid : definingCode!.terminologyId!.name() == "local",
+            $val : value,
+            $ver : definingCode!.terminologyId!.versionID() == null)
+    )
+    ArchetypeReference( $ida : idArchetype)
+    $mp : TAbnormalRespiratoryPattern( fields[ "archetypeName" ] ==  $ida)
+
+then
+    shed( $mp, TAbnormalRespiratoryPattern.class);
+    System.out.println("><><2><><" + "shed: TAbnormalRespiratoryPattern");
+    Object y = don(  $mp, TAcuteRespiratoryFailure.class);
+    System.out.println("><><2><><" + y);
+end
+
+rule "Don with Map 1 complementary for TDiagnosis"
+no-loop
+when
+    $elm : ElementInstance( this isA TDiagnosis, $dv : dataValue,
+        dataValue#DvCodedText.(
+            $cs : definingCode!.codeString == "gt0011",
+            $tid : definingCode!.terminologyId!.name() == "local",
+            $val : value,
+            $ver : definingCode!.terminologyId!.versionID() == null)
+    )
+    ArchetypeReference( $ida : idArchetype)
+    $mp : TDiagnosis( fields[ "archetypeName" ] ==  $ida)
+
+then
+    shed( $mp, TDiagnosis.class); //no longer is needed
+    System.out.println("><><2><><" + "shed: TDiagnosis");
+    Object y = don(  $mp, TSecondaryDiagnosis.class);
+    System.out.println("><><2><><" + y);
+end
+
+rule "check 1"
+no-loop
+when
+    Map( this isA TAbnormalRespiratoryPattern.class, //to say they both belong to the same Archetype
+        this isA TAcuteRespiratoryFailure.class)
+    Map( this isA TSecondaryDiagnosis.class) //this one belongs to the different Archetype
+then
+    System.out.println("><><validated as><><" + "TAbnormalRespiratoryPattern, TAcuteRespiratoryFailure, TSecondaryDiagnosis" );
+end

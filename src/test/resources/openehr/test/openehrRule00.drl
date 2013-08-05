@@ -1,0 +1,166 @@
+package openehr.test;
+
+import java.util.*;
+
+import org.openehr.rm.datatypes.text.*;
+import se.cambio.cds.model.facade.execution.vo.ArchetypeReference;
+import se.cambio.cds.model.facade.execution.vo.ElementInstance;
+import se.cambio.cds.model.facade.execution.vo.ContainerInstance;
+import org.openehr.rm.datatypes.quantity.DvQuantity;
+import org.openehr.rm.datatypes.text.DvText;
+import org.openehr.rm.datatypes.text.DvCodedText;
+import org.openehr.rm.datatypes.basic.DataValue;
+
+
+import org.opencds.vmr.v1_0.internal.*;
+import org.opencds.vmr.v1_0.internal.concepts.*;
+
+
+declare org.drools.factmodel.MapCore  //what is this for
+end
+
+//----------------------------------------------------------//
+
+declare trait TDiagnosis //openEHR-EHR-EVALUATION.problem-diagnosis.v1
+@propertyReactive
+	diagnosis : DvText //this is a text data type
+end
+
+declare trait TStatus
+@propertyReactive
+	status : DvText
+end
+
+declare trait TLocation //This is a cluster
+@propertyReactive
+	bodySite : DvText
+	locationDescription : DvText
+end
+
+declare trait TRelatedProblem //This is a cluster
+@propertyReactive
+	clinicalDescription : DvText
+	relatedProblem : DvText
+end
+
+declare trait TRelatedProblems //This is a cluster
+@propertyReactive
+	relatedProblem : List
+	// List<TRelatedProblem]>//not possible to have list of traits in a generic form
+	//so there must be a rule to add traits to the list later
+end
+
+declare trait TRecommendation //openEHR-EHR-EVALUATION.recommendation.v1
+@propertyReactive
+    recommendation : DvText
+end
+
+declare trait TRationale
+@propertyReactive
+    rationale : DvText
+end
+
+declare trait TRate //openEHR-EHR-OBSERVATION.respiration.v1
+@propertyReactive
+	rate : DvQuantity //this is a quantity data type
+end
+
+declare trait TRhythm
+@propertyReactive
+    rhythm : DvText
+end
+
+declare trait TDepth
+@propertyReactive
+    depth : DvText
+end
+
+declare trait TDescription
+@propertyReactive
+    description : DvText
+end
+
+declare trait TAbnormalRespiratoryPattern
+@propertyReactive
+    abnormalRespiratoryPattern : DvCodedText
+    //dataValue : DataValue
+    //hyperlink : Object
+end
+
+//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
+
+declare DataTypeMapping
+    vocabulary  : String
+    codeMap     : Map
+end
+
+rule "Init Mock DataType Mapping"
+salience 100000
+when
+then
+    Map map = new HashMap();
+        //new rule mapper//
+        map.put( "openEHR-EHR-OBSERVATION.respiration.v1/data[at0001]/events[at0002]/data[at0003]/items[at0009]",
+            TAbnormalRespiratoryPattern.class );
+        map.put( "openEHR-EHR-EVALUATION.problem-diagnosis.v1/data[at0001]/items[at0002.1]",
+            TDiagnosis.class );
+
+    DataTypeMapping m1 = new DataTypeMapping( "EHR", map );
+    insert( m1 );
+
+    map = new HashMap();
+        //new rule mapper//
+        map.put( "openEHR-EHR-EVALUATION.recommendation.v1/data[at0001]/items[at0002]",
+            TRecommendation.class );
+
+    DataTypeMapping m2 = new DataTypeMapping( "CDS", map );
+    insert( m2 );
+
+    System.out.println("All mock maps are created.");
+end
+
+declare ArchetypeMapping
+    vocabulary  : String
+    codeMap     : Map
+end
+
+/*
+- trait problem with all the elements
+- don( map, .class ) // elements as keys for problem interface
+- collect all the component of the same archetype and put them in a map and then applying against the problem trait
+*/
+
+rule "Map Initializer for every archetype that is used in the inserted facts"
+salience 1000
+no-loop
+when
+    $archetypeReference : ArchetypeReference($idd : idDomain, $ida : idArchetype)
+    not Map( this[ "archetypeName" ] == $ida)
+then
+    Map map = new HashMap();
+    map.put("archetypeName", $ida);
+    map.put("domainName", $idd);
+    insert( map );
+    System.out.println("Trait Map for Archetype: " + $ida);
+end
+
+rule "Don with Map 1"
+no-loop
+when
+    //$dvct : DvCodedText()
+    $archetypeReference : ArchetypeReference($idd : idDomain, $ida : idArchetype)
+    $elm : ElementInstance(
+        $code : id,
+        archetypeReference == $archetypeReference )
+        //, dataValue == $dvct)
+    DataTypeMapping( vocabulary == $idd, $map : codeMap, codeMap[ $code ] != null )
+    $obs : Map( this[ "archetypeName" ] ==  $ida )
+    //$tst2 : DvText()
+then
+
+    //Object x1 = don( $tst2, (Class) $map.get( $code ) );//TAbnormalRespiratoryPattern.class
+    Object x1 = don( $elm, (Class) $map.get( $code ) );//TAbnormalRespiratoryPattern.class
+    //Object x2 = don( $obs, x1 );//!!!error with multi don
+    System.out.println("><><><><");
+    //System.out.println($dvct);
+end

@@ -1,0 +1,113 @@
+package openehr.test;
+
+import java.util.*;
+
+declare org.drools.factmodel.MapCore  //what is this for
+end
+
+//global List list;  //what is this for
+
+declare trait PersonMap
+@propertyReactive  
+   name : String  
+   age  : int  
+   height : Double  
+end
+
+declare trait StudentMap
+@propertyReactive
+   ID : String
+   GPA : Double = 3.0
+end
+
+rule Don  
+when  
+  $m : Map( this[ "age"] == 18 )
+then  
+   don( $m, PersonMap.class );
+   System.out.println( "done: PersonMap" );
+
+end
+
+rule Log  
+when  
+   //$p : PersonMap( )//name == "john", age > 10 ) //FIXED // this causes exception after doing shed because PersonMap still existed
+   //eval ( $p.getName() == "john" & $p.getAge() > 10 )
+   $p : PersonMap( name == "john", age > 10 )
+then  
+   System.out.println( $p );  
+   modify ( $p ) {  
+       setHeight( 184.0 );  
+   }
+   System.out.println("Log: " +  $p );
+end
+
+
+rule Don2
+salience -1
+when
+    //$m : Map( this[ "age"] == 18 ) //after the first done [above] this map does not longer exist
+    $m : PersonMap()
+then
+   don( $m, StudentMap.class );
+   System.out.println( "done2: StudentMap" );
+end
+
+rule Log2
+salience -2
+no-loop
+when
+   //$p : StudentMap( $h : fields[ "height" ] )//it should return an error for height which is not presented
+   //eval ( $p.getHeight() >= 3 )
+   $p : StudentMap( )//GPA >= 3.0)// after shed having parameter inside StudentMap causes exception
+   eval ( $p.getGPA() >= 3.0 )
+then
+   System.out.println( $p );
+   modify ( $p ) {
+       setGPA( 4.0 ),
+       setID( "100" );
+   }
+   System.out.println("Log2: " + $p );
+end
+
+rule Shed1
+salience -3// it seams that the order of shed must be the same as applying don
+when
+    $m : PersonMap()
+then
+   shed( $m, PersonMap.class );
+   System.out.println( "shed: PersonMap" );
+end
+
+rule Shed2
+salience -4
+when
+    $m : StudentMap()
+then
+   shed( $m, StudentMap.class );
+   System.out.println( "shed: StudentMap" );
+end
+
+rule "reuse Map"
+salience -2
+when
+    $m : Map( )
+then
+    System.out.println( "map reused" );
+end
+
+declare TestType
+    data : String = "mamad"
+end
+
+rule "Map Initializer for "
+salience 1000
+no-loop
+when
+then
+    Map map = new HashMap();
+    map.put( "name", "john");
+    map.put( "age", 18 );
+    //map.put( "obj", new TestType());
+    insert( map );
+end

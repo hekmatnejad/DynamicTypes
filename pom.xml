@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>openCDS</groupId>
+    <artifactId>openCDS</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>openCDS</groupId>
+                <artifactId>openCDS</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <configuration>
+                    <workingDirectory>${user.dir}</workingDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    -->
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-compiler</artifactId>
+            <version>5.6.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.opencds</groupId>
+            <artifactId>vmr</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/opencds-vmr-1_0-internal-1.1.0-SNAPSHOT.jar</systemPath>
+        </dependency>
+       <dependency>
+            <groupId>org.opencds</groupId>
+            <artifactId>common</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/opencds-common-1.1.0-SNAPSHOT.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>core</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/openehr-rm-core-1.0.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>domain</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/openehr-rm-domain-1.0.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>cds.core</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/openehr-cds-core-0.9.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>terminology.service</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/openehr-terminology-service-0.9.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>commons-lang-2.4</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/commons-lang-2.4.jar</systemPath>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>joda-time-1.3</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/joda-time-1.3.jar</systemPath>
+        </dependency>
+
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+        </dependency>
+
+
+    </dependencies>
+    
+</project>

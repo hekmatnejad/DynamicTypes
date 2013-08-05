@@ -1,0 +1,217 @@
+package opencds.test;
+
+/*
+import se.cambio.cds.model.facade.execution.vo.ArchetypeReference;
+import se.cambio.cds.model.facade.execution.vo.ElementInstance;
+import se.cambio.cds.model.facade.execution.vo.ContainerInstance;
+import se.cambio.cds.util.DVUtil;
+import org.openehr.rm.datatypes.quantity.DvCount;
+import org.openehr.rm.datatypes.quantity.DvOrdinal;
+import org.openehr.rm.datatypes.quantity.DvQuantity;
+import org.openehr.rm.datatypes.quantity.datetime.DvDate;
+import org.openehr.rm.datatypes.quantity.datetime.DvDateTime;
+import org.openehr.rm.datatypes.quantity.datetime.DvDuration;
+import org.openehr.rm.datatypes.quantity.datetime.DvTime;
+import org.openehr.rm.datatypes.quantity.DvProportion;
+import org.openehr.rm.datatypes.quantity.ProportionKind;
+import org.openehr.rm.datatypes.basic.DvBoolean;
+import org.openehr.rm.datatypes.text.DvCodedText;
+import org.openehr.rm.datatypes.text.DvText;
+global se.cambio.cds.util.ExecutionLogger $executionLogger;
+global org.openehr.rm.datatypes.basic.DataValue $auxDV;
+global org.openehr.rm.datatypes.quantity.datetime.DvDateTime $currentDateTime;
+
+rule "tst-mh-DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA/gt0001"
+salience 1
+no-loop true
+when
+   $archetypeReference1:ArchetypeReference(idDomain=="EHR", idArchetype=="openEHR-EHR-OBSERVATION.respiration.v1", aggregationFunction=="LAST")
+      $gt0002:ElementInstance(id=="openEHR-EHR-OBSERVATION.respiration.v1/data[at0001]/events[at0002]/data[at0003]/items[at0009]", archetypeReference==$archetypeReference1)
+   $archetypeReference2:ArchetypeReference(idDomain=="EHR", idArchetype=="openEHR-EHR-EVALUATION.problem-diagnosis.v1", aggregationFunction=="LAST")
+      $gt0004:ElementInstance(id=="openEHR-EHR-EVALUATION.problem-diagnosis.v1/data[at0001]/items[at0026]/items[at0027]/items[at0029]", archetypeReference==$archetypeReference2)
+   $archetypeReference3:ArchetypeReference(idDomain=="CDS", idArchetype=="openEHR-EHR-EVALUATION.alert.v1")
+      $gt0006:ElementInstance(id=="openEHR-EHR-EVALUATION.alert.v1/data[at0001]/items[at0009]", archetypeReference==$archetypeReference3)
+
+   eval($gt0004.hasValue() && $gt0004.isSubClassOf(new DvText("local::gt0005|SecondaryDiagnoses|")))
+   //eval($gt0002.hasValue() && $gt0002.isSubClassOf(new DvCodedText("AcuteRespiratoryFailure","local","gt0003")))
+   eval($gt0002.hasValue() && $gt0002.equalDV(new DvCodedText("AcuteRespiratoryFailure","local","gt0003")))
+   eval($gt0002.hasValue())
+then
+   $gt0006.setDataValue(new DvCodedText("Active","local","at0011"));$gt0006.setNullFlavour(null);$executionLogger.addLog(drools, $gt0006);
+   modify($gt0006){};
+end
+*/
+/*
+//////////////////////// openEHR equvalent
+
+        map.put( "C238", InpatientEncounter.class );
+openEHR-EHR-COMPOSITION.encounter.v1
+
+        map.put( "C284", AcuteRespiratoryFailure.class );
+openEHR-EHR-OBSERVATION.respiration.v1
+openEHR-EHR-CLUSTER.microscopy_lung_carcinoma.v1
+openEHR-EHR-OBSERVATION.pulmonary_function.v1
+...
+
+        map.put( "C417", Secondary.class );
+openEHR-EHR-COMPOSITION.problem_list.v1
+openEHR-EHR-EVALUATION.problem_diagnosis.v1
+openEHR-EHR-SECTION.problem_list.v1
+openEHR-EHR-EVALUATION.exclusion-problem_diagnosis.v1
+
+        map.put( "C439", DxPOA.class ); //Diagnosis Present On Admission
+openEHR-EHR-COMPOSITION.encounter.v1
+openEHR-EHR-EVALUATION.clinical_synopsis.v1
+
+///////////////////////////////////////////////
+*/
+
+//*********** type declaration ***********//
+
+declare openEhrDataValue  //root class for all openEHR rm data types
+    dataValue : DataValue
+end
+//or
+declare trait TDataValue
+@propertyReactive
+end
+
+declare trait TDvText extends TDataValue // or  openEhrDataValue
+@propertyReactive
+    value : String
+end
+
+declare trait TDvCodedText extends TDvText
+@propertyReactive
+    definingCode : CodePhrase
+end
+
+declare trait TDvDateTime extends TDvTemporal.....
+@propertyReactive
+
+end
+
+//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
+declare trait RespirationArchetype
+@propertyReactive
+    name : String
+    Id : Integer
+end
+
+//////////////////////////////////////////
+declare trait InpatientEncounter
+@propertyReactive
+    openEhrDataType : String
+    id : String
+    dataValue : DataValue// is it better to inherit them from a base trait?
+end
+
+declare trait AcuteRespiratoryFailure
+@propertyReactive
+    openEhrDataType : String
+    id : String
+    dataValue : DataValue// is it better to inherit them from a base trait?
+end
+
+declare trait Secondary
+@propertyReactive
+    openEhrDataType : String
+    id : String
+    dataValue : DataValue// is it better to inherit them from a base trait?
+end
+
+declare trait DxPOA
+@propertyReactive
+    openEhrArchetype : String
+    id : String
+    dataValue : DataValue// is it better to inherit them from a base trait?
+end
+
+//*********** Concept mapper declaration ***********//
+
+declare ConceptMapping
+    vocabulary  : String
+    codeMap     : Map
+end
+
+rule "Init Mock Mapping"
+salience 100000
+when
+then
+    Map map = new HashMap();
+        //new rule mapper//
+        map.put( "openEHR-EHR-EVALUATION.alert.v1/data[at0001]/items[at0009]",  InpatientEncounter.class );//C284
+        map.put( "openEHR-EHR-EVALUATION.problem-diagnosis.v1/data[at0001]/items[at0026]/items[at0027]/items[at0029]", Secondary.class ); //C417
+        map.put( "", DxPOA.class ); //C439
+
+    ConceptMapping m1 = new ConceptMapping( "EHR", map );
+    insert( m1 );
+
+    map = new HashMap();
+        //new rule mapper//
+        map.put( "openEHR-EHR-OBSERVATION.respiration.v1/data[at0001]/events[at0002]/data[at0003]/items[at0009]", AcuteRespiratoryFailure.class ); //C238
+
+    ConceptMapping m2 = new ConceptMapping( "CDS", map );
+    insert( m2 );
+end
+
+declare DataTypeMapping
+    vocabulary  : String
+    codeMap     : Map
+end
+
+rule "Init Mock DataType Mapping"
+salience 100000
+when
+then
+    Map map = new HashMap();
+        //new rule mapper//
+        map.put("DvDataValue",  TDvDataValue.class );
+        map.put("DvText",  TDvText.class );
+        map.put("DvCodedText",  TDvCodedText.class );
+        map.put("DvDateTime",  TDvDateTime.class );
+
+    ConceptMapping m1 = new DataTypeMapping( "DataTypes", map );
+    insert( m1 );
+
+    map = new HashMap();
+        //new rule mapper//
+        map.put( "openEHR-EHR-OBSERVATION.respiration.v1", RespirationArchetype.class );
+
+    ConceptMapping m2 = new DataTypeMapping( "Archetypes", map );
+    insert( m2 );
+end
+
+//*********** Rule declaration ***********//
+
+rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA1" //classification rule    //static rules
+no-loop
+when
+    $archetypeReference : ArchetypeReference($idd : idDomain)
+    $obs : ElementInstance($code : id, archetypeReference==$archetypeReference)
+    ConceptMapping( vocabulary == $idd, $map : codeMap, codeMap[ $code ] != null )
+then
+    Object x1 = don( $obs, (Class) $map.get( $code ) );
+    modify(x1){
+        setDataValue($obs.getDataValue)
+    };
+    System.out.println( "Classified1 : " + x1 );
+end
+
+rule "test PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA"  //dynamic rules
+no-loop
+when
+    //$x1 : InpatientEncounter()
+    $x2 : AcuteRespiratoryFailure()
+    $x3 : Secondary()
+    //$x4 : DxPOA()
+then
+    System.out.println("This is a dynamic rule - Rule fired as a result of <PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA>");
+end
+
+
+//questions
+/*
+1-
+
+*/

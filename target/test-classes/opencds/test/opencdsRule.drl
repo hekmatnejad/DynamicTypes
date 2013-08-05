@@ -1,0 +1,172 @@
+package opencds.test;
+
+import org.opencds.vmr.v1_0.internal.*;
+import org.opencds.vmr.v1_0.internal.concepts.*;
+import java.util.*;
+
+/*
+rule "Procedures"
+when
+    $o : ProcedureEvent( procedureCode.code == "20" && procedureCode.codeSystem == "AHRQ v4.3" ,
+                         $tgt : targetBodySite )
+    $b : BodySite( this == $tgt )
+then
+    System.out.println( " Rule 1 >>> " + $o );
+end
+*/
+
+
+
+declare ConceptMapping
+    vocabulary  : String
+    codeMap     : Map
+end
+
+/*
+rule "Init Mock Mapping"
+salience 100000
+when
+then
+    Map map = new HashMap();
+        map.put( "20", "C1" );
+        map.put( "10", "C2" );
+        map.put( "11", "C3" );
+
+    ConceptMapping m1 = new ConceptMapping( "AHRQ v4.3", map );
+    insert( m1 );
+end
+
+
+rule "Map Procedures to Concepts"
+salience 1000
+when
+    $p : ProcedureEvent( $id : id, $code : procedureCode.code, $codeSystem : procedureCode.codeSystem )
+         ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
+then
+    ProcedureConcept pc = new ProcedureConcept();
+        pc.setConceptTargetId( $id );
+        pc.setOpenCdsConceptCode( (String) $map.get( $code ) );
+        pc.setDeterminationMethodCode( $codeSystem );
+        pc.setId( java.util.UUID.randomUUID().toString() );
+    insertLogical( pc );
+    System.out.println( "Classified : " + pc );
+end
+
+rule "Procedures v2"
+when
+    ProcedureConcept( $cid : conceptTargetId, openCdsConceptCode == "C1" )
+    $o : ProcedureEvent( id == $cid,
+                         $tgt : targetBodySite )
+    $b : BodySite( this == $tgt )
+then
+    System.out.println( " Rule 2 >>> " + $o );
+end
+*/
+
+
+
+
+
+
+declare trait ProcedureEventCpt //concept
+@propertyReactive
+    openCdsConceptCode : String
+    id : String
+    targetBodySite : BodySite
+    approachBodySite : BodySite
+    price   : Double = 1000.0 //error with primitive types when initialize them
+    toBeReturned : boolean
+end
+
+declare trait Appendicectomy extends ProcedureEventCpt //sub-specific concept
+@propertyReactive
+    openCdsConceptCode : String = "C1"
+    foo : int
+end
+
+
+declare trait Abdomen
+//changed by mohammad
+//declare trait Abdomen extends BodySiteCpt
+@propertyReactive
+end
+
+declare trait AbdominalProcedure extends ProcedureEventCpt
+@propertyReactive
+    openCdsConceptCode : String
+end
+
+//added by mohammad
+declare trait BodySiteCpt
+@propertyReactive
+    openCdsConceptCode : String
+    id : String
+    targetBodySite : BodySite
+    approachBodySite : BodySite
+    price   : Double = 1000.0 //error with primitive types when initialize them
+    toBeReturned : boolean
+end
+
+rule "Init Mock Mapping"
+salience 100000
+when
+then
+    Map map = new HashMap();
+        map.put( "20", Appendicectomy.class );
+        map.put( "10", Abdomen.class );
+
+    ConceptMapping m1 = new ConceptMapping( "AHRQ v4.3", map );
+    insert( m1 );
+end
+
+rule "Map Procedures to Concepts"
+salience 1000
+no-loop
+when
+    $p : ProcedureEvent( $id : id, $code : procedureCode.code, $codeSystem : procedureCode.codeSystem )
+         ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
+then
+    Appendicectomy x = (Appendicectomy) don( $p, (Class) $map.get( $code ) );  //don: create an object that implement the appendicectomy and wrap the procedureEvent
+    System.out.println( "Classified : " + x );
+end
+
+
+
+rule "Map Body Sites"
+salience 1000
+no-loop
+when
+    $b : BodySite( $code : bodySiteCode.code, $codeSystem : bodySiteCode.codeSystem )
+         ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
+then
+    don( $b, (Class) $map.get( $code ) );
+    System.out.println( "Abdomen rec : " + $b );
+
+	//added by mohammad
+	//Abdomen abd = (Abdomen) don( $b, (Class) $map.get( $code ) );
+	//System.out.println("classified : " + abd);
+
+end
+
+
+rule "Procedures v3"
+when
+    $o : Appendicectomy( $inner : openCdsConceptCode,  price > 100,
+                         $tgt : approachBodySite )
+    $b : Abdomen( core.equals( $tgt ) )
+then
+    System.out.println( " Rule 3 >>> " + $tgt );
+    don( $o, AbdominalProcedure.class );
+    modify ( $o ) {
+        setToBeReturned( true );
+    }
+end
+
+
+rule "Procedures v4"
+when
+    $o : AbdominalProcedure( toBeReturned == true, this isA Appendicectomy, $core : core, $inner : openCdsConceptCode )
+then
+    System.out.println( "XYZ  >> " + $inner );
+end
+
