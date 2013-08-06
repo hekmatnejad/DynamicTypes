@@ -1,4 +1,3 @@
-
 package opencds.test;
 
 import org.opencds.vmr.v1_0.internal.*;
@@ -129,7 +128,7 @@ end
 rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA4" //classification rule    //static rules
 no-loop
 when
-    $obs : Problem( $id : id, $code : importance!.code, $codeSystem : importance!.codeSystem)
+    $obs : Problem( $id : id, $code : importance.code, $codeSystem : importance.codeSystem)
     ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
 then
     Object x6 = don( $obs, (Class) $map.get( $code ) );

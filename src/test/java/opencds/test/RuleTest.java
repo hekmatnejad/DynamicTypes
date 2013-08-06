@@ -36,7 +36,7 @@ public class RuleTest {
     @Test
     public void testCDS() {
 
-        if(true) return;
+        //if(true) return;
 
         KnowledgeBase kBase = buildKB( "opencds/test/opencdsRule.drl" );
 

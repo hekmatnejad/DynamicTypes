@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Maven: org.openehr:cds.core:1.1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/openehr-cds-core-0.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

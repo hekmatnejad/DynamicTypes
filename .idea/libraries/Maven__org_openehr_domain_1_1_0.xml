@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Maven: org.openehr:domain:1.1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/openehr-rm-domain-1.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
