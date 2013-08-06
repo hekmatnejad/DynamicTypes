@@ -4,55 +4,107 @@ import org.opencds.vmr.v1_0.internal.*;
 import org.opencds.vmr.v1_0.internal.concepts.*;
 import java.util.*;
 
-
-//import org.drools.core.factmodel.traits.Thing;
-
-//*********** type declaration ***********//
-
-//this trait must be specific for the concept it is focusing on
-declare trait InfluenzaTestForOrganism    //one for each concept
-@propertyReactive
-    openCdsConceptCode : String
-    id : String
-    influ : String
+/*
+rule "Procedures"
+when
+    $o : ProcedureEvent( procedureCode.code == "20" && procedureCode.codeSystem == "AHRQ v4.3" ,
+                         $tgt : targetBodySite )
+    $b : BodySite( this == $tgt )
+then
+    System.out.println( " Rule 1 >>> " + $o );
 end
+*/
 
-declare trait ResultPositive
-@propertyReactive
-    openCdsConceptCode : String
-    id : String
-    res : String
-end
 
-declare trait InpatientEncounter
-@propertyReactive
-    openCdsConceptCode : String
-    id : String
-end
-
-declare trait AcuteRespiratoryFailure
-@propertyReactive
-    openCdsConceptCode : String
-    id : String
-end
-
-declare trait Secondary
-@propertyReactive
-    openCdsConceptCode : String
-    id : String
-end
-
-declare trait DxPOA
-@propertyReactive
-    openCdsConceptCode : String
-    id : String
-end
-
-//*********** Concept mapper declaration ***********//
 
 declare ConceptMapping
     vocabulary  : String
     codeMap     : Map
+end
+
+/*
+rule "Init Mock Mapping"
+salience 100000
+when
+then
+    Map map = new HashMap();
+        map.put( "20", "C1" );
+        map.put( "10", "C2" );
+        map.put( "11", "C3" );
+
+    ConceptMapping m1 = new ConceptMapping( "AHRQ v4.3", map );
+    insert( m1 );
+end
+
+
+rule "Map Procedures to Concepts"
+salience 1000
+when
+    $p : ProcedureEvent( $id : id, $code : procedureCode.code, $codeSystem : procedureCode.codeSystem )
+         ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
+then
+    ProcedureConcept pc = new ProcedureConcept();
+        pc.setConceptTargetId( $id );
+        pc.setOpenCdsConceptCode( (String) $map.get( $code ) );
+        pc.setDeterminationMethodCode( $codeSystem );
+        pc.setId( java.util.UUID.randomUUID().toString() );
+    insertLogical( pc );
+    System.out.println( "Classified : " + pc );
+end
+
+rule "Procedures v2"
+when
+    ProcedureConcept( $cid : conceptTargetId, openCdsConceptCode == "C1" )
+    $o : ProcedureEvent( id == $cid,
+                         $tgt : targetBodySite )
+    $b : BodySite( this == $tgt )
+then
+    System.out.println( " Rule 2 >>> " + $o );
+end
+*/
+
+
+
+
+
+
+declare trait ProcedureEventCpt //concept
+@propertyReactive
+    openCdsConceptCode : String
+    id : String
+    targetBodySite : BodySite
+    approachBodySite : BodySite
+    price   : Double = 1000.0 //error with primitive types when initialize them
+    toBeReturned : boolean
+end
+
+declare trait Appendicectomy extends ProcedureEventCpt //sub-specific concept
+@propertyReactive
+    openCdsConceptCode : String = "C1"
+    foo : int
+end
+
+
+declare trait Abdomen
+//changed by mohammad
+//declare trait Abdomen extends BodySiteCpt
+@propertyReactive
+end
+
+declare trait AbdominalProcedure extends ProcedureEventCpt
+@propertyReactive
+    openCdsConceptCode : String
+end
+
+//added by mohammad
+declare trait BodySiteCpt
+@propertyReactive
+    openCdsConceptCode : String
+    id : String
+    targetBodySite : BodySite
+    approachBodySite : BodySite
+    price   : Double = 1000.0 //error with primitive types when initialize them
+    toBeReturned : boolean
 end
 
 rule "Init Mock Mapping"
@@ -60,112 +112,61 @@ salience 100000
 when
 then
     Map map = new HashMap();
-        map.put( "C261", InfluenzaTestForOrganism.class );
-        map.put( "C87", ResultPositive.class );
-        //new rule mapper//
-        map.put( "C238", InpatientEncounter.class );
-        map.put( "C284", AcuteRespiratoryFailure.class );
-        map.put( "C417", Secondary.class );
-        map.put( "C439", DxPOA.class );
-
+        map.put( "20", Appendicectomy.class );
+        map.put( "10", Abdomen.class );
 
     ConceptMapping m1 = new ConceptMapping( "AHRQ v4.3", map );
     insert( m1 );
 end
 
-//*********** Rule declaration ***********//
-
-rule "IsReportableInfluenza1" //classification rule
+rule "Map Procedures to Concepts"
+salience 1000
 no-loop
 when
-    $obs : ObservationValue( $code1 : concept.code, $codeSystem1 : concept.codeSystem )
-    ConceptMapping( vocabulary == $codeSystem1, $map1 : codeMap, codeMap[ $code1 ] != null )
+    $p : ProcedureEvent( $id : id, $code : procedureCode.code, $codeSystem : procedureCode.codeSystem )
+         ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
 then
-    Object x1 = don( $obs, (Class) $map1.get( $code1 ) );
-    System.out.println( "Classified1 : " + x1 );
+    Appendicectomy x = (Appendicectomy) don( $p, (Class) $map.get( $code ) );  //don: create an object that implement the appendicectomy and wrap the procedureEvent
+    System.out.println( "Classified : " + x );
 end
 
-rule "IsReportableInfluenza2" //classification rule    //static rules
+
+
+rule "Map Body Sites"
+salience 1000
 no-loop
 when
-    $obs : ObservationResult( $id : id, $code2 : observationFocus.code, $codeSystem2 : observationFocus.codeSystem)
-    ConceptMapping( vocabulary == $codeSystem2, $map2 : codeMap, codeMap[ $code2 ] != null )
+    $b : BodySite( $code : bodySiteCode.code, $codeSystem : bodySiteCode.codeSystem )
+         ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
 then
-    Object x2 = don( $obs, (Class) $map2.get( $code2 ) );
-    System.out.println( "Classified2 : " + x2 );
+    don( $b, (Class) $map.get( $code ) );
+    System.out.println( "Abdomen rec : " + $b );
+
+	//added by mohammad
+	//Abdomen abd = (Abdomen) don( $b, (Class) $map.get( $code ) );
+	//System.out.println("classified : " + abd);
+
 end
 
-rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA1" //classification rule    //static rules
-no-loop
+
+rule "Procedures v3"
 when
-    $obs : EncounterEvent( $id : id, $code : encounterType.code, $codeSystem : encounterType.codeSystem)
-    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
+    $o : Appendicectomy( $inner : openCdsConceptCode,  price > 100,
+                         $tgt : approachBodySite )
+    $b : Abdomen( core.equals( $tgt ) )
 then
-    Object x3 = don( $obs, (Class) $map.get( $code ) );
-    System.out.println( "Classified3 : " + x3 );
+    System.out.println( " Rule 3 >>> " + $tgt );
+    don( $o, AbdominalProcedure.class );
+    modify ( $o ) {
+        setToBeReturned( true );
+    }
 end
 
-rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA2" //classification rule    //static rules
-no-loop
+
+rule "Procedures v4"
 when
-    $obs : Problem( $id : id, $code : problemCode.code, $codeSystem : problemCode.codeSystem)
-    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
+    $o : AbdominalProcedure( toBeReturned == true, this isA Appendicectomy, $core : core, $inner : openCdsConceptCode )
 then
-    Object x4 = don( $obs, (Class) $map.get( $code ) );
-    System.out.println( "Classified4 : " + x4 );
+    System.out.println( "XYZ  >> " + $inner );
 end
-
-rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA3" //classification rule    //static rules
-no-loop
-when
-    $obs : ClinicalStatementRelationship( $id : id, $code : targetRelationshipToSource.code, $codeSystem : targetRelationshipToSource.codeSystem)
-    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
-then
-    Object x5 = don( $obs, (Class) $map.get( $code ) );
-    System.out.println( "Classified5 : " + x5 );
-end
-
-rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA4" //classification rule    //static rules
-no-loop
-when
-    $obs : Problem( $id : id, $code : importance.code, $codeSystem : importance.codeSystem)
-    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
-then
-    Object x6 = don( $obs, (Class) $map.get( $code ) );
-    System.out.println( "Classified6 : " + x6 );
-end
-
-rule "test IsReportableInfluenza"  //dynamic rules
-no-loop
-when
-    $x1 : InfluenzaTestForOrganism()
-    $x2 : ResultPositive()
-then
-    //Object obj = don( $x1, ResultPositive.class);
-    //System.out.println("wow: " + obj);
-    //shed( $x2, InfluenzaTestForOrganism.class);
-    //System.out.println("shed result: " + res);
-    System.out.println("This is a dynamic rule - Rule fired as a result of <IsReportableInfluenza>");
-end
-
-rule "test PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA"  //dynamic rules
-no-loop
-when
-    $x3 : InpatientEncounter()
-    $x4 : AcuteRespiratoryFailure()
-    $x5 : Secondary()
-    $x6 : DxPOA()
-then
-    System.out.println("This is a dynamic rule - Rule fired as a result of <PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA>");
-end
-//-------- second rule ---------//
-//rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA"
-//C238 = Inpatient Encounter
-//EncounterEvent
-//C284 = Acute Respiratory Failure
-//Problem
-//C417 = Secondary
-//C439 = Dx POA
-//ClinicalStatementRelationship
-
 

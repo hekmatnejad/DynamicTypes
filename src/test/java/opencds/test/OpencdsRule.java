@@ -78,11 +78,11 @@ public class OpencdsRule {
         cdCoded5.setCode("C439");
         Problem problemSry = new Problem();
         problemSry.setImportance(cdCoded5);
-        problemSry.setProblemCode(cdCoded5);
+        problemSry.setProblemCode(cdCoded3);
 
 
         knowledgeSession.insert(elementEvt);
-        knowledgeSession.insert(problem);
+        //knowledgeSession.insert(problem);
         knowledgeSession.insert(clinicRel);
         knowledgeSession.insert(problemSry);
 

@@ -105,7 +105,7 @@ then
     Object x3 = don( $obs, (Class) $map.get( $code ) );
     System.out.println( "Classified3 : " + x3 );
 end
-
+/*
 rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA2" //classification rule    //static rules
 no-loop
 when
@@ -115,7 +115,7 @@ then
     Object x4 = don( $obs, (Class) $map.get( $code ) );
     System.out.println( "Classified4 : " + x4 );
 end
-
+*/
 rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA3" //classification rule    //static rules
 no-loop
 when
@@ -129,11 +129,17 @@ end
 rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA4" //classification rule    //static rules
 no-loop
 when
-    $obs : Problem( $id : id, $code : importance!.code, $codeSystem : importance!.codeSystem)
+//    $obs : Problem( $id : id, $code : importance!.code, $codeSystem : importance!.codeSystem)
+//    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
+    $obs : Problem( $id : id, $code : importance!.code, $codeSystem : importance!.codeSystem
+                , $code2 : problemCode!.code)
     ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
+    ConceptMapping( vocabulary == $codeSystem, $map2 : codeMap, codeMap[ $code2 ] != null )
 then
     Object x6 = don( $obs, (Class) $map.get( $code ) );
+    Object x7 = don( x6, (Class) $map2.get( $code2 ) );
     System.out.println( "Classified6 : " + x6 );
+    System.out.println( "Classified6 : " + x7 );
 end
 
 rule "test IsReportableInfluenza"  //dynamic rules
