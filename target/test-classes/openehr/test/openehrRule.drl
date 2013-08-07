@@ -212,7 +212,6 @@ when
     )
     ArchetypeReference( $ida : idArchetype)
     $mp : TAbnormalRespiratoryPattern( fields[ "archetypeName" ] ==  $ida)
-
 then
     shed( $mp, TAbnormalRespiratoryPattern.class);
     System.out.println("><><2><><" + "shed: TAbnormalRespiratoryPattern");
@@ -232,7 +231,6 @@ when
     )
     ArchetypeReference( $ida : idArchetype)
     $mp : TDiagnosis( fields[ "archetypeName" ] ==  $ida)
-
 then
     shed( $mp, TDiagnosis.class); //no longer is needed
     System.out.println("><><2><><" + "shed: TDiagnosis");
@@ -240,12 +238,15 @@ then
     System.out.println("><><2><><" + y);
 end
 
-rule "check 1"
+rule "check for validation"
 no-loop
 when
-    Map( this isA TAbnormalRespiratoryPattern.class, //to say they both belong to the same Archetype
-        this isA TAcuteRespiratoryFailure.class)
-    Map( this isA TSecondaryDiagnosis.class) //this one belongs to the different Archetype
+//    Map( this isA TAbnormalRespiratoryPattern.class, //to say they both belong to the same Archetype
+//        this isA TAcuteRespiratoryFailure.class)
+//    Map( this isA TSecondaryDiagnosis.class) //this one belongs to the different Archetype
+    /*these two below lines are equivalent to the above ones*/
+    TAbnormalRespiratoryPattern(this isA TAcuteRespiratoryFailure.class)
+    TSecondaryDiagnosis()
 then
-    System.out.println("><><validated as><><" + "TAbnormalRespiratoryPattern, TAcuteRespiratoryFailure, TSecondaryDiagnosis" );
+    System.out.println("><*><validated as><*><" + "TAbnormalRespiratoryPattern, TAcuteRespiratoryFailure, TSecondaryDiagnosis" );
 end

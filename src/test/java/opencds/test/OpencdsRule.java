@@ -60,12 +60,14 @@ public class OpencdsRule {
         cdCoded2.setCode("C238"); //C238 = Inpatient Encounter
         EncounterEvent elementEvt = new EncounterEvent();
         elementEvt.setEncounterType(cdCoded2);
+        elementEvt.setId("238");
 //    $obs : Problem( $id : id, $code : problemCode.code, $codeSystem : problemCode.codeSystem)
         CD cdCoded3 = new CD();
         cdCoded3.setCodeSystem("AHRQ v4.3");
         cdCoded3.setCode("C284"); //C284 = Acute Respiratory Failure
         ProblemBase problem = new Problem();
         problem.setProblemCode(cdCoded3);
+        problem.setId("284");
 //    $obs : Problem( $id : id, $code : importance.code, $codeSystem : importance.codeSystem)
         CD cdCoded4 = new CD();
         cdCoded4.setCodeSystem("AHRQ v4.3");
@@ -73,6 +75,7 @@ public class OpencdsRule {
         Problem problemSry = new Problem();
         problemSry.setImportance(cdCoded4);
         problemSry.setProblemCode(cdCoded3);
+        problemSry.setId("417");
 //    $obs : ClinicalStatementRelationship( $id : id, $code : targetRelationshipToSource.code, $codeSystem : targetRelationshipToSource.codeSystem)
         ClinicalStatementRelationship clinicRel = new ClinicalStatementRelationship();
         CD cdCoded5 = new CD();
@@ -80,6 +83,7 @@ public class OpencdsRule {
         cdCoded5.setCode("C439"); //C439 = Dx POA
         clinicRel.setTargetRelationshipToSource(cdCoded5);
         clinicRel.setTargetId(problemSry.getId());
+        clinicRel.setId("439");
 
         knowledgeSession.insert(elementEvt);
         //knowledgeSession.insert(problem);

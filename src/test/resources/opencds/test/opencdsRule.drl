@@ -137,17 +137,19 @@ when
     $x2 : ResultPositive()
 then
     System.out.println("This is a dynamic rule - Rule fired as a result of <IsReportableInfluenza>");
+    System.out.println(":: InfluenzaTestForOrganism ResultPositive");
 end
 
 rule "test PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA"  //dynamic rules
 no-loop
 when
     $x3 : InpatientEncounter()
-    $x4 : AcuteRespiratoryFailure()
+    $x4 : DxPOA()
     $x5 : Secondary()
-    $x6 : DxPOA()
+    $x6 : AcuteRespiratoryFailure()
 then
     System.out.println("This is a dynamic rule - Rule fired as a result of <PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA>");
+    System.out.println(":: InpatientEncounter DxPOA Secondary AcuteRespiratoryFailure");
 end
 //-------- second rule ---------//
 //rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA"

@@ -10,15 +10,9 @@ import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.junit.Test;
 import org.openehr.rm.datatypes.text.DvCodedText;
-import org.openehr.rm.datatypes.text.DvText;
 import se.cambio.cds.model.facade.execution.vo.ArchetypeReference;
 import se.cambio.cds.model.facade.execution.vo.ContainerInstance;
 import se.cambio.cds.model.facade.execution.vo.ElementInstance;
-import se.cambio.cds.util.CDSTerminologyService;
-import se.cambio.cds.util.DVUtil;
-
-import java.util.LinkedList;
-import java.util.List;
 
 import static junit.framework.Assert.fail;
 
@@ -33,9 +27,7 @@ public class OpenehrTest {
 
     @Test
     public void testTraitOpenehr(){
-        System.out.println(System.getProperty("user.dir"));
-//        System.out.println(CDSTerminologyService.getDelegate());
-
+//        System.out.println(System.getProperty("user.dir"));
 //        if(true) return;
 
 
@@ -67,15 +59,9 @@ public class OpenehrTest {
         ElementInstance elDiagnosis = new ElementInstance(
                 "openEHR-EHR-EVALUATION.problem-diagnosis.v1/data[at0001]/items[at0002.1]",
                 dv2,
-                arDiagnosis,new ContainerInstance("111",null),null);
+                arDiagnosis,new ContainerInstance("112",null),null);
         ksession.insert(arDiagnosis);
         ksession.insert(elDiagnosis);
-
-
-
-        DvText dvt = new DvText("sample DvText...");
-
-        ksession.insert(dvt);
 
         ksession.fireAllRules();
 
