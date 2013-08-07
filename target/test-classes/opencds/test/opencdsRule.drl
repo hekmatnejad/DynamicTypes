@@ -105,41 +105,29 @@ then
     Object x3 = don( $obs, (Class) $map.get( $code ) );
     System.out.println( "Classified3 : " + x3 );
 end
-/*
-rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA2" //classification rule    //static rules
-no-loop
-when
-    $obs : Problem( $id : id, $code : problemCode.code, $codeSystem : problemCode.codeSystem)
-    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
-then
-    Object x4 = don( $obs, (Class) $map.get( $code ) );
-    System.out.println( "Classified4 : " + x4 );
-end
-*/
+
 rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA3" //classification rule    //static rules
 no-loop
 when
     $obs : ClinicalStatementRelationship( $id : id, $code : targetRelationshipToSource.code, $codeSystem : targetRelationshipToSource.codeSystem)
     ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
 then
-    Object x5 = don( $obs, (Class) $map.get( $code ) );
-    System.out.println( "Classified5 : " + x5 );
+    Object x4 = don( $obs, (Class) $map.get( $code ) );
+    System.out.println( "Classified4 : " + x4 );
 end
 
 rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA4" //classification rule    //static rules
 no-loop
 when
-//    $obs : Problem( $id : id, $code : importance!.code, $codeSystem : importance!.codeSystem)
-//    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
     $obs : Problem( $id : id, $code : importance!.code, $codeSystem : importance!.codeSystem
                 , $code2 : problemCode!.code)
     ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
     ConceptMapping( vocabulary == $codeSystem, $map2 : codeMap, codeMap[ $code2 ] != null )
 then
-    Object x6 = don( $obs, (Class) $map.get( $code ) );
-    Object x7 = don( x6, (Class) $map2.get( $code2 ) );
-    System.out.println( "Classified6 : " + x6 );
-    System.out.println( "Classified6 : " + x7 );
+    Object x5 = don( $obs, (Class) $map.get( $code ) );
+    Object x6 = don( x5, (Class) $map2.get( $code2 ) );
+    System.out.println( "Classified5 : " + x5 );
+    System.out.println( "Classified5 : " + x6 );
 end
 
 rule "test IsReportableInfluenza"  //dynamic rules
@@ -148,10 +136,6 @@ when
     $x1 : InfluenzaTestForOrganism()
     $x2 : ResultPositive()
 then
-    //Object obj = don( $x1, ResultPositive.class);
-    //System.out.println("wow: " + obj);
-    //shed( $x2, InfluenzaTestForOrganism.class);
-    //System.out.println("shed result: " + res);
     System.out.println("This is a dynamic rule - Rule fired as a result of <IsReportableInfluenza>");
 end
 

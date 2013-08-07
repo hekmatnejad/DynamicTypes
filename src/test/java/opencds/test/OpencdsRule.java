@@ -57,29 +57,29 @@ public class OpencdsRule {
 //    $obs : EncounterEvent( $id : id, $code : encounterType.code, $codeSystem : encounterType.codeSystem)
         CD cdCoded2 = new CD();
         cdCoded2.setCodeSystem("AHRQ v4.3");
-        cdCoded2.setCode("C238");
+        cdCoded2.setCode("C238"); //C238 = Inpatient Encounter
         EncounterEvent elementEvt = new EncounterEvent();
         elementEvt.setEncounterType(cdCoded2);
 //    $obs : Problem( $id : id, $code : problemCode.code, $codeSystem : problemCode.codeSystem)
         CD cdCoded3 = new CD();
         cdCoded3.setCodeSystem("AHRQ v4.3");
-        cdCoded3.setCode("C284");
+        cdCoded3.setCode("C284"); //C284 = Acute Respiratory Failure
         ProblemBase problem = new Problem();
         problem.setProblemCode(cdCoded3);
-//    $obs : ClinicalStatementRelationship( $id : id, $code : targetRelationshipToSource.code, $codeSystem : targetRelationshipToSource.codeSystem)
-        ClinicalStatementRelationship clinicRel = new ClinicalStatementRelationship();
+//    $obs : Problem( $id : id, $code : importance.code, $codeSystem : importance.codeSystem)
         CD cdCoded4 = new CD();
         cdCoded4.setCodeSystem("AHRQ v4.3");
-        cdCoded4.setCode("C417");
-        clinicRel.setTargetRelationshipToSource(cdCoded4);
-//    $obs : Problem( $id : id, $code : importance.code, $codeSystem : importance.codeSystem)
+        cdCoded4.setCode("C417"); //C417 = Secondary
+        Problem problemSry = new Problem();
+        problemSry.setImportance(cdCoded4);
+        problemSry.setProblemCode(cdCoded3);
+//    $obs : ClinicalStatementRelationship( $id : id, $code : targetRelationshipToSource.code, $codeSystem : targetRelationshipToSource.codeSystem)
+        ClinicalStatementRelationship clinicRel = new ClinicalStatementRelationship();
         CD cdCoded5 = new CD();
         cdCoded5.setCodeSystem("AHRQ v4.3");
-        cdCoded5.setCode("C439");
-        Problem problemSry = new Problem();
-        problemSry.setImportance(cdCoded5);
-        problemSry.setProblemCode(cdCoded3);
-
+        cdCoded5.setCode("C439"); //C439 = Dx POA
+        clinicRel.setTargetRelationshipToSource(cdCoded5);
+        clinicRel.setTargetId(problemSry.getId());
 
         knowledgeSession.insert(elementEvt);
         //knowledgeSession.insert(problem);
@@ -87,7 +87,6 @@ public class OpencdsRule {
         knowledgeSession.insert(problemSry);
 
         knowledgeSession.fireAllRules();
-        //System.out.println( proc.isToBeReturned() );
 
     }
 
