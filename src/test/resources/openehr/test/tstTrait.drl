@@ -6,7 +6,7 @@ declare org.drools.factmodel.MapCore  //what is this for
 end
 
 //global List list;  //what is this for
-
+/*
 declare trait PersonMap
 @propertyReactive  
    name : String  
@@ -20,7 +20,7 @@ declare trait StudentMap
    GPA : Double = 3.0
 end
 
-rule Don  
+rule Don
 when  
   $m : Map( this[ "age"] == 18 )
 then  
@@ -110,4 +110,52 @@ then
     map.put( "age", 18 );
     //map.put( "obj", new TestType());
     insert( map );
+end
+*/
+
+//new test for isA after doing don a map's field with a trait
+
+declare trait StudentMap
+@propertyReactive
+   ID : String
+   GPA : Double = 3.0
+end
+
+declare Citizen
+@traitable
+    ssn : Integer
+end
+
+rule "1"
+salience 1
+no-loop
+when
+then
+    Citizen cz = new Citizen(1020);
+    Map map = new HashMap();
+    insert(cz);
+    insert(map);
+end
+
+rule "2"
+salience 1
+no-loop
+when
+    $map : Map()
+    $cz : Citizen()
+then
+    Object obj = don( $cz, StudentMap.class);
+    $map.put("student" , obj );
+    update($map);
+    System.out.println("Map..");
+end
+
+rule "3"
+salience 1
+no-loop
+when
+    $map : Map($st : this["student"])
+    Map($st isA StudentMap.class, this == $map)
+then
+    System.out.println("student: "+$st);
 end

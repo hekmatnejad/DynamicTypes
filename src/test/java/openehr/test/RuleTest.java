@@ -413,7 +413,7 @@ public class RuleTest {
     @Test
     public void testTrait(){
 
-        if(true) return;
+        //if(true) return;
 
         StatefulKnowledgeSession ksession = buildKB( "openehr/test/tstTrait.drl" ).newStatefulKnowledgeSession();
 

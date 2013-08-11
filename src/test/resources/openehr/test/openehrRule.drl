@@ -14,6 +14,7 @@ import org.openehr.rm.datatypes.basic.DataValue;
 import org.opencds.vmr.v1_0.internal.*;
 import org.opencds.vmr.v1_0.internal.concepts.*;
 
+import openehr.util.OpenehrArchetype;
 
 declare org.drools.factmodel.MapCore  //what is this for
 end
@@ -115,6 +116,19 @@ declare trait TAcuteRespiratoryFailure extends TAbnormalRespiratoryPattern
     terminologyIdVersion : String
 end
 
+//archetypes' trait
+
+declare trait RespiratoryProblemAt
+@propertyReactive
+    problem : ElementInstance @alias(OBSERVATION_ELEMENT_AbnormalRespiratoryPattern)
+    respiratoryPattern : TAbnormalRespiratoryPattern @alias(OBSERVATION_ELEMENT_AbnormalRespiratoryPattern)
+end
+
+declare trait AcuteRespiratoryProblemAt extends RespiratoryProblemAt
+@propertyReactive
+    acuteRespiratoryFailure : TAcuteRespiratoryFailure @alias(OBSERVATION_ELEMENT_AbnormalRespiratoryPattern)
+end
+
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
 
 declare DataTypeMapping
@@ -154,15 +168,11 @@ then
     insert( m2 );
 
     System.out.println("All mock maps are created.");
-    ArchetypeElementsList atList = new ArchetypeElementsList();
-    insert( atList );
-    System.out.println("Archetype element list is created.");
 end
 
-declare ArchetypeElementsList //this keep a list of doned archetype elements to avoid repetitive don
-    atElements  : List = new LinkedList()
-end
 
+
+//evaluation part
 
 
 rule "Map Initializer for every archetype that is used in the inserted facts"
@@ -176,7 +186,23 @@ then
     map.put("archetypeName", $ida);
     map.put("domainName", $idd);
     insert( map );
-    System.out.println("Trait Map for Archetype: " + $ida);
+    OpenehrArchetype ut = new OpenehrArchetype($ida);
+    insert(ut);
+end
+
+rule "Assemble Map"
+no-loop
+salience 1000
+when
+    $archetypeReference : ArchetypeReference($idd : idDomain, $ida : idArchetype)
+    $elm : ElementInstance(
+        $code : id,
+        archetypeReference == $archetypeReference )
+    $mp : Map( this[ "archetypeName" ] ==  $ida )
+    $ut : OpenehrArchetype(archetypeName == $ida)
+then
+    $mp.put($ut.getItemName($code), $elm); //add elementInstance to the representative Archetype Map
+    update($mp);
 end
 
 rule "Don with Map 1"
@@ -186,67 +212,104 @@ when
     $elm : ElementInstance(
         $code : id,
         archetypeReference == $archetypeReference )
-    $al : ArchetypeElementsList( atElements.contains( $code ) == false )//check if this element instance is already donned
     DataTypeMapping( vocabulary == $idd, $map : codeMap, codeMap[ $code ] != null )//in order to map an appropriate element item
-    $mp : Map( this[ "archetypeName" ] ==  $ida ) // the related Archetype Map
 then
-    $mp.put("elementIns", $elm); //add elementInstance to the representative Archetype Map
-    update($mp);
     Object x1 = don( $elm, (Class) $map.get( $code ) );
-    Object obj = don($mp, (Class) $map.get( $code ));
-    modify( $al ){ //to avoid repetitive firing of this rule
-        getAtElements().add( $code );
-    }
-    System.out.println("><><1><><" + obj);
 end
 
-rule "Don with Map 1 complementary for TAcuteRespiratoryFailure"
+rule "Don with Map 2 complementary for TAcuteRespiratoryFailure"
 no-loop
 when
-    $elm : ElementInstance( this isA TAbnormalRespiratoryPattern, $dv : dataValue,
+    $archetypeReference : ArchetypeReference( $ida : idArchetype)
+    $elm : ElementInstance( this isA TAbnormalRespiratoryPattern.class,
+        this not isA  TAcuteRespiratoryFailure.class,
+        $dv : dataValue, $code : id,
+        archetypeReference == $archetypeReference,
         dataValue#DvCodedText.(
             $cs : definingCode!.codeString == "at0057",
             $tid : definingCode!.terminologyId!.name() == "local",
             $val : value,
             $ver : definingCode!.terminologyId!.versionID() == null)
     )
-    ArchetypeReference( $ida : idArchetype)
-    $mp : TAbnormalRespiratoryPattern( fields[ "archetypeName" ] ==  $ida)
+    $ut : OpenehrArchetype(archetypeName == $ida)
+    $mp : Map( this[ "archetypeName" ] ==  $ida )
 then
-    shed( $mp, TAbnormalRespiratoryPattern.class);
-    System.out.println("><><2><><" + "shed: TAbnormalRespiratoryPattern");
-    Object y = don(  $mp, TAcuteRespiratoryFailure.class);
-    System.out.println("><><2><><" + y);
+    Object z = don(  $elm, TAcuteRespiratoryFailure.class);
+    $mp.put($ut.getItemName($code), z);
+    update($mp);
+    System.out.println("><><2><><" + "donned with TAcuteRespiratoryFailure");
 end
 
 rule "Don with Map 1 complementary for TDiagnosis"
 no-loop
 when
-    $elm : ElementInstance( this isA TDiagnosis, $dv : dataValue,
+    $archetypeReference : ArchetypeReference( $ida : idArchetype)
+    $elm : ElementInstance( this isA TDiagnosis.class,
+        this not isA TSecondaryDiagnosis.class,
+        $dv : dataValue, $code : id,
+        archetypeReference == $archetypeReference,
         dataValue#DvCodedText.(
             $cs : definingCode!.codeString == "gt0011",
             $tid : definingCode!.terminologyId!.name() == "local",
             $val : value,
             $ver : definingCode!.terminologyId!.versionID() == null)
     )
-    ArchetypeReference( $ida : idArchetype)
-    $mp : TDiagnosis( fields[ "archetypeName" ] ==  $ida)
+    $ut : OpenehrArchetype(archetypeName == $ida)
+    $mp : Map( this[ "archetypeName" ] ==  $ida )
 then
-    shed( $mp, TDiagnosis.class); //no longer is needed
-    System.out.println("><><2><><" + "shed: TDiagnosis");
-    Object y = don(  $mp, TSecondaryDiagnosis.class);
-    System.out.println("><><2><><" + y);
+    Object z = don(  $elm, TSecondaryDiagnosis.class);
+    $mp.put($ut.getItemName($code), z);
+    update($mp);
+    System.out.println("><><2><><" + "donned with TSecondaryDiagnosis");
+end
+
+rule "Don the Map with an appropriate trait 1"
+no-loop
+when
+    //$map : Map($x : this["OBSERVATION_ELEMENT_AbnormalRespiratoryPattern"] isA TAbnormalRespiratoryPattern.class)
+    $map : Map($x : this["OBSERVATION_ELEMENT_AbnormalRespiratoryPattern"])
+    Map( $x isA TAbnormalRespiratoryPattern.class, this == $map)
+    not Map(this isA RespiratoryProblemAt.class)
+then
+    don($map, RespiratoryProblemAt.class);
+    System.out.println("><><3><><" + "donned with RespiratoryProblemAt " + $x);
+end
+
+rule "Don the Map with an appropriate trait 2"
+no-loop
+when
+    //$map : Map($x : this["OBSERVATION_ELEMENT_AbnormalRespiratoryPattern"] isA TAcuteRespiratoryFailure.class)
+    $map : Map($x : this["OBSERVATION_ELEMENT_AbnormalRespiratoryPattern"])
+    Map( $x isA TAcuteRespiratoryFailure.class, this == $map)
+    not Map(this isA AcuteRespiratoryProblemAt.class)
+then
+    don($map, AcuteRespiratoryProblemAt.class);
+    System.out.println("><><3><><" + "donned with AcuteRespiratoryProblemAt " + $x);
 end
 
 rule "check for validation"
 no-loop
 when
-//    Map( this isA TAbnormalRespiratoryPattern.class, //to say they both belong to the same Archetype
-//        this isA TAcuteRespiratoryFailure.class)
-//    Map( this isA TSecondaryDiagnosis.class) //this one belongs to the different Archetype
-    /*these two below lines are equivalent to the above ones*/
+    RespiratoryProblemAt(problem isA TAcuteRespiratoryFailure.class)
+    //AcuteRespiratoryProblemAt()
+then
+    System.out.println("><*><validated as><*><" + "TAbnormalRespiratoryPattern, TAcuteRespiratoryFailure" );
+end
+
+
+/*
+rule "check for validation"
+no-loop
+when
     TAbnormalRespiratoryPattern(this isA TAcuteRespiratoryFailure.class)
     TSecondaryDiagnosis()
+    //DxProblem()
 then
     System.out.println("><*><validated as><*><" + "TAbnormalRespiratoryPattern, TAcuteRespiratoryFailure, TSecondaryDiagnosis" );
 end
+*/
+/*
+declare trait testTrait
+    test : String  @alias( xyz )
+end
+*/

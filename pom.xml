@@ -30,6 +30,7 @@
             <artifactId>drools-compiler</artifactId>
             <version>5.6.0-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>org.opencds</groupId>
             <artifactId>vmr</artifactId>
@@ -89,7 +90,56 @@
             <scope>system</scope>
             <systemPath>${pom.basedir}/lib/joda-time-1.3.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>adl-parser-1.0.2</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/adl-parser-1.0.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>openehr-aom-1.0.2</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/openehr-aom-1.0.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>openehr-ap-1.0.2</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/openehr-ap-1.0.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>measure-serv-1.0.2</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/measure-serv-1.0.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>mini-termserv-1.0.2</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/mini-termserv-1.0.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>log4j-1.2.13</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/log4j-1.2.13.jar</systemPath>
+        </dependency>
 
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>jdom-1.0</artifactId>
+            <version>1.1.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/jdom-1.0.jar</systemPath>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>

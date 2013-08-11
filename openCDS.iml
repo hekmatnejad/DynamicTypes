@@ -34,6 +34,13 @@
     <orderEntry type="library" name="Maven: org.openehr:terminology.service:1.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.openehr:commons-lang-2.4:1.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.openehr:joda-time-1.3:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openehr:adl-parser-1.0.2:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openehr:openehr-aom-1.0.2:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openehr:openehr-ap-1.0.2:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openehr:measure-serv-1.0.2:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openehr:mini-termserv-1.0.2:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openehr:log4j-1.2.13:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openehr:jdom-1.0:1.1.0" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.10" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
   </component>

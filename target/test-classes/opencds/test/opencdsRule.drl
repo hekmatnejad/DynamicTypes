@@ -43,10 +43,21 @@ declare trait Secondary
     id : String
 end
 
-declare trait DxPOA
+
+declare trait RelationTrait //used to connect two concept together
+@propertyReactive
+    sourceId : String
+    targetId : String
+end
+
+declare trait DxPOA extends RelationTrait
 @propertyReactive
     openCdsConceptCode : String
     id : String
+end
+
+declare Problem //to avoid second firing of parents and childs
+@propertyReactive
 end
 
 //*********** Concept mapper declaration ***********//
@@ -76,7 +87,7 @@ end
 
 //*********** Rule declaration ***********//
 
-rule "IsReportableInfluenza1" //classification rule
+rule "ObservationValue by concept" //"IsReportableInfluenza1" //classification rule
 no-loop
 when
     $obs : ObservationValue( $code1 : concept.code, $codeSystem1 : concept.codeSystem )
@@ -86,7 +97,7 @@ then
     System.out.println( "Classified1 : " + x1 );
 end
 
-rule "IsReportableInfluenza2" //classification rule    //static rules
+rule "ObservationResult by observationFocus" // IsReportableInfluenza2" //classification rule    //static rules
 no-loop
 when
     $obs : ObservationResult( $id : id, $code2 : observationFocus.code, $codeSystem2 : observationFocus.codeSystem)
@@ -119,16 +130,24 @@ end
 rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA4" //classification rule    //static rules
 no-loop
 when
-    $obs : Problem( $id : id, $code : importance!.code, $codeSystem : importance!.codeSystem
-                , $code2 : problemCode!.code)
+    $obs : Problem( $id : id, $code : importance!.code, $codeSystem : importance!.codeSystem)
     ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
-    ConceptMapping( vocabulary == $codeSystem, $map2 : codeMap, codeMap[ $code2 ] != null )
 then
     Object x5 = don( $obs, (Class) $map.get( $code ) );
-    Object x6 = don( x5, (Class) $map2.get( $code2 ) );
     System.out.println( "Classified5 : " + x5 );
-    System.out.println( "Classified5 : " + x6 );
 end
+
+rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA5" //classification rule    //static rules
+no-loop
+when
+    $obs : Problem( $id : id, $code : problemCode!.code, $codeSystem : problemCode!.codeSystem )
+    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
+then
+    Object x6 = don( $obs, (Class) $map.get( $code ) );
+    System.out.println( "Classified6 : " + x6 );
+end
+
+
 
 rule "test IsReportableInfluenza"  //dynamic rules
 no-loop
@@ -143,10 +162,9 @@ end
 rule "test PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA"  //dynamic rules
 no-loop
 when
-    $x3 : InpatientEncounter()
-    $x4 : DxPOA()
-    $x5 : Secondary()
-    $x6 : AcuteRespiratoryFailure()
+    $x3 : InpatientEncounter( $encId := id )   //:= assignment for the first use and equality for the other times
+    $x4 : DxPOA( $encId, $probId ; )
+    $x6 : AcuteRespiratoryFailure( $probId := id, this isA Secondary.class )
 then
     System.out.println("This is a dynamic rule - Rule fired as a result of <PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA>");
     System.out.println(":: InpatientEncounter DxPOA Secondary AcuteRespiratoryFailure");
@@ -161,4 +179,8 @@ end
 //C439 = Dx POA
 //ClinicalStatementRelationship
 
-
+/*
+todo:
+add the very similar openCDs drl rules to this file
+to show the verification of the results
+*/

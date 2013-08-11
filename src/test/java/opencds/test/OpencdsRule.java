@@ -65,30 +65,29 @@ public class OpencdsRule {
         CD cdCoded3 = new CD();
         cdCoded3.setCodeSystem("AHRQ v4.3");
         cdCoded3.setCode("C284"); //C284 = Acute Respiratory Failure
-        ProblemBase problem = new Problem();
+        Problem problem = new Problem();
         problem.setProblemCode(cdCoded3);
         problem.setId("284");
 //    $obs : Problem( $id : id, $code : importance.code, $codeSystem : importance.codeSystem)
         CD cdCoded4 = new CD();
         cdCoded4.setCodeSystem("AHRQ v4.3");
         cdCoded4.setCode("C417"); //C417 = Secondary
-        Problem problemSry = new Problem();
-        problemSry.setImportance(cdCoded4);
-        problemSry.setProblemCode(cdCoded3);
-        problemSry.setId("417");
-//    $obs : ClinicalStatementRelationship( $id : id, $code : targetRelationshipToSource.code, $codeSystem : targetRelationshipToSource.codeSystem)
+        problem.setImportance(cdCoded4);
+
+ //    $obs : ClinicalStatementRelationship( $id : id, $code : targetRelationshipToSource.code, $codeSystem : targetRelationshipToSource.codeSystem)
         ClinicalStatementRelationship clinicRel = new ClinicalStatementRelationship();
         CD cdCoded5 = new CD();
         cdCoded5.setCodeSystem("AHRQ v4.3");
         cdCoded5.setCode("C439"); //C439 = Dx POA
         clinicRel.setTargetRelationshipToSource(cdCoded5);
-        clinicRel.setTargetId(problemSry.getId());
+        clinicRel.setTargetId(problem.getId());
         clinicRel.setId("439");
+        clinicRel.setSourceId( elementEvt.getId());
 
         knowledgeSession.insert(elementEvt);
         //knowledgeSession.insert(problem);
         knowledgeSession.insert(clinicRel);
-        knowledgeSession.insert(problemSry);
+        knowledgeSession.insert(problem);
 
         knowledgeSession.fireAllRules();
 
