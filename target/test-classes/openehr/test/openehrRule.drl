@@ -120,13 +120,13 @@ end
 
 declare trait RespiratoryProblemAt
 @propertyReactive
-    problem : ElementInstance @alias(OBSERVATION_ELEMENT_AbnormalRespiratoryPattern)
-    respiratoryPattern : TAbnormalRespiratoryPattern @alias(OBSERVATION_ELEMENT_AbnormalRespiratoryPattern)
+    problem : ElementInstance @Alias("OBSERVATION_ELEMENT_AbnormalRespiratoryPattern")
+    respiratoryPattern : TAbnormalRespiratoryPattern @Alias("OBSERVATION_ELEMENT_AbnormalRespiratoryPattern")
 end
 
 declare trait AcuteRespiratoryProblemAt extends RespiratoryProblemAt
 @propertyReactive
-    acuteRespiratoryFailure : TAcuteRespiratoryFailure @alias(OBSERVATION_ELEMENT_AbnormalRespiratoryPattern)
+    acuteRespiratoryFailure : TAcuteRespiratoryFailure @Alias("OBSERVATION_ELEMENT_AbnormalRespiratoryPattern")
 end
 
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
@@ -290,6 +290,7 @@ end
 rule "check for validation"
 no-loop
 when
+    //RespiratoryProblemAt(OBSERVATION_ELEMENT_AbnormalRespiratoryPattern isA TAcuteRespiratoryFailure)//.class)
     RespiratoryProblemAt(problem isA TAcuteRespiratoryFailure.class)
     //AcuteRespiratoryProblemAt()
 then

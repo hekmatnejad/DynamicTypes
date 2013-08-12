@@ -1,0 +1,90 @@
+package openehr.test;
+
+import java.util.*;
+import org.drools.factmodel.traits.Alias
+
+
+declare org.drools.factmodel.MapCore  //what is this for
+end
+
+
+//new test for isA after doing don a map's field with a trait
+
+declare trait StudentMap
+@propertyReactive
+   ID : String
+   GPA : Double = 3.0
+end
+
+declare Citizen
+@traitable
+    ssn : Integer
+end
+
+declare trait Tutoring
+@propertyReactive
+    instructor : String
+    customer : Citizen @Alias("student")
+end
+
+rule "1"
+salience 1
+no-loop
+when
+then
+    Citizen cz = new Citizen(1020);
+    Map map = new HashMap();
+    insert(cz);
+    insert(map);
+end
+
+rule "2"
+salience 1
+no-loop
+when
+    $map : Map()
+    $cz : Citizen()
+then
+    Object obj = don( $cz, StudentMap.class);
+    $map.put("customer" , obj );
+    update($map);
+    System.out.println("Map..");
+end
+
+rule "3"
+salience 1
+no-loop
+when
+    $map : Map($st : this["customer"])
+    Map($st isA StudentMap.class, this == $map)
+then
+    System.out.println("customer: "+$st);
+end
+
+rule "4"
+salience 1
+no-loop
+when
+    $map : Map($st : this["customer"])
+then
+    Object obj = don( $map, Tutoring.class );
+    System.out.println("Object: " + obj);
+end
+
+rule "5"
+salience 1
+no-loop
+when
+    $tut : Tutoring(customer isA StudentMap.class)
+then
+    System.out.println("Tutoring(customer isA StudentMap.class) ");
+end
+
+rule "6"
+salience -1
+no-loop
+when
+    $tut : Tutoring(student isA StudentMap.class)
+then
+    System.out.println("Tutoring(student isA StudentMap.class) ");
+end

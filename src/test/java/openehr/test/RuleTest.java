@@ -350,6 +350,8 @@ public class RuleTest {
     @Test
     public void testTraitOpenehr(){
 
+        if(true) return;
+
         StatefulKnowledgeSession ksession = buildKB( "openehr/test/openehrRule.drl" ).newStatefulKnowledgeSession();
 
         TraitFactory.setMode( TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase() );
@@ -415,9 +417,12 @@ public class RuleTest {
 
         //if(true) return;
 
-        StatefulKnowledgeSession ksession = buildKB( "openehr/test/tstTrait.drl" ).newStatefulKnowledgeSession();
+
+        //StatefulKnowledgeSession ksession = buildKB( "openehr/test/tstTrait.drl" ).newStatefulKnowledgeSession();
+        StatefulKnowledgeSession ksession = buildKB( "openehr/test/tstMapMemberTrait.drl" ).newStatefulKnowledgeSession();
 
         TraitFactory.setMode( TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase() );
+//        TraitFactory.setMode( TraitFactory.VirtualPropertyMode.TRIPLES, ksession.getKnowledgeBase() );
 
         //List list = new ArrayList();
         //ksession.setGlobal( "list", list );
