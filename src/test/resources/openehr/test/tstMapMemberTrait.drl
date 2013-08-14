@@ -10,21 +10,33 @@ end
 
 //new test for isA after doing don a map's field with a trait
 
-declare trait StudentMap
-@propertyReactive
-   ID : String
-   GPA : Double = 3.0
-end
-
-declare Citizen
+declare trait Citizen
 @traitable
-    ssn : Integer
+    citizenship : String = "Unknown"
 end
 
-declare trait Tutoring
+declare trait Student extends Citizen
 @propertyReactive
-    instructor : String
-    customer : Citizen @Alias("student")
+   ID : String = "412314" @Alias("ID")
+   GPA : Double = 3.99
+end
+
+declare Person
+@traitable
+    personalID : String
+    isStudent : boolean
+end
+
+declare trait Worker
+@propertyReactive
+    //customer : Citizen
+    hasBenefits : Boolean = true
+end
+
+declare trait StudentWorker extends Worker
+@propertyReactive
+    //currentStudent : Citizen @Alias("customer")
+    tuitionWaiver : Boolean @Alias("hasBenefits")
 end
 
 rule "1"
@@ -32,9 +44,10 @@ salience 1
 no-loop
 when
 then
-    Citizen cz = new Citizen(1020);
+    Person p = new Person("1020",true);
     Map map = new HashMap();
-    insert(cz);
+    map.put("isEmpty",true);
+    insert(p);
     insert(map);
 end
 
@@ -42,49 +55,52 @@ rule "2"
 salience 1
 no-loop
 when
-    $map : Map()
-    $cz : Citizen()
+    $stu : Person(isStudent == true)
+    $map : Map(this["isEmpty"] == true)
 then
-    Object obj = don( $cz, StudentMap.class);
-    $map.put("customer" , obj );
+    Student s = don( $stu , Student.class );
+    $map.put("worker" , s);
+    $map.put("isEmpty" , false);
     update($map);
-    System.out.println("Map..");
+    System.out.println("don: Person -> Student ");
 end
 
 rule "3"
 salience 1
 no-loop
 when
-    $map : Map($st : this["customer"])
-    Map($st isA StudentMap.class, this == $map)
+    $map : Map($stu : this["worker"])
+    Map($stu isA Student.class, this == $map)
 then
-    System.out.println("customer: "+$st);
+    Object obj = don( $map , Worker.class );
+    System.out.println("don: Map -> Worker : "+obj);
 end
 
 rule "4"
 salience 1
 no-loop
 when
-    $map : Map($st : this["customer"])
+    $stu : Student()
 then
-    Object obj = don( $map, Tutoring.class );
-    System.out.println("Object: " + obj);
+    Object obj = don( $stu , StudentWorker.class );
+    System.out.println("don: Map -> StudentWorker : "+obj);
 end
 
 rule "5"
 salience 1
 no-loop
 when
-    $tut : Tutoring(customer isA StudentMap.class)
+    StudentWorker(tuitionWaiver == true)
 then
-    System.out.println("Tutoring(customer isA StudentMap.class) ");
+    System.out.println("tuitionWaiver == true");
 end
 
+/*
 rule "6"
 salience -1
 no-loop
 when
-    $tut : Tutoring(student isA StudentMap.class)
 then
-    System.out.println("Tutoring(student isA StudentMap.class) ");
+    System.out.println("");
 end
+*/
