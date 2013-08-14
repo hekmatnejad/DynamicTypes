@@ -61,6 +61,7 @@ then
     Student s = don( $stu , Student.class );
     $map.put("worker" , s);
     $map.put("isEmpty" , false);
+    $map.put("hasBenefits",null);
     update($map);
     System.out.println("don: Person -> Student ");
 end

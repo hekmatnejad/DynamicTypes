@@ -1,0 +1,93 @@
+
+/*
+@aliasing soft fields may fail silently or throw exceptions
+the behavior of @alias is undefined for soft fields and may be erratic at best.
+*/
+
+package openehr.test;
+
+import java.util.*;
+import org.drools.factmodel.traits.Alias
+
+global java.util.List list;
+
+declare org.drools.factmodel.MapCore  //what is this for
+end
+
+
+declare trait Citizen
+@traitable
+    citizenship : String = "Unknown"
+    socialSecurity : String = "0"
+end
+
+declare trait Student extends Citizen
+@propertyReactive
+   ID : String = "412314" @Alias("personID") //notice: by removing this Alias rule "4" would be ok
+   GPA : Double = 3.99
+   SSN : String = "888111155555" @Alias("socialSecurity")
+end
+
+declare Person
+@traitable
+    personID : String
+    isStudent : boolean
+end
+
+rule "1"
+salience 1
+no-loop
+when
+then
+    Person p = new Person("1020",true);
+    insert(p);
+    list.add("initialized");
+end
+
+rule "2"
+salience 1
+no-loop
+when
+    $stu : Person(isStudent == true)
+then
+    Student s = don( $stu , Student.class );
+    System.out.println("don: Person -> Student " + s);
+    list.add("student is donned");
+end
+
+rule "3"
+salience 1
+no-loop
+when
+    $stu : Student(ID == "412314", SSN == "888111155555")
+then
+    list.add("student has ID and SSN");
+end
+
+rule "4"
+salience 1
+no-loop
+when
+    Student(fields["personID"] == "412314", fields["socialSecurity"] == "888111155555")
+    //$stu : Student(personID == "412314", socialSecurity == "888111155555")//notice: compile error
+then
+    list.add("student has personID and socialSecurity");
+end
+
+rule "5"
+salience 1
+no-loop
+when
+    $ctz : Citizen(socialSecurity == "888111155555")
+then
+    list.add("citizen has socialSecurity");
+end
+
+rule "6"
+salience 1
+no-loop
+when
+    $p : Person(personID == "412314")
+then
+    list.add("person has personID");
+end

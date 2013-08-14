@@ -1,14 +1,22 @@
+
+/*
+  Map accessors and custom evaluators do not work together
+  Map( this[ "x" ] custOp value ) fails.
+  The custom evaluator is passed the map itself, rather than the value
+  corresponding to the key.
+*/
+
 package openehr.test;
 
 import java.util.*;
 import org.drools.factmodel.traits.Alias
 
+global java.util.List list;
+
 
 declare org.drools.factmodel.MapCore  //what is this for
 end
 
-
-//new test for isA after doing don a map's field with a trait
 
 declare trait Citizen
 @traitable
@@ -17,27 +25,21 @@ end
 
 declare trait Student extends Citizen
 @propertyReactive
-   ID : String = "412314" @Alias("ID")
+   ID : String = "412314" @Alias("personID")
    GPA : Double = 3.99
 end
 
 declare Person
 @traitable
-    personalID : String
+    personID : String
     isStudent : boolean
 end
 
 declare trait Worker
 @propertyReactive
-    //customer : Citizen
     hasBenefits : Boolean = true
 end
 
-declare trait StudentWorker extends Worker
-@propertyReactive
-    //currentStudent : Citizen @Alias("customer")
-    tuitionWaiver : Boolean @Alias("hasBenefits")
-end
 
 rule "1"
 salience 1
@@ -49,6 +51,7 @@ then
     map.put("isEmpty",true);
     insert(p);
     insert(map);
+    list.add("initialized");
 end
 
 rule "2"
@@ -61,47 +64,18 @@ then
     Student s = don( $stu , Student.class );
     $map.put("worker" , s);
     $map.put("isEmpty" , false);
-    $map.put("hasBenefits",null);
     update($map);
     System.out.println("don: Person -> Student ");
+    list.add("student is donned");
 end
 
 rule "3"
 salience 1
 no-loop
 when
-    $map : Map($stu : this["worker"])
-    Map($stu isA Student.class, this == $map)
+    $map : Map($stu : this["worker"] isA Student.class)
 then
     Object obj = don( $map , Worker.class );
     System.out.println("don: Map -> Worker : "+obj);
+    list.add("worker is donned");
 end
-
-rule "4"
-salience 1
-no-loop
-when
-    $stu : Student()
-then
-    Object obj = don( $stu , StudentWorker.class );
-    System.out.println("don: Map -> StudentWorker : "+obj);
-end
-
-rule "5"
-salience 1
-no-loop
-when
-    StudentWorker(tuitionWaiver == true)
-then
-    System.out.println("tuitionWaiver == true");
-end
-
-/*
-rule "6"
-salience -1
-no-loop
-when
-then
-    System.out.println("");
-end
-*/
