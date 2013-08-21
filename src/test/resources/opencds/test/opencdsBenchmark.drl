@@ -1,0 +1,47 @@
+
+package opencds.test;
+
+import org.opencds.vmr.v1_0.internal.*;
+import org.opencds.vmr.v1_0.internal.concepts.*;
+import java.util.*;
+
+
+rule "ObservationFocusConcept by concept 1"
+no-loop
+when
+    $obs : ObservationResult( $id : id, $code : observationFocus.code == "10220", $codeSystem : observationFocus.codeSystem )
+then
+    ObservationFocusConcept x1 = new ObservationFocusConcept();
+    x1.setOpenCdsConceptCode( "C261" );
+    x1.setConceptTargetId( $id );
+    insert( x1 );
+    //System.out.println( "Classified1 : " + x1 );
+end
+
+rule "ObservationFocusConcept by concept 2"
+no-loop
+when
+    $obs : ObservationResult( $id : id, $code : observationValue.concept.code == "34254",
+        $codeSystem : observationValue.concept.codeSystem )
+then
+    ObservationCodedValueConcept x1 = new ObservationCodedValueConcept();
+    x1.setOpenCdsConceptCode( "C87" );
+    x1.setConceptTargetId( $id );
+    insert( x1 );
+    //System.out.println( "Classified2 : " + x1 );
+end
+
+rule "IsReportableInfluenza"
+//ruleflow-group "EvaluateLabData"
+dialect "java"
+salience -1000
+when
+      $y : ObservationFocusConcept( openCdsConceptCode == "C261" )
+      $z : ObservationCodedValueConcept( openCdsConceptCode == "C87" )
+      $x : ObservationResult( id == $y.conceptTargetId,
+                              id == $z.conceptTargetId,
+                              subjectIsFocalPerson == true )
+then
+    //System.out.println(":::: openCDS original rule fired successfully.");
+end
+

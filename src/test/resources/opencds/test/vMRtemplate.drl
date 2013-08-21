@@ -1,0 +1,77 @@
+
+package opencds.test;
+
+import org.opencds.vmr.v1_0.internal.*;
+import org.opencds.vmr.v1_0.internal.concepts.*;
+import java.util.*;
+import org.opencds.vmr.v1_0.internal.datatypes.CD;
+import org.opencds.vmr.v1_0.internal.datatypes.IVLQTY;
+
+
+declare trait TCriticalProblem
+@propertyReactive
+    templateId : String
+    problemCode : CD
+    problemEffectiveTimeRange : IVLQTY
+    criticality : CD
+    problemStatus : CD
+end
+
+declare Problem
+@propertyReactive
+    templateId : String
+    problemCode : CD
+    problemEffectiveTimeRange : IVLQTY
+    criticality : CD
+    problemStatus : CD
+end
+
+declare trait TImportantCriticality
+@propertyReactive
+
+end
+
+rule "init problem"
+no-loop
+when
+then
+    Problem p = new Problem();
+    CD c = new CD();
+    c.setCode("m101");
+    p.setCriticality( c );
+    insert( c );
+    insert( p );
+end
+
+rule "opencdsTemplate 1"
+when
+    $p : Problem(
+    /*
+        templateId == "tmp1020", problemCode.codeSystem == "SNOMED-CT",
+        problemStatus.value == "INACTIVE" ||
+        ( problemStatus.value == "ACTIVE" &&  problemEffectiveTimeRange.highValue == null ),
+    */
+        $crc : criticality
+
+        )
+        if( criticality != null ) do[addCriticality]      //memberOf {"12","23"}
+then
+    don( $p , TCriticalProblem.class );
+    System.out.println(":: before then");
+
+then[addCriticality]
+       TImportantCriticality x = don( $crc , TImportantCriticality.class );
+       modify( $p ){
+            setCriticality( (CD)x.getCore() );
+       }
+
+    System.out.println(":: after then");
+
+end
+
+rule "using opencdsTemplate 1"
+when
+    TCriticalProblem( $c : criticality isA TImportantCriticality.class )
+then
+    System.out.println("criticality isA TImportantCriticality.class" );
+end

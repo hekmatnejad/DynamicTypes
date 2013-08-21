@@ -4,75 +4,52 @@ package opencds.test;
 import org.opencds.vmr.v1_0.internal.*;
 import org.opencds.vmr.v1_0.internal.concepts.*;
 import java.util.*;
-import org.opencds.vmr.v1_0.internal.datatypes.CD;
-import org.opencds.vmr.v1_0.internal.datatypes.IVLQTY;
 
-
-//import org.drools.core.factmodel.traits.Thing;
-
-//*********** type declaration ***********//
 //base trait for all openCDS concepts
 declare trait opencdsConcept
 @propertyReactive
     openCdsConceptCode : String
     id : String
 end
-
 //this trait must be specific for the concept it is focusing on
 declare trait InfluenzaTestForOrganism extends opencdsConcept //one for each concept
 @propertyReactive
     openCdsConceptCode : String = "C261"
     observationValue : ObservationValue
 end
-
 declare trait ResultPositive extends opencdsConcept
 @propertyReactive
     openCdsConceptCode : String = "C87"
 end
-
-
 declare ObservationResult
 @propertyReactive
 end
 
-//*********** Rule declaration ***********//
-
 rule "ObservationFocusConcept by concept 1"
 no-loop
 when
-    $obs : ObservationResult( $id : id, $code : observationFocus.code == "10220", $codeSystem : observationFocus.codeSystem )
+    $obs : ObservationResult( $id : id, $code : observationFocus.code == "10220",
+        $codeSystem : observationFocus.codeSystem )
 then
     Object x1 = don( $obs, InfluenzaTestForOrganism.class );
-    System.out.println( "Classified1 : " + x1 );
+    //System.out.println( "Classified1 : " + x1 );
 end
 
 rule "ObservationFocusConcept by concept 2"
 no-loop
 when
-    $obs : ObservationResult( $id : id, $code : observationValue.concept.code == "34254",
+    $obs : ObservationResult( $id : id=="1" || id=="2", $code : observationValue.concept.code == "34254",
         $codeSystem : observationValue.concept.codeSystem )
 then
     Object x1 = don( $obs, ResultPositive.class );
-    System.out.println( "Classified2 : " + x1 );
+    //System.out.println( "Classified2 : " + x1 );
 end
 
-rule "test IsReportableInfluenza"
+rule "IsReportableInfluenza"
 no-loop
 when
     InfluenzaTestForOrganism(this isA ResultPositive.class)
 then
-    System.out.println(":: InfluenzaTestForOrganism ResultPositive");
+    //System.out.println(":: InfluenzaTestForOrganism ResultPositive");
 end
-/*
-rule "test if inside LHS 1"
-no-loop
-when
-    InfluenzaTestForOrganism(this isA ResultPositive.class)
-        if(openCdsConceptCode != null) break[printOpencdsConceptCode] //break or do
-then
-    System.out.println(":: before then");
-    then[printOpencdsConceptCode]{
-        System.out.println("if -> opencdsConceptCode != null");}
-    System.out.println(":: after then");
-end
-*/
+

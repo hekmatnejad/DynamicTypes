@@ -4,183 +4,75 @@ package opencds.test;
 import org.opencds.vmr.v1_0.internal.*;
 import org.opencds.vmr.v1_0.internal.concepts.*;
 import java.util.*;
+import org.opencds.vmr.v1_0.internal.datatypes.CD;
+import org.opencds.vmr.v1_0.internal.datatypes.IVLQTY;
 
 
 //import org.drools.core.factmodel.traits.Thing;
 
 //*********** type declaration ***********//
+//base trait for all openCDS concepts
+declare trait opencdsConcept
+@propertyReactive
+    openCdsConceptCode : String
+    id : String
+end
 
 //this trait must be specific for the concept it is focusing on
-declare trait InfluenzaTestForOrganism    //one for each concept
+declare trait InfluenzaTestForOrganism extends opencdsConcept //one for each concept
 @propertyReactive
-    openCdsConceptCode : String
-    id : String
-    influ : String
+    openCdsConceptCode : String = "C261"
+    observationValue : ObservationValue
 end
 
-declare trait ResultPositive
+declare trait ResultPositive extends opencdsConcept
 @propertyReactive
-    openCdsConceptCode : String
-    id : String
-    res : String
+    openCdsConceptCode : String = "C87"
 end
 
-declare trait InpatientEncounter
+
+declare ObservationResult
 @propertyReactive
-    openCdsConceptCode : String
-    id : String
-end
-
-declare trait AcuteRespiratoryFailure
-@propertyReactive
-    openCdsConceptCode : String
-    id : String
-end
-
-declare trait Secondary
-@propertyReactive
-    openCdsConceptCode : String
-    id : String
-end
-
-
-declare trait RelationTrait //used to connect two concept together
-@propertyReactive
-    sourceId : String
-    targetId : String
-end
-
-declare trait DxPOA extends RelationTrait
-@propertyReactive
-    openCdsConceptCode : String
-    id : String
-end
-
-declare Problem //to avoid second firing of parents and childs
-@propertyReactive
-end
-
-//*********** Concept mapper declaration ***********//
-
-declare ConceptMapping
-    vocabulary  : String
-    codeMap     : Map
-end
-
-rule "Init Mock Mapping"
-salience 100000
-when
-then
-    Map map = new HashMap();
-        map.put( "C261", InfluenzaTestForOrganism.class );
-        map.put( "C87", ResultPositive.class );
-        //new rule mapper//
-        map.put( "C238", InpatientEncounter.class );
-        map.put( "C284", AcuteRespiratoryFailure.class );
-        map.put( "C417", Secondary.class );
-        map.put( "C439", DxPOA.class );
-
-
-    ConceptMapping m1 = new ConceptMapping( "AHRQ v4.3", map );
-    insert( m1 );
 end
 
 //*********** Rule declaration ***********//
 
-rule "ObservationValue by concept" //"IsReportableInfluenza1" //classification rule
+rule "ObservationFocusConcept by concept 1"
 no-loop
 when
-    $obs : ObservationValue( $code1 : concept.code, $codeSystem1 : concept.codeSystem )
-    ConceptMapping( vocabulary == $codeSystem1, $map1 : codeMap, codeMap[ $code1 ] != null )
+    $obs : ObservationResult( $id : id, $code : observationFocus.code == "10220", $codeSystem : observationFocus.codeSystem )
 then
-    Object x1 = don( $obs, (Class) $map1.get( $code1 ) );
+    Object x1 = don( $obs, InfluenzaTestForOrganism.class );
     System.out.println( "Classified1 : " + x1 );
 end
 
-rule "ObservationResult by observationFocus" // IsReportableInfluenza2" //classification rule    //static rules
+rule "ObservationFocusConcept by concept 2"
 no-loop
 when
-    $obs : ObservationResult( $id : id, $code2 : observationFocus.code, $codeSystem2 : observationFocus.codeSystem)
-    ConceptMapping( vocabulary == $codeSystem2, $map2 : codeMap, codeMap[ $code2 ] != null )
+    $obs : ObservationResult( $id : id, $code : observationValue.concept.code == "34254",
+        $codeSystem : observationValue.concept.codeSystem )
 then
-    Object x2 = don( $obs, (Class) $map2.get( $code2 ) );
-    System.out.println( "Classified2 : " + x2 );
+    Object x1 = don( $obs, ResultPositive.class );
+    System.out.println( "Classified2 : " + x1 );
 end
 
-rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA1" //classification rule    //static rules
+rule "test IsReportableInfluenza"
 no-loop
 when
-    $obs : EncounterEvent( $id : id, $code : encounterType.code, $codeSystem : encounterType.codeSystem)
-    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
+    InfluenzaTestForOrganism(this isA ResultPositive.class)
 then
-    Object x3 = don( $obs, (Class) $map.get( $code ) );
-    System.out.println( "Classified3 : " + x3 );
-end
-
-rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA3" //classification rule    //static rules
-no-loop
-when
-    $obs : ClinicalStatementRelationship( $id : id, $code : targetRelationshipToSource.code, $codeSystem : targetRelationshipToSource.codeSystem)
-    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
-then
-    Object x4 = don( $obs, (Class) $map.get( $code ) );
-    System.out.println( "Classified4 : " + x4 );
-end
-
-rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA4" //classification rule    //static rules
-no-loop
-when
-    $obs : Problem( $id : id, $code : importance!.code, $codeSystem : importance!.codeSystem)
-    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
-then
-    Object x5 = don( $obs, (Class) $map.get( $code ) );
-    System.out.println( "Classified5 : " + x5 );
-end
-
-rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA5" //classification rule    //static rules
-no-loop
-when
-    $obs : Problem( $id : id, $code : problemCode!.code, $codeSystem : problemCode!.codeSystem )
-    ConceptMapping( vocabulary == $codeSystem, $map : codeMap, codeMap[ $code ] != null )
-then
-    Object x6 = don( $obs, (Class) $map.get( $code ) );
-    System.out.println( "Classified6 : " + x6 );
-end
-
-
-
-rule "test IsReportableInfluenza"  //dynamic rules
-no-loop
-when
-    $x1 : InfluenzaTestForOrganism()
-    $x2 : ResultPositive()
-then
-    System.out.println("This is a dynamic rule - Rule fired as a result of <IsReportableInfluenza>");
     System.out.println(":: InfluenzaTestForOrganism ResultPositive");
 end
-
-rule "test PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA"  //dynamic rules
+/*
+rule "test if inside LHS 1"
 no-loop
 when
-    $x3 : InpatientEncounter( $encId := id )   //:= assignment for the first use and equality for the other times
-    $x4 : DxPOA( $encId, $probId ; )
-    $x6 : AcuteRespiratoryFailure( $probId := id, this isA Secondary.class )
+    InfluenzaTestForOrganism(this isA ResultPositive.class)
+        if(openCdsConceptCode != null) break[printOpencdsConceptCode] //break or do
 then
-    System.out.println("This is a dynamic rule - Rule fired as a result of <PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA>");
-    System.out.println(":: InpatientEncounter DxPOA Secondary AcuteRespiratoryFailure");
+    System.out.println(":: before then");
+    then[printOpencdsConceptCode]{
+        System.out.println("if -> opencdsConceptCode != null");}
+    System.out.println(":: after then");
 end
-//-------- second rule ---------//
-//rule "PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA"
-//C238 = Inpatient Encounter
-//EncounterEvent
-//C284 = Acute Respiratory Failure
-//Problem
-//C417 = Secondary
-//C439 = Dx POA
-//ClinicalStatementRelationship
-
-/*
-todo:
-add the very similar openCDs drl rules to this file
-to show the verification of the results
 */
