@@ -6,7 +6,6 @@ import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
 import org.drools.definition.type.FactType;
-import org.drools.event.rule.DebugAgendaEventListener;
 import org.drools.factmodel.traits.TraitFactory;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
@@ -28,101 +27,11 @@ import static junit.framework.Assert.fail;
 /**
  * Created with IntelliJ IDEA.
  * User: mamad
- * Date: 8/5/13
- * Time: 5:04 PM
+ * Date: 8/22/13
+ * Time: 3:58 PM
  * To change this template use File | Settings | File Templates.
  */
-public class OpencdsRule {
-    @Test
-    public void testTraitOpencds02() {
-
-        if(true) return;
-
-        KnowledgeBase kBase = buildKB( "opencds/test/opencdsRule.drl" );
-
-        StatefulKnowledgeSession knowledgeSession = kBase.newStatefulKnowledgeSession();
-
-        ObservationResult obs = new ObservationResult();
-        CD cdFocus = new CD();
-        cdFocus.setCodeSystem("AHRQ v4.3");
-        cdFocus.setCode("C261");
-        obs.setId("261");
-        obs.setObservationFocus(cdFocus);
-        obs.setSubjectIsFocalPerson(true);
-
-        CD cdCoded = new CD();
-        cdCoded.setCodeSystem("AHRQ v4.3");
-        cdCoded.setCode("C87");
-        ObservationValue obsValue = new ObservationValue();
-        obsValue.setConcept(cdCoded);
-        obsValue.setIdentifier("87");
-        obs.setObservationValue(obsValue);
-
-        //----------------------------------//
-
-        ObservationFocusConcept ofc = new ObservationFocusConcept();
-        ofc.setId("261");
-        ofc.setOpenCdsConceptCode("C261");
-        ofc.setConceptTargetId("261");
-
-        ObservationCodedValueConcept ocvc = new ObservationCodedValueConcept();
-        ocvc.setId("87");
-        ocvc.setOpenCdsConceptCode("C87");
-        ocvc.setConceptTargetId("261");
-
-//        knowledgeSession.insert(ofc);
-//        knowledgeSession.insert(ocvc);
-        //----------------------------------//
-
-        knowledgeSession.insert(obs);
-        knowledgeSession.insert(obsValue);
-
-        knowledgeSession.fireAllRules();
-
-/*
-        map.put( "C238", InpatientEncounter.class );
-        map.put( "C284", AcuteRespiratoryFailure.class );
-        map.put( "C417", Secondary.class );
-        map.put( "C439", DxPOA.class );
- */
-//    $obs : EncounterEvent( $id : id, $code : encounterType.code, $codeSystem : encounterType.codeSystem)
-        CD cdCoded2 = new CD();
-        cdCoded2.setCodeSystem("AHRQ v4.3");
-        cdCoded2.setCode("C238"); //C238 = Inpatient Encounter
-        EncounterEvent elementEvt = new EncounterEvent();
-        elementEvt.setEncounterType(cdCoded2);
-        elementEvt.setId("238");
-//    $obs : Problem( $id : id, $code : problemCode.code, $codeSystem : problemCode.codeSystem)
-        CD cdCoded3 = new CD();
-        cdCoded3.setCodeSystem("AHRQ v4.3");
-        cdCoded3.setCode("C284"); //C284 = Acute Respiratory Failure
-        Problem problem = new Problem();
-        problem.setProblemCode(cdCoded3);
-        problem.setId("284");
-//    $obs : Problem( $id : id, $code : importance.code, $codeSystem : importance.codeSystem)
-        CD cdCoded4 = new CD();
-        cdCoded4.setCodeSystem("AHRQ v4.3");
-        cdCoded4.setCode("C417"); //C417 = Secondary
-        problem.setImportance(cdCoded4);
-
- //    $obs : ClinicalStatementRelationship( $id : id, $code : targetRelationshipToSource.code, $codeSystem : targetRelationshipToSource.codeSystem)
-        ClinicalStatementRelationship clinicRel = new ClinicalStatementRelationship();
-        CD cdCoded5 = new CD();
-        cdCoded5.setCodeSystem("AHRQ v4.3");
-        cdCoded5.setCode("C439"); //C439 = Dx POA
-        clinicRel.setTargetRelationshipToSource(cdCoded5);
-        clinicRel.setTargetId(problem.getId());
-        clinicRel.setId("439");
-        clinicRel.setSourceId( elementEvt.getId());
-
-        knowledgeSession.insert(elementEvt);
-        //knowledgeSession.insert(problem);
-        knowledgeSession.insert(clinicRel);
-        knowledgeSession.insert(problem);
-
-        knowledgeSession.fireAllRules();
-
-    }
+public class OpencdsBenchmarking {
 
     @Test
     public void testTraitOpencdsBenchmark() {
@@ -137,21 +46,21 @@ public class OpencdsRule {
 
         for ( int j = 0; j < 20; j++ ) {
 
-        ObservationResult obs = new ObservationResult();
-        CD cdFocus = new CD();
-        cdFocus.setCodeSystem("AHRQ v4.3");
-        cdFocus.setCode("10220");
-        obs.setId(UUID.randomUUID().toString());
-        obs.setObservationFocus(cdFocus);
-        obs.setSubjectIsFocalPerson(true);
+            ObservationResult obs = new ObservationResult();
+            CD cdFocus = new CD();
+            cdFocus.setCodeSystem("AHRQ v4.3");
+            cdFocus.setCode("10220");
+            obs.setId(UUID.randomUUID().toString());
+            obs.setObservationFocus(cdFocus);
+            obs.setSubjectIsFocalPerson(true);
 
-        CD cdCoded = new CD();
-        cdCoded.setCodeSystem("AHRQ v4.3");
-        cdCoded.setCode("34254");
-        ObservationValue obsValue = new ObservationValue();
-        obsValue.setConcept(cdCoded);
-        obsValue.setIdentifier(UUID.randomUUID().toString());
-        obs.setObservationValue(obsValue);
+            CD cdCoded = new CD();
+            cdCoded.setCodeSystem("AHRQ v4.3");
+            cdCoded.setCode("34254");
+            ObservationValue obsValue = new ObservationValue();
+            obsValue.setConcept(cdCoded);
+            obsValue.setIdentifier(UUID.randomUUID().toString());
+            obs.setObservationValue(obsValue);
 
             knowledgeSession.insert(obs);
 
@@ -221,9 +130,9 @@ public class OpencdsRule {
 
             trait +=
                     "declare trait " + "autoTrait001" + i + "  extends opencdsConcept\n" +
-                    "@propertyReactive\n" +
-                    "    openCdsConceptCode : String = \"C001" + i + "\"\n" +
-                    "end\n";
+                            "@propertyReactive\n" +
+                            "    openCdsConceptCode : String = \"C001" + i + "\"\n" +
+                            "end\n";
         }
 
         String rule = "";
@@ -232,25 +141,25 @@ public class OpencdsRule {
 
             rule +=
                     "rule \"ObservationFocusConcept by concept 001"+i+"\"\n" +
-                    "no-loop\n" +
-                    "when\n" +
-                    "    $obs : ObservationResult(  $id : id==\"001"+i+"\" || id==\"001"+(i+1)+"\", " +
+                            "no-loop\n" +
+                            "when\n" +
+                            "    $obs : ObservationResult(  $id : id==\"001"+i+"\" || id==\"001"+(i+1)+"\", " +
                             "$code : observationFocus.code == \"10220\",\n" +
-                    "        $codeSystem : observationFocus.codeSystem )\n" +
-                    "then\n" +
-                    "    //System.out.println( \"Claxified \" + $id + \" as auto Trait \" + " + i + " ); \n" +
-                    "    Object x1 = don( $obs, autoTrait001"+i+".class );\n" +
-                    "end\n";
+                            "        $codeSystem : observationFocus.codeSystem )\n" +
+                            "then\n" +
+                            "    //System.out.println( \"Claxified \" + $id + \" as auto Trait \" + " + i + " ); \n" +
+                            "    Object x1 = don( $obs, autoTrait001"+i+".class );\n" +
+                            "end\n";
 
             rule +=
                     "rule \"IsReportableInfluenza001"+i+"\"\n" +
-                    "no-loop\n" +
-                    "when\n" +
-                    "    $obj : autoTrait001"+i+"(this isA autoTrait001"+(i+1)+".class)\n" +
-                    "then\n" +
-                    "    //System.out.println(\":: InfluenzaTestForOrganism ResultPositive \"+$obj.getId());\n" +
-                    "//System.out.println($obj.getId());\n" +
-                    "end\n";
+                            "no-loop\n" +
+                            "when\n" +
+                            "    $obj : autoTrait001"+i+"(this isA autoTrait001"+(i+1)+".class)\n" +
+                            "then\n" +
+                            "    //System.out.println(\":: InfluenzaTestForOrganism ResultPositive \"+$obj.getId());\n" +
+                            "//System.out.println($obj.getId());\n" +
+                            "end\n";
         }
 
         rule += "rule \"Clean\"\n" +
@@ -315,7 +224,7 @@ public class OpencdsRule {
         ksession.fireAllRules();
         assertEquals(0, ksession.getObjects().size());
 
-    //   ksession.addEventListener( new DebugAgendaEventListener( ));
+        //   ksession.addEventListener( new DebugAgendaEventListener( ));
 
         System.out.println("Instantiating and inserting facts.");
         long st = System.currentTimeMillis();
@@ -335,9 +244,15 @@ public class OpencdsRule {
         System.err.println("Total time: " + (ed - st));
     }
 
-
-   @Test
+    @Test
     public void testTraitOpencdsBenchmark2Native() throws IllegalAccessException, InstantiationException {
+
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
         String drl = "package opencds.test;\n" +
                 "\n" +
                 "import org.opencds.vmr.v1_0.internal.*;\n" +
@@ -364,16 +279,16 @@ public class OpencdsRule {
                 "end\n";
 
 
-        int maxStep = 1000;
+        int maxStep = 100;
         String trait = "";
         System.out.println("Making DRL file.");
         for(int i=0; i<=maxStep; i++){
 
             trait +=
                     "declare trait " + "autoTrait001" + i + "  extends opencdsConcept\n" +
-                    "@propertyReactive\n" +
-                    "    openCdsConceptCode : String = \"C001" + i + "\"\n" +
-                    "end\n";
+                            "@propertyReactive\n" +
+                            "    openCdsConceptCode : String = \"C001" + i + "\"\n" +
+                            "end\n";
         }
 
         String rule = "";
@@ -385,23 +300,27 @@ public class OpencdsRule {
                     "no-loop\n" +
                     "when\n" +
                     "    $obs : ObservationResult2(  $id : id==\"001"+i+"\" , " +
-                            "$code : observationFocus.code == \"10220\",\n" +
+                    "    $code : observationFocus.code == \"10220\",\n" +
                     "        $codeSystem : observationFocus.codeSystem )\n" +
                     "then\n" +
                     "    //System.out.println( \"Claxified \" + $id + \" as auto Trait \" + " + i + " ); \n" +
                     "    Object x1 = don( $obs, autoTrait001"+i+".class );\n" +
+                    "    //insert(new CD()); \n" +
                     "end\n" +
-                 "rule \"ObservationFocusConcept by concept 002"+i+"\"\n" +
+
+                    "rule \"ObservationFocusConcept by concept 002"+i+"\"\n" +
                     "no-loop\n" +
                     "when\n" +
                     "    $obs : ObservationResult2(  $id : id==\"001"+(i+1)+"\" , " +
-                            "$code : observationFocus.code == \"10220\",\n" +
+                    "$code : observationFocus.code == \"10220\",\n" +
                     "        $codeSystem : observationFocus.codeSystem )\n" +
                     "then\n" +
                     "    //System.out.println( \"Claxified \" + $id + \" as auto Trait \" + " + i + " ); \n" +
                     "    Object x1 = don( $obs, autoTrait001"+i+".class );\n" +
+                    "    //insert(new CD()); \n" +
                     "end\n";
 
+/*
             rule +=
                     "rule \"IsReportableInfluenza001"+i+"\"\n" +
                     "no-loop\n" +
@@ -411,6 +330,8 @@ public class OpencdsRule {
                     "    //System.out.println(\":: InfluenzaTestForOrganism ResultPositive \"+$obj.getId());\n" +
                     "//System.out.println($obj.getId());\n" +
                     "end\n";
+*/
+
 /*
 
             rule += "rule \"ObservationFocusConcept by concept 1001"+i+"\"\n" +
@@ -461,20 +382,20 @@ public class OpencdsRule {
 //                "  retract( $o );\n" +
 //                "//System.out.println(\"000\");\n"+
 //                "end  ";
-       rule += "rule \"Clean\"\n" +
-               "salience -999"+
-               "when\n" +
-               "  $s : String()\n" +
-               "  $o : Object( this != $s )\n" +
-               "then\n" +
-               "  if ( ! $o.getClass().getName().contains( \"Initial\" ) ) { \n" +
-               "   retract( $o );\n" +
-               "  } \n" +
-               "  //System.out.println(\"000\");\n"+
-               "end  ";
+        rule += "rule \"Clean\"\n" +
+                "salience -999"+
+                "when\n" +
+                "  $s : String()\n" +
+                "  $o : Object( this != $s )\n" +
+                "then\n" +
+                "  if ( ! $o.getClass().getName().contains( \"Initial\" ) ) { \n" +
+                "   retract( $o );\n" +
+                "  } \n" +
+                "  //System.out.println(\"removed\");\n"+
+                "end  ";
 
-//       drl +=  rule;
-       drl += trait + rule;
+        drl += trait + rule;
+
         System.out.println("Initializing KB.");
         long st2 = System.currentTimeMillis();
 
@@ -488,7 +409,7 @@ public class OpencdsRule {
 
         Collection<FactHandle> handles = new ArrayList<FactHandle>(maxStep);
         Collection<Object> facts = new ArrayList<Object>(maxStep);
-       FactType observationResult = ksession.getKnowledgeBase().getFactType( "opencds.test", "ObservationResult2" );
+        FactType observationResult = ksession.getKnowledgeBase().getFactType( "opencds.test", "ObservationResult2" );
         for ( int j = 0; j < maxStep; j++ ) {
 
             Object obs = observationResult.newInstance();
@@ -512,27 +433,27 @@ public class OpencdsRule {
         }
 
         ksession.fireAllRules();
-        System.out.println(" FIrst run insert + fire : " + (System.currentTimeMillis() - ed2) );
+        System.out.println(" First run insert + fire : " + (System.currentTimeMillis() - ed2) );
 
-       for ( int j = 0; j < 10; j++ ) {
-           System.out.println("Warmup cycle " + j );
-           long start = System.currentTimeMillis();
-           for ( Object o : facts ) {
-               ksession.insert(o);
-           }
-           ksession.fireAllRules();
-           long end = System.currentTimeMillis();
-           System.out.println( "Warmup time " + (end-start) );
-           FactHandle c = ksession.insert( "clean-all" );
-           ksession.fireAllRules();
-           ksession.retract( c );
-           ksession.fireAllRules();
-           assertEquals(0, ksession.getObjects().size());
-       }
+        for ( int j = 0; j < 10; j++ ) {
+            System.out.println("Warmup cycle " + j );
+            long start = System.currentTimeMillis();
+            for ( Object o : facts ) {
+                ksession.insert(o);
+            }
+            ksession.fireAllRules();
+            long end = System.currentTimeMillis();
+            System.out.println( "Warmup time " + (end-start) );
+            FactHandle c = ksession.insert( "clean-all" );
+            ksession.fireAllRules();
+            ksession.retract( c );
+            ksession.fireAllRules();
+            assertEquals(0, ksession.getObjects().size());
+        }
 
 
 
-       //   ksession.addEventListener( new DebugAgendaEventListener( ));
+        //   ksession.addEventListener( new DebugAgendaEventListener( ));
 
         System.out.println("Instantiating and inserting facts.");
         long st = System.currentTimeMillis();
@@ -544,10 +465,10 @@ public class OpencdsRule {
         long ed3 = System.currentTimeMillis();
         System.err.println( "Second insertion round " + (ed3 - st));
         System.err.println("Firring rules.");
-        ksession.fireAllRules();
+        int fired = ksession.fireAllRules();
         long ed = System.currentTimeMillis();
         long ed4 = System.currentTimeMillis();
-        System.err.println("Second fire " + (ed4 - ed3));
+        System.err.println("Second fire ["+ fired +"] " + (ed4 - ed3));
 
         System.err.println("Total time: " + (ed - st));
     }
@@ -561,48 +482,48 @@ public class OpencdsRule {
                 "import org.opencds.vmr.v1_0.internal.concepts.*;\n" +
                 "import java.util.*;\n" +
                 "\n";
-        int maxStep =1000;
+        int maxStep =100;
         String rule = "";
         System.out.println("Making DRL file.");
         for(int i=0; i<=maxStep; i++){
 
             rule +=
                     "rule \"ObservationFocusConcept by concept 1001"+i+"\"\n" +
-                    "no-loop\n" +
-                    "when\n" +
-                    "    $obs : ObservationResult( $id : id == \"001"+i+"\", $code : observationFocus.code == \"10220\",\n" +
-                    "        $codeSystem : observationFocus.codeSystem )\n" +
-                    "then\n" +
-                    "    ObservationFocusConcept x1 = new ObservationFocusConcept();\n" +
-                    "    x1.setOpenCdsConceptCode( \"C261001"+i+"\" );\n" +
-                    "    x1.setConceptTargetId( $id );\n" +
-                    "    insert( x1 );\n" +
-                    "end\n" +
-                    "\n" +
-                    "rule \"ObservationFocusConcept by concept 2001"+i+"\"\n" +
-                    "no-loop\n" +
-                    "when\n" +
-                    "    $obs : ObservationResult( $id : id == \"001"+i+"\", $code : observationValue.concept.code == \"34254\",\n" +
-                    "        $codeSystem : observationValue.concept.codeSystem )\n" +
-                    "then\n" +
-                    "    ObservationCodedValueConcept x1 = new ObservationCodedValueConcept();\n" +
-                    "    x1.setOpenCdsConceptCode( \"C87001"+i+"\" );\n" +
-                    "    x1.setConceptTargetId( $id );\n" +
-                    "    insert( x1 );\n" +
-                    "end\n" +
-                    "\n" +
-                    "rule \"IsReportableInfluenza001"+i+"\"\n" +
-                    "dialect \"java\"\n" +
-                    "when\n" +
-                    "      $y : ObservationFocusConcept( openCdsConceptCode == \"C261001"+i+"\" )\n" +
-                    "      $z : ObservationCodedValueConcept( openCdsConceptCode == \"C87001"+i+"\" )\n" +
-                    "      $x : ObservationResult( id == $y.conceptTargetId,\n" +
-                    "                              id == $z.conceptTargetId,\n" +
-                    "                              id == \"001"+i+"\" \n"+
-                    "                               )\n" +
-                    "then\n" +
-                    "      //System.out.println($x.getId());\n"+
-                    "end\n";
+                            "no-loop\n" +
+                            "when\n" +
+                            "    $obs : ObservationResult( $id : id == \"001"+i+"\", $code : observationFocus.code == \"10220\",\n" +
+                            "        $codeSystem : observationFocus.codeSystem )\n" +
+                            "then\n" +
+                            "    ObservationFocusConcept x1 = new ObservationFocusConcept();\n" +
+                            "    x1.setOpenCdsConceptCode( \"C261001"+i+"\" );\n" +
+                            "    x1.setConceptTargetId( $id );\n" +
+                            "    insert( x1 );\n" +
+                            "end\n" +
+                            "\n" +
+                            "rule \"ObservationFocusConcept by concept 2001"+i+"\"\n" +
+                            "no-loop\n" +
+                            "when\n" +
+                            "    $obs : ObservationResult( $id : id == \"001"+i+"\", $code : observationValue.concept.code == \"34254\",\n" +
+                            "        $codeSystem : observationValue.concept.codeSystem )\n" +
+                            "then\n" +
+                            "    ObservationCodedValueConcept x1 = new ObservationCodedValueConcept();\n" +
+                            "    x1.setOpenCdsConceptCode( \"C87001"+i+"\" );\n" +
+                            "    x1.setConceptTargetId( $id );\n" +
+                            "    insert( x1 );\n" +
+                            "end\n" +
+                            "\n" +
+                            "rule \"IsReportableInfluenza001"+i+"\"\n" +
+                            "dialect \"java\"\n" +
+                            "when\n" +
+                            "      $y : ObservationFocusConcept( openCdsConceptCode == \"C261001"+i+"\" )\n" +
+                            "      $z : ObservationCodedValueConcept( openCdsConceptCode == \"C87001"+i+"\" )\n" +
+                            "      $x : ObservationResult( id == $y.conceptTargetId,\n" +
+                            "                              id == $z.conceptTargetId,\n" +
+                            "                              id == \"001"+i+"\" \n"+
+                            "                               )\n" +
+                            "then\n" +
+                            "      //System.out.println($x.getId());\n"+
+                            "end\n";
         }
 
         rule += "rule \"Clean\"\n" +
@@ -614,11 +535,9 @@ public class OpencdsRule {
                 "  if ( ! $o.getClass().getName().contains( \"Initial\" ) ) { \n" +
                 "   retract( $o );\n" +
                 "  } \n" +
-                "  //System.out.println(\"000\");\n"+
                 "end  ";
 
         drl += rule;
-//        System.out.println(drl);
         System.out.println("Initializing KB.");
         long st2 = System.currentTimeMillis();
 
@@ -652,7 +571,7 @@ public class OpencdsRule {
 
         }
 
-        for ( int j = 0; j < 10; j++ ) {
+        for ( int j = 0; j < 3; j++ ) {
             System.out.println("Warmup cycle " + j );
             long start = System.currentTimeMillis();
             for ( Object o : facts ) {
@@ -664,54 +583,24 @@ public class OpencdsRule {
             FactHandle c = ksession.insert( "clean-all" );
             ksession.fireAllRules();
             ksession.retract( c );
+            assertEquals(0, ksession.getObjects().size());
         }
 
-        assertEquals(0, ksession.getObjects().size());
 
         System.out.println("inserting facts.");
         long st = System.currentTimeMillis();
-            for ( Object o : facts ) {
-                ksession.insert(o);
-            }
+        for ( Object o : facts ) {
+            ksession.insert(o);
+        }
 
         long ed3 = System.currentTimeMillis();
         System.out.println((ed3 - st));
         System.out.println("Firring rules.");
-        int fire = ksession.fireAllRules();
+        int fired = ksession.fireAllRules();
         long ed4 = System.currentTimeMillis();
         System.out.println((ed4 - ed3));
 
-        System.out.println("Total time: " + (ed4 - st) + " fired " + fire );
-
-    }
-
-    @Test
-    public void testTraitOpencds() {
-
-        KnowledgeBase kBase = buildKB( "opencds/test/opencdsRule.drl" );
-
-        StatefulKnowledgeSession knowledgeSession = kBase.newStatefulKnowledgeSession();
-        IVLQTY ivlqty = new IVLQTY();
-
-        ObservationResult obs = new ObservationResult();
-        CD cdFocus = new CD();
-        cdFocus.setCodeSystem("AHRQ v4.3");
-        cdFocus.setCode("10220");
-        obs.setId(UUID.randomUUID().toString());
-        obs.setObservationFocus(cdFocus);
-        obs.setSubjectIsFocalPerson(true);
-
-        CD cdCoded = new CD();
-        cdCoded.setCodeSystem("AHRQ v4.3");
-        cdCoded.setCode("34254");
-        ObservationValue obsValue = new ObservationValue();
-        obsValue.setConcept(cdCoded);
-        obsValue.setIdentifier(UUID.randomUUID().toString());
-        obs.setObservationValue(obsValue);
-
-        knowledgeSession.insert(obs);
-
-        knowledgeSession.fireAllRules();
+        System.out.println("Total time: " + (ed4 - st) + " fired " + fired );
 
     }
 
