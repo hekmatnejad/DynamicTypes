@@ -1,0 +1,109 @@
+package opencds.test;
+
+import org.drools.factmodel.traits.Traitable;
+
+declare Person
+@Traitable
+@propertyReactive
+    ssn : String
+    pob : String
+    isStudent : boolean
+    hasAssistantship : boolean
+end
+
+declare trait Student
+@propertyReactive
+    studyingCountry : String
+    hasAssistantship : boolean
+end
+
+declare trait Worker
+@propertyReactive
+    pob : String
+    workingCountry : String
+end
+
+declare trait USCitizen
+@propertyReactive
+    pob : String = "US"
+end
+
+declare trait ITCitizen
+@propertyReactive
+    pob : String = "IT"
+end
+
+declare trait IRCitizen
+@propertyReactive
+    pob : String = "IR"
+end
+
+rule "init"
+no-loop
+when
+then
+    Person p = new Person("1234","IR",true,true);
+    insert( p );
+    System.out.println("init");
+end
+
+rule "check for being student"
+no-loop
+when
+    $p : Person( $ssn : ssn, $pob : pob,  isStudent == true )
+//    if($pob == "IR" ) do[pobIsIR]
+then
+    Student st = (Student) don( $p , Student.class );
+    modify( st ){
+        setStudyingCountry( "US" );
+    }
+    System.out.println("student");
+//then[pobIsIR]
+//    don( $p , IRCitizen.class );
+//    System.out.println("IR citizen");
+
+end
+
+rule "check for IR"
+no-loop
+when
+    $p : Person( pob == "IR" )
+    //$p : Student( fields["pob"] == "IR" )
+then
+    Object obj = don( $p , IRCitizen.class );
+    System.out.println("IR citizen ");      // + obj);
+end
+
+rule "check for being US citizen"
+no-loop
+when
+    $s : Student( studyingCountry == "US" )
+then
+    don( $s , USCitizen.class );
+    System.out.println("US citizen");
+end
+
+rule "check for being worker"
+no-loop
+when
+    $p : Student( hasAssistantship == true, $sc : studyingCountry )
+then
+    Worker wr = (Worker)don( $p , Worker.class );
+    modify( wr ){
+        setWorkingCountry( $sc );
+    }
+    System.out.println("worker");
+end
+
+rule "position args"
+when
+    Student( )      // $sc := studyingCountry )
+    USCitizen( )
+    IRCitizen( )      // $pob := pob )
+    Worker( )       // pob == $pob , workingCountry == $sc )
+then
+    System.out.println("You are working in US as student worker.");
+end
+
+
+
