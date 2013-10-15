@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42210602-7845-4e94-9639-b87199252aa8" name="Default" comment="another map trait tests are added to check mismatch types">
+    <list default="true" id="42210602-7845-4e94-9639-b87199252aa8" name="Default" comment="">
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\classes\openEHR-EHR-EVALUATION.problem-diagnosis.v1.adl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\classes\openEHR-EHR-EVALUATION.problem.v1.adl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\classes\openEHR-EHR-OBSERVATION.body_weight.v1.adl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\classes\openEHR-EHR-OBSERVATION.respiration.v1.adl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\test-classes\opencds\test\opencdsRule.drl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\test-classes\opencds\test\opencdsRule00.drl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\test-classes\opencds\test\opencdsRuleSample.drl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\test-classes\opencds\test\tstDrools.drl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\test-classes\openehr\test\openehrRule.drl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\test-classes\openehr\test\openehrRule00.drl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\test-classes\openehr\test\openehrRule01.drl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\test-classes\openehr\test\openehrRuleSample.drl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\test-classes\openehr\test\tstMapMemberTrait.drl" afterPath="" />
+      <change type="DELETED" beforePath="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\target\test-classes\openehr\test\tstTrait.drl" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="openCDS.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381823385299" ignored="false" />
+    <file path="/Dummy.txt" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381823718436" ignored="false" />
     <file path="/TraitTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380569047839" ignored="false" />
     <file path="/testTraitIsA.drl" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380566977459" ignored="false" />
     <file path="/a.dummy" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381399029599" ignored="false" />
@@ -1241,7 +1255,11 @@
       <created>1381823185287</created>
       <updated>1381823185287</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="updated with opencds simple benchmarks">
+      <created>1381823722505</created>
+      <updated>1381823722505</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1313,7 +1331,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="openCDS benchmark update 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated with opencds simple benchmarks" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1336,6 +1354,7 @@
     <MESSAGE value="another map trait tests are added to check mismatch types" />
     <MESSAGE value="minor optimization for PQ" />
     <MESSAGE value="openCDS benchmark update 1" />
+    <MESSAGE value="updated with opencds simple benchmarks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
