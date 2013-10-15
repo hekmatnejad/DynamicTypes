@@ -32,14 +32,14 @@ import static junit.framework.Assert.fail;
  * Time: 5:04 PM
  * To change this template use File | Settings | File Templates.
  */
-public class OpencdsRule {
+public class OpencdsRule{
 
     @Test
     public void testTraitOpencds02() {
 
 //        if(true) return;
 
-        KnowledgeBase kBase = buildKB( "opencds/test/opencdsRule02.drl" );
+        KnowledgeBase kBase = buildKB( "opencds/test/opencdsRule.drl" );
 
         StatefulKnowledgeSession knowledgeSession = kBase.newStatefulKnowledgeSession();
 
@@ -58,22 +58,6 @@ public class OpencdsRule {
         obsValue.setConcept(cdCoded);
         obsValue.setIdentifier("87");
         obs.setObservationValue(obsValue);
-
-        //----------------------------------//
-
-        ObservationFocusConcept ofc = new ObservationFocusConcept();
-        ofc.setId("261");
-        ofc.setOpenCdsConceptCode("C261");
-        ofc.setConceptTargetId("261");
-
-        ObservationCodedValueConcept ocvc = new ObservationCodedValueConcept();
-        ocvc.setId("87");
-        ocvc.setOpenCdsConceptCode("C87");
-        ocvc.setConceptTargetId("261");
-
-//        knowledgeSession.insert(ofc);
-//        knowledgeSession.insert(ocvc);
-        //----------------------------------//
 
         knowledgeSession.insert(obs);
         knowledgeSession.insert(obsValue);

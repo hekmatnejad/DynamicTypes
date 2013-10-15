@@ -1,0 +1,37 @@
+package org.drools.factmodel.traits;
+
+import org.drools.factmodel.traits.Traitable;
+import org.drools.factmodel.traits.Alias;
+
+global java.util.List list;
+
+declare org.drools.factmodel.MapCore
+end
+
+
+declare Parent
+@Traitable(logical=true)
+@propertyReactive
+    name : String
+    id : int
+end
+
+declare trait ParentTrait
+@propertyReactive
+    name : String
+    id : float
+end
+
+rule "init"
+when
+then
+    Parent p = new Parent("papa", 1010);
+    insert( p );
+end
+
+rule "don"
+when
+    $p : Parent(id > 1000)
+then
+    don( $p , ParentTrait.class );
+end

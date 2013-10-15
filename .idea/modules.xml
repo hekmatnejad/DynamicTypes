@@ -2,6 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-clips/drools-clips.iml" filepath="$PROJECT_DIR$/../drools/drools-clips/drools-clips.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-compiler/drools-compiler.iml" filepath="$PROJECT_DIR$/../drools/drools-compiler/drools-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-core/drools-core.iml" filepath="$PROJECT_DIR$/../drools/drools-core/drools-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-decisiontables/drools-decisiontables.iml" filepath="$PROJECT_DIR$/../drools/drools-decisiontables/drools-decisiontables.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-examples/drools-examples.iml" filepath="$PROJECT_DIR$/../drools/drools-examples/drools-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-jsr94/drools-jsr94.iml" filepath="$PROJECT_DIR$/../drools/drools-jsr94/drools-jsr94.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-multiproject.iml" filepath="$PROJECT_DIR$/../drools/drools-multiproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-persistence-jpa/drools-persistence-jpa.iml" filepath="$PROJECT_DIR$/../drools/drools-persistence-jpa/drools-persistence-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-scorecards/drools-scorecards.iml" filepath="$PROJECT_DIR$/../drools/drools-scorecards/drools-scorecards.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-templates/drools-templates.iml" filepath="$PROJECT_DIR$/../drools/drools-templates/drools-templates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drools/drools-verifier/drools-verifier.iml" filepath="$PROJECT_DIR$/../drools/drools-verifier/drools-verifier.iml" />
       <module fileurl="file://$PROJECT_DIR$/openCDS.iml" filepath="$PROJECT_DIR$/openCDS.iml" />
     </modules>
   </component>

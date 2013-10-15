@@ -22,9 +22,31 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="drools-clips" />
+        <module name="drools-compiler" />
+        <module name="drools-core" />
+        <module name="drools-decisiontables" />
+        <module name="drools-examples" />
+        <module name="drools-jsr94" />
+        <module name="drools-persistence-jpa" />
+        <module name="drools-scorecards" />
+        <module name="drools-templates" />
+        <module name="drools-verifier" />
         <module name="openCDS" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="drools-clips" target="1.5" />
+      <module name="drools-compiler" target="1.5" />
+      <module name="drools-core" target="1.5" />
+      <module name="drools-decisiontables" target="1.5" />
+      <module name="drools-examples" target="1.5" />
+      <module name="drools-jsr94" target="1.5" />
+      <module name="drools-persistence-jpa" target="1.5" />
+      <module name="drools-scorecards" target="1.5" />
+      <module name="drools-templates" target="1.5" />
+      <module name="drools-verifier" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 

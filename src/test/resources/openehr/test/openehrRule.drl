@@ -15,10 +15,16 @@ import org.opencds.vmr.v1_0.internal.*;
 import org.opencds.vmr.v1_0.internal.concepts.*;
 
 import openehr.util.OpenehrArchetype;
+import org.drools.factmodel.traits.*;
 
-declare org.drools.factmodel.MapCore  //what is this for
+declare ElementInstance
+@Traitable(logical = true)
+@propertyReactive
 end
-
+declare HashMap
+@Traitable(logical = true)
+@propertyReactive
+end
 //----------------------------------------------------------//
 
 declare trait TDiagnosis //openEHR-EHR-EVALUATION.problem-diagnosis.v1
@@ -36,44 +42,9 @@ declare trait TSecondaryDiagnosis extends TDiagnosis
     terminologyIdVersion : String
 end
 
-
-declare trait TStatus
-@propertyReactive
-	status : DvText
-    elmName : String
-end
-
-declare trait TLocation //This is a cluster
-@propertyReactive
-	bodySite : DvText
-	locationDescription : DvText
-    elmName : String
-end
-
-declare trait TRelatedProblem //This is a cluster
-@propertyReactive
-	clinicalDescription : DvText
-	relatedProblem : DvText
-    elmName : String
-end
-
-declare trait TRelatedProblems //This is a cluster
-@propertyReactive
-	relatedProblem : List
-	// List<TRelatedProblem]>//not possible to have list of traits in a generic form
-	//so there must be a rule to add traits to the list later
-    elmName : String
-end
-
 declare trait TRecommendation //openEHR-EHR-EVALUATION.recommendation.v1
 @propertyReactive
     recommendation : DvText
-end
-
-declare trait TRationale
-@propertyReactive
-    rationale : DvText
-    elmName : String
 end
 
 declare trait TRate //openEHR-EHR-OBSERVATION.respiration.v1
@@ -101,6 +72,7 @@ declare trait TDescription
 end
 
 declare trait TAbnormalRespiratoryPattern
+@Trait(logical = true)
 @propertyReactive
     abnormalRespiratoryPattern : DvCodedText
     elmName : String = "Abnormal respiratory pattern"
@@ -108,6 +80,7 @@ declare trait TAbnormalRespiratoryPattern
 end
 
 declare trait TAcuteRespiratoryFailure extends TAbnormalRespiratoryPattern
+@Trait(logical = true)
 @propertyReactive
     value : String = "Acute respiratory failure"
     elmName : String = "Acute respiratory failure"
@@ -119,14 +92,16 @@ end
 //archetypes' trait
 
 declare trait RespiratoryProblemAt
+@Trait(logical = true)
 @propertyReactive
     problem : ElementInstance @Alias("OBSERVATION_ELEMENT_AbnormalRespiratoryPattern")
-    respiratoryPattern : TAbnormalRespiratoryPattern @Alias("OBSERVATION_ELEMENT_AbnormalRespiratoryPattern")
+    //respiratoryPattern : TAbnormalRespiratoryPattern @Alias("OBSERVATION_ELEMENT_AbnormalRespiratoryPattern")
 end
 
 declare trait AcuteRespiratoryProblemAt extends RespiratoryProblemAt
+@Trait(logical = true)
 @propertyReactive
-    acuteRespiratoryFailure : TAcuteRespiratoryFailure @Alias("OBSERVATION_ELEMENT_AbnormalRespiratoryPattern")
+    //acuteRespiratoryFailure : TAcuteRespiratoryFailure @Alias("OBSERVATION_ELEMENT_AbnormalRespiratoryPattern")
 end
 
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
@@ -237,7 +212,7 @@ then
     Object z = don(  $elm, TAcuteRespiratoryFailure.class);
     $mp.put($ut.getItemName($code), z);
     update($mp);
-    System.out.println("><><2><><" + "donned with TAcuteRespiratoryFailure");
+    System.out.println("><><2><><" + "donned with TAcuteRespiratoryFailure " + $ut.getItemName($code));
 end
 
 rule "Don with Map 1 complementary for TDiagnosis"
@@ -260,57 +235,39 @@ then
     Object z = don(  $elm, TSecondaryDiagnosis.class);
     $mp.put($ut.getItemName($code), z);
     update($mp);
-    System.out.println("><><2><><" + "donned with TSecondaryDiagnosis");
+    System.out.println("><><2><><" + "donned with TSecondaryDiagnosis " + $ut.getItemName($code));
 end
 
 rule "Don the Map with an appropriate trait 1"
 no-loop
 when
-    //$map : Map($x : this["OBSERVATION_ELEMENT_AbnormalRespiratoryPattern"] isA TAbnormalRespiratoryPattern.class)
-    $map : Map($x : this["OBSERVATION_ELEMENT_AbnormalRespiratoryPattern"])
-    Map( $x isA TAbnormalRespiratoryPattern.class, this == $map)
-    not Map(this isA RespiratoryProblemAt.class)
+    $map : Map($x : this["OBSERVATION_ELEMENT_AbnormalRespiratoryPattern"] isA TAbnormalRespiratoryPattern.class)
+    not Map(this isA RespiratoryProblemAt.class)//change it later
 then
     don($map, RespiratoryProblemAt.class);
     System.out.println("><><3><><" + "donned with RespiratoryProblemAt " + $x);
 end
-
+/*
 rule "Don the Map with an appropriate trait 2"
 no-loop
 when
-    //$map : Map($x : this["OBSERVATION_ELEMENT_AbnormalRespiratoryPattern"] isA TAcuteRespiratoryFailure.class)
-    $map : Map($x : this["OBSERVATION_ELEMENT_AbnormalRespiratoryPattern"])
-    Map( $x isA TAcuteRespiratoryFailure.class, this == $map)
+    $map : Map($x : this["OBSERVATION_ELEMENT_AbnormalRespiratoryPattern"] isA TAcuteRespiratoryFailure.class,
+            this isA RespiratoryProblemAt.class)
     not Map(this isA AcuteRespiratoryProblemAt.class)
 then
     don($map, AcuteRespiratoryProblemAt.class);
     System.out.println("><><3><><" + "donned with AcuteRespiratoryProblemAt " + $x);
 end
-
+*/
 rule "check for validation"
 no-loop
 when
     //RespiratoryProblemAt(OBSERVATION_ELEMENT_AbnormalRespiratoryPattern isA TAcuteRespiratoryFailure)//.class)
-    RespiratoryProblemAt(problem isA TAcuteRespiratoryFailure.class)
+//    RespiratoryProblemAt($p : problem isA TAcuteRespiratoryFailure.class)
+    $r : RespiratoryProblemAt(  )
     //AcuteRespiratoryProblemAt()
 then
-    System.out.println("><*><validated as><*><" + "TAbnormalRespiratoryPattern, TAcuteRespiratoryFailure" );
+    System.out.println("><*><validated as><*><" + "TAbnormalRespiratoryPattern, TAcuteRespiratoryFailure " + $r);
+    System.out.println("><*><The PROBLEM><*><" + $r.getProblem() );
 end
 
-
-/*
-rule "check for validation"
-no-loop
-when
-    TAbnormalRespiratoryPattern(this isA TAcuteRespiratoryFailure.class)
-    TSecondaryDiagnosis()
-    //DxProblem()
-then
-    System.out.println("><*><validated as><*><" + "TAbnormalRespiratoryPattern, TAcuteRespiratoryFailure, TSecondaryDiagnosis" );
-end
-*/
-/*
-declare trait testTrait
-    test : String  @alias( xyz )
-end
-*/

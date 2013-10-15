@@ -43,14 +43,10 @@ declare trait DxPOA extends RelationTrait
     sourceId : String @Position(0)
     targetId : String @Position(1)
 end
+
 declare Problem //to avoid second firing of parents and children
 @propertyReactive
 @Traitable
-end
-
-declare Object
-@Traitable
-@propertyReactive
 end
 declare ObservationResult
 @Traitable

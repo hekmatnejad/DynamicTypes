@@ -65,6 +65,8 @@ public class OpenehrTest {
 
         ksession.fireAllRules();
 
+
+
     }
 
     private KnowledgeBase buildKB( String drlPath ) {

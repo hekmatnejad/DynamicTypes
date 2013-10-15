@@ -11,7 +11,7 @@ end
 //new test for isA after doing don a map's field with a trait
 
 declare trait Citizen
-@traitable
+//@traitable
     citizenship : String = "Unknown"
 end
 
@@ -22,7 +22,7 @@ declare trait Student extends Citizen
 end
 
 declare Person
-@traitable
+@Traitable
     personalID : String
     isStudent : boolean
 end

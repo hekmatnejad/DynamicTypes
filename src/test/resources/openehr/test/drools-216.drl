@@ -30,7 +30,7 @@ declare trait Student extends Citizen
 end
 
 declare Person
-@traitable
+@Traitable
     personID : String
     isStudent : boolean
 end

@@ -147,7 +147,11 @@
             <version>4.10</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.sun.japex</groupId>
+            <artifactId>japex</artifactId>
+            <version>1.2.4</version>
+        </dependency>
 
     </dependencies>
-    
 </project>

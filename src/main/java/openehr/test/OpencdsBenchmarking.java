@@ -1,5 +1,7 @@
-package opencds.test;
+package openehr.test;
 
+import com.sun.japex.JapexDriver;
+import com.sun.japex.TestCase;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
 import org.drools.base.ClassObjectType;
@@ -21,19 +23,15 @@ import org.drools.spi.KnowledgeHelper;
 import org.drools.spi.PropagationContext;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.opencds.vmr.v1_0.internal.*;
-import org.opencds.vmr.v1_0.internal.concepts.ObservationCodedValueConcept;
-import org.opencds.vmr.v1_0.internal.concepts.ObservationFocusConcept;
+import org.opencds.vmr.v1_0.internal.ObservationResult;
+import org.opencds.vmr.v1_0.internal.ObservationValue;
 import org.opencds.vmr.v1_0.internal.datatypes.CD;
-import org.opencds.vmr.v1_0.internal.datatypes.IVLQTY;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.UUID;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.fail;
-import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -42,7 +40,7 @@ import static junit.framework.Assert.assertNotNull;
  * Time: 3:58 PM
  * To change this template use File | Settings | File Templates.
  */
-public class OpencdsBenchmarking {
+public class OpencdsBenchmarking{
 
     @Ignore
     @Test
@@ -294,7 +292,7 @@ public class OpencdsBenchmarking {
                 "end\n";
 
 
-        int maxStep = 1000;
+        int maxStep = 100;
         String trait = "";
         System.out.println("Making DRL file.");
         for(int i=0; i<=maxStep; i++){
@@ -326,12 +324,12 @@ public class OpencdsBenchmarking {
                     "rule \"ObservationFocusConcept by concept 002"+i+"\"\n" +
                     "no-loop\n" +
                     "when\n" +
-                    "    $obs : ObservationResult2(  $id : id==\"001"+(i+1)+"\" , " +
+                    "    $obs : ObservationResult2(  $id : id==\"001"+(i)+"\" , " +  //<<<<<<
                     "$code : observationFocus.code == \"10220\",\n" +
                     "        $codeSystem : observationFocus.codeSystem )\n" +
                     "then\n" +
                     "    //System.out.println( \"Claxified \" + $id + \" as auto Trait \" + " + i + " ); \n" +
-                    "    Object x1 = don( $obs, autoTrait001"+i+".class );\n" +
+                    "    Object x1 = don( $obs, autoTrait001"+(i+1)+".class );\n" +
                     "    //insert(new CD()); \n" +
                     "end\n";
 
@@ -339,7 +337,7 @@ public class OpencdsBenchmarking {
                     "rule \"IsReportableInfluenza001"+i+"\"\n" +
                     "no-loop\n" +
                     "when\n" +
-                    "    $obj : autoTrait001"+i+"(this isA autoTrait001"+(i+1)+".class)\n" +
+                            "    $obj : autoTrait001"+i+"(this isA autoTrait001"+(i+1)+".class)\n" +
                     "then\n" +
                     "    //System.out.println(\":: InfluenzaTestForOrganism ResultPositive \"+$obj.getId());\n" +
                     "//System.out.println($obj.getId());\n" +
@@ -692,5 +690,6 @@ public class OpencdsBenchmarking {
         return knowledgeBase;
 
     }
+
 
 }

@@ -8,6 +8,11 @@ import java.util.*;
 import org.drools.factmodel.traits.Thing;
 import org.drools.factmodel.traits.Traitable;
 
+import org.opencds.vmr.v1_0.internal.ObservationValue;
+import org.opencds.vmr.v1_0.internal.ObservationResult;
+import org.opencds.vmr.v1_0.internal.Problem;
+import org.opencds.vmr.v1_0.internal.ClinicalStatementRelationship;
+import org.opencds.vmr.v1_0.internal.EncounterEvent;
 
 //*********** type declaration ***********//
 //base trait for all openCDS concepts
@@ -35,19 +40,34 @@ declare trait Secondary extends OpencdsConcept
 end
 declare trait RelationTrait extends OpencdsConcept //used to connect two concept together
 @propertyReactive
-    sourceId : String @Position(0)
-    targetId : String @Position(1)
+    sourceId : String @position(0)
+    targetId : String @position(1)
 end
 declare trait DxPOA extends RelationTrait
 @propertyReactive
 end
+
 declare Problem //to avoid second firing of parents and children
+@Traitable
 @propertyReactive
 end
 declare ObservationResult
 @Traitable
 @propertyReactive
 end
+declare ClinicalStatementRelationship
+@Traitable
+@propertyReactive
+end
+declare ObservationValue
+@Traitable
+@propertyReactive
+end
+declare EncounterEvent
+@Traitable
+@propertyReactive
+end
+
 //*********** Concept mapper declaration ***********//
 
 declare ConceptMapping
@@ -149,10 +169,11 @@ end
 rule "test PSI_11DenominatorExcludeAcuteRespiratoryFailureSecondaryPOA"  //dynamic rules
 no-loop
 when
-    $x3 : InpatientEncounter( $encId := id )
-    //$x4 : DxPOA( $encId, $probId ; )
-    $x6 : AcuteRespiratoryFailure( $probId := id, this isA Secondary.class )
-    $x4 : DxPOA( sourceId == $encId, targetId == $probId )
+    $x3 : InpatientEncounter( $encId := id ) //@watch (id)
+    $x4 : DxPOA( $encId, $probId ; )
+    $x6 : AcuteRespiratoryFailure( $probId := id, this isA Secondary.class )  //@watch (id)
+
+    ////$x4 : DxPOA( sourceId == $encId, targetId == $probId )
 then
     System.out.println(":: InpatientEncounter DxPOA Secondary AcuteRespiratoryFailure");
 end

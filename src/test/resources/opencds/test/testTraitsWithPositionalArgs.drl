@@ -2,6 +2,9 @@ package opencds.test;
 
 import org.drools.factmodel.traits.Traitable;
 
+
+global java.util.List list;
+
 declare Person
 @Traitable
 @propertyReactive
@@ -38,6 +41,11 @@ declare trait IRCitizen
     pob : String = "IR"
 end
 
+declare trait StudentWorker extends Student, Worker
+@propertyReactive
+    uniName : String
+end
+
 rule "init"
 no-loop
 when
@@ -45,33 +53,26 @@ then
     Person p = new Person("1234","IR",true,true);
     insert( p );
     System.out.println("init");
+    list.add("initialized");
+
 end
 
 rule "check for being student"
 no-loop
 when
     $p : Person( $ssn : ssn, $pob : pob,  isStudent == true )
-//    if($pob == "IR" ) do[pobIsIR]
+    if($pob == "IR" ) do[pobIsIR]
 then
     Student st = (Student) don( $p , Student.class );
     modify( st ){
         setStudyingCountry( "US" );
     }
     System.out.println("student");
-//then[pobIsIR]
-//    don( $p , IRCitizen.class );
-//    System.out.println("IR citizen");
-
-end
-
-rule "check for IR"
-no-loop
-when
-    $p : Person( pob == "IR" )
-    //$p : Student( fields["pob"] == "IR" )
-then
-    Object obj = don( $p , IRCitizen.class );
-    System.out.println("IR citizen ");      // + obj);
+    list.add("student");
+then[pobIsIR]
+    don( $p , IRCitizen.class );
+    System.out.println("IR citizen");
+    list.add("IR citizen");
 end
 
 rule "check for being US citizen"
@@ -81,6 +82,7 @@ when
 then
     don( $s , USCitizen.class );
     System.out.println("US citizen");
+    list.add("US citizen");
 end
 
 rule "check for being worker"
@@ -88,22 +90,37 @@ no-loop
 when
     $p : Student( hasAssistantship == true, $sc : studyingCountry )
 then
-    Worker wr = (Worker)don( $p , Worker.class );
+    Worker wr = (Worker) don( $p , Worker.class );
     modify( wr ){
         setWorkingCountry( $sc );
     }
     System.out.println("worker");
+    list.add("worker");
 end
 
-rule "position args"
+rule "position args 1"
 when
-    Student( )      // $sc := studyingCountry )
+    Student( $sc : studyingCountry ) @watch( studyingCountry )
+    $w : Worker( $pob , $sc; )
     USCitizen( )
-    IRCitizen( )      // $pob := pob )
-    Worker( )       // pob == $pob , workingCountry == $sc )
+    IRCitizen( $pob := pob )
 then
-    System.out.println("You are working in US as student worker.");
+    System.out.println("::You are working in US as student worker.");
+    list.add("You are working in US as student worker");
+    StudentWorker sw = (StudentWorker) don( $w, StudentWorker.class );
+    modify(sw){
+        setUniName( "ASU" );
+    }
+    System.out.println("student worker " + sw);
 end
 
-
-
+rule "position args 2"
+when
+    Student( $sc : studyingCountry ) @watch( studyingCountry )
+    $sw : StudentWorker( $pob , $sc; )
+    IRCitizen( $pob := pob )
+    //$sw : StudentWorker()
+then
+    System.out.println("::You are studying and working at ASU." );
+    list.add("You are studying and working at ASU");
+end

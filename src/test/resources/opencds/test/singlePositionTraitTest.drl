@@ -1,0 +1,66 @@
+package opencds.test;
+
+import org.drools.factmodel.traits.Traitable;
+
+global java.util.List list;
+
+
+declare Pos
+@propertyReactive
+@Traitable
+end
+
+declare trait PosTrait
+@propertyReactive
+    field0 : int = 100  //@position(0)
+    field1 : int = 101  //@position(1)
+    field2 : int = 102  //@position(0)
+end
+
+declare trait MultiInhPosTrait extends PosTrait
+@propertyReactive
+    mfield0 : int = 200 //@position(0)
+    mfield1 : int = 201 @position(2)
+end
+
+rule "init"
+no-loop
+when
+then
+    Pos pos = new Pos();
+    insert(pos);
+end
+
+rule "don PosTrait"
+no-loop
+when
+    $p : Pos( this not isA MultiInhPosTrait.class)
+then
+    don( $p, PosTrait.class );
+end
+
+rule "don MultiInhPosTrait"
+no-loop
+when
+    $p : Pos()
+then
+    don( $p, MultiInhPosTrait.class );
+end
+
+rule "single position trait"
+no-loop
+when
+    PosTrait($f1, $f2, $f3; )
+then
+    System.out.println("PosTrait Field orders: "+ $f1 + " "+ $f2 + " "+ $f3);
+    list.add("single position order is correct");
+end
+
+rule "multi Inheritance position trait"
+no-loop
+when
+    MultiInhPosTrait($f1, $f2, $f3, $f4, $f5;)
+then
+    System.out.println("MultiInhPosTrait Field orders: "+ $f1 + " "+ $f2 + " "+ $f3 + " "+ $f4 + " "+ $f5);
+    list.add("multi position order is correct");
+end
