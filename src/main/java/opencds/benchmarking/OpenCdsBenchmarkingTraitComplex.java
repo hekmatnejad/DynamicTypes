@@ -33,7 +33,7 @@ import static junit.framework.Assert.assertEquals;
 public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 2;
+    private static int maxStep = 10;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
@@ -128,15 +128,14 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
                             "rule \"FinalCheck"+i+"\"\n" +
                             "no-loop\n" +
                             "when\n" +
-                            "    $x : TA( $ta : id )\n" +
-//                            "    $y : TB( $ta, $tc; )\n" +
-                            "    $z : TC( $tc : id, this isA TD )\n" +
-                            "    $y : TB( $ta == sID, $tc == tID )  //, id == \"00B"+i+"\" )\n" +
+                            "    $x : TA( $ta := id )\n" +
+                            "    $y : TB( $ta, $tc; )\n" +
+                            "    $z : TC( $tc := id == \"00C"+i+"\", this isA TD )\n" +
                             "then\n" +
-                            "      System.out.println($x);\n"+
-                            "      System.out.println($y);\n"+
-                            "      System.out.println($z);\n"+
-                            "      System.out.println();\n"+
+                            "      //System.out.println($x);\n"+
+                            "      //System.out.println($y);\n"+
+                            "      //System.out.println($z);\n"+
+                            "      //System.out.println();\n"+
                             "end\n" +
                                     "";
         }
@@ -189,7 +188,7 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
-        assertEquals(0, clearVM2());
+        assertEquals(0, clearVM());
         for ( Object o : facts ) {
             ksession.insert(o);
         }
@@ -205,7 +204,7 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
 
     @Override
     public void finish(TestCase testCase) {
-        assertEquals(0, clearVM2());
+        assertEquals(0, clearVM());
     }
 
 

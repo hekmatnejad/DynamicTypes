@@ -4,20 +4,20 @@
     <param name="japex.contextClassLoader" value="true"/>
 
     <param name="japex.resultUnit" value="ms"/>
-    <param name="japex.warmupIterations" value="75"/>
+    <param name="japex.warmupIterations" value="0"/>
     <param name="japex.runIterations" value="1"/>
 
-    <driver name="OpenCDS with Trait">
-        <param name="japex.driverClass" value="opencds.benchmarking.OpenCdsBenchmarkingTrait"/>
-        <param name="description" value="OpenCDS Trait Driver"/>
+    <driver name="trait don benchmark on number of fields">
+        <param name="japex.driverClass" value="drools.traits.benchmarks.TraitDonBmk"/>
+        <param name="description" value="trait Don Driver"/>
     </driver>
 
-        <driver name="OpenCDS Native">
-        <param name="japex.driverClass" value="opencds.benchmarking.OpenCdsBenchmarkingNative"/>
-        <param name="description" value="OpenCDS Native Driver"/>
-    </driver>
 
-    <testCase name="test1"/>
+    <testCase name="test1">
+        <param name="HardFieldNum" value="2"></param>
+        <param name="SoftFieldNum" value="3"></param>
+    </testCase>
+    <!--
     <testCase name="test2"/>
     <testCase name="test3"/>
     <testCase name="test4"/>
@@ -29,6 +29,6 @@
     <testCase name="test10"/>
     <testCase name="test11"/>
     <testCase name="test12"/>
-    <!--
+
     -->
 </testSuite>

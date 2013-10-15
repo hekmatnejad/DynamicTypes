@@ -68,11 +68,12 @@ public class BenchmarkUtil {
 
     public static void main(String[] args) {
 
-//        OpencdsBenchmarking opencdsBenchmarking = new OpencdsBenchmarking();
-//        benchmarkThisMethod(opencdsBenchmarking,"testOpencdsBenchmark2TraitMethod");
+//        //OpencdsBenchmarking opencdsBenchmarking = new OpencdsBenchmarking();
+//        //benchmarkThisMethod(opencdsBenchmarking,"testOpencdsBenchmark2TraitMethod");
 
 //        openCDSBenchmark();
-        openCDSBenchmarkComplex();
+//        openCDSBenchmarkComplex();
+        traitDonBenchmark();
     }
 
     public static void openCDSBenchmark()
@@ -88,10 +89,21 @@ public class BenchmarkUtil {
     public static void openCDSBenchmarkComplex()
     {
         Japex japex = new Japex();
-        japex.setHtml(false);
+        japex.setHtml(true);
         japex.setOutputDirectory(new File("japex"));
-        japex.setOutputWriter( new PrintWriter(System.out));
+//        japex.setOutputWriter( new PrintWriter(System.out));
         japex.run(  ClassLoader.getSystemResource("opencdsBnk-configComplex.xml").getPath().replaceAll("%20", " ") );
 
     }
+
+    public static void traitDonBenchmark()
+    {
+        Japex japex = new Japex();
+        japex.setHtml(true);
+        japex.setOutputDirectory(new File("japex"));
+//        japex.setOutputWriter( new PrintWriter(System.out));
+        japex.run(  ClassLoader.getSystemResource("traitDon-config.xml").getPath().replaceAll("%20", " ") );
+
+    }
+
 }

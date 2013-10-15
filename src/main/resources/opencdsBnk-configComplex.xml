@@ -4,7 +4,7 @@
     <param name="japex.contextClassLoader" value="true"/>
 
     <param name="japex.resultUnit" value="ms"/>
-    <param name="japex.warmupIterations" value="0"/>
+    <param name="japex.warmupIterations" value="50"/>
     <param name="japex.runIterations" value="1"/>
 
     <driver name="OpenCDS with Trait">
@@ -18,7 +18,6 @@
     </driver>
 
     <testCase name="test1"/>
-<!--
     <testCase name="test2"/>
     <testCase name="test3"/>
     <testCase name="test4"/>
@@ -30,5 +29,4 @@
     <testCase name="test10"/>
     <testCase name="test11"/>
     <testCase name="test12"/>
--->
 </testSuite>

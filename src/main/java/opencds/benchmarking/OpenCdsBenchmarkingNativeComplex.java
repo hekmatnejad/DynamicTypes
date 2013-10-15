@@ -35,7 +35,7 @@ import static junit.framework.Assert.assertEquals;
 public class OpenCdsBenchmarkingNativeComplex extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 2;
+    private static int maxStep = 10;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
@@ -133,10 +133,10 @@ public class OpenCdsBenchmarkingNativeComplex extends JapexDriverBase implements
                     "rule \"FinalCheck"+i+"\"\n" +
                     "no-loop\n" +
                     "when\n" +
-                    "    $x : CA( $ca : tid )\n" +
+                    "    $x : CA( $ca : tid == \"00A"+i+"\" )\n" +
                     "    $y : CB( $cb : tid )\n" +
                     "    $z : CC( $cc : tid, xid == $cb )\n" +
-                    "    $w : CD( sid == $ca, tid == $cb )\n" +
+                    "    $w : CD( sid == $ca, tid == $cb)\n" +
                     "then\n" +
                     "      //System.out.println($w);\n"+
                     "end\n";
@@ -188,7 +188,7 @@ public class OpenCdsBenchmarkingNativeComplex extends JapexDriverBase implements
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
-        assertEquals(0,clearVM2());
+        assertEquals(0,clearVM());
         for ( Object o : facts ) {
             ksession.insert(o);
         }
@@ -204,7 +204,7 @@ public class OpenCdsBenchmarkingNativeComplex extends JapexDriverBase implements
 
     @Override
     public void finish(TestCase testCase) {
-        assertEquals(0,clearVM2());
+        assertEquals(0,clearVM());
     }
 
 
