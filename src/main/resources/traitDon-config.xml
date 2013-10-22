@@ -4,7 +4,7 @@
     <param name="japex.contextClassLoader" value="true"/>
 
     <param name="japex.resultUnit" value="ms"/>
-    <param name="japex.warmupIterations" value="0"/>
+    <param name="japex.warmupIterations" value="30"/>
     <param name="japex.runIterations" value="1"/>
 
     <driver name="trait don benchmark on number of fields">
@@ -14,21 +14,33 @@
 
 
     <testCase name="test1">
-        <param name="HardFieldNum" value="2"></param>
-        <param name="SoftFieldNum" value="3"></param>
+        <param name="HardFieldNum" value="1"></param>
+        <param name="SoftFieldNum" value="1"></param>
+        <param name="HiddenFieldNum" value="62"></param>            <!--1724-->
     </testCase>
-    <!--
-    <testCase name="test2"/>
-    <testCase name="test3"/>
-    <testCase name="test4"/>
-    <testCase name="test5"/>
-    <testCase name="test6"/>
-    <testCase name="test7"/>
-    <testCase name="test8"/>
-    <testCase name="test9"/>
-    <testCase name="test10"/>
-    <testCase name="test11"/>
-    <testCase name="test12"/>
-
-    -->
+    <testCase name="test2">
+        <param name="HardFieldNum" value="1"></param>
+        <param name="SoftFieldNum" value="31"></param>
+        <param name="HiddenFieldNum" value="32"></param>
+    </testCase>
+    <testCase name="test3">
+        <param name="HardFieldNum" value="16"></param>
+        <param name="SoftFieldNum" value="16"></param>
+        <param name="HiddenFieldNum" value="32"></param>
+    </testCase>
+    <testCase name="test4">
+        <param name="HardFieldNum" value="31"></param>
+        <param name="SoftFieldNum" value="1"></param>
+        <param name="HiddenFieldNum" value="0"></param>
+    </testCase>
+    <testCase name="test5">
+        <param name="HardFieldNum" value="1"></param>
+        <param name="SoftFieldNum" value="31"></param>
+        <param name="HiddenFieldNum" value="0"></param>
+    </testCase>
+    <testCase name="test6">
+        <param name="HardFieldNum" value="16"></param>
+        <param name="SoftFieldNum" value="16"></param>
+        <param name="HiddenFieldNum" value="0"></param>
+    </testCase>
 </testSuite>

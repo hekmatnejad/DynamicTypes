@@ -8,7 +8,6 @@ import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
-import org.drools.builder.ResultSeverity;
 import org.drools.common.DefaultFactHandle;
 import org.drools.definition.type.FactType;
 import org.drools.factmodel.traits.TraitFactory;
@@ -16,7 +15,6 @@ import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.rule.FactHandle;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -25,23 +23,14 @@ import static junit.framework.Assert.assertEquals;
 /**
  * Created with IntelliJ IDEA.
  * User: mamad
- * Date: 10/15/13
- * Time: 1:27 AM
+ * Date: 10/7/13
+ * Time: 2:23 PM
  * To change this template use File | Settings | File Templates.
  */
-/**
- * Created with IntelliJ IDEA.
- * User: mamad
- * Date: 10/15/13
- * Time: 1:28 AM
- * To change this template use File | Settings | File Templates.
- */
-public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
+public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver {
 
-    private static String drlHeader = "";
     private static String drl = "";
-    private static String rule = "";
-    private static int maxStep = 200;
+    private static int maxStep = 500;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
@@ -51,106 +40,95 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
     public void initializeDriver() {
         System.out.println("\ninitializeDriver");
 
-        drl = "package drools.traits.benchmarks;\n" +
+        drl = "package opencds.test;\n" +
                 "\n" +
                 "import org.drools.factmodel.traits.Traitable;\n" +
-                "" +
-                "";
-
-
-        rule =
+                "import java.util.*;\n" +
                 "\n" +
-                "rule \"match and don\"\n" +
-                "no-loop\n" +
-                "when\n" +
-                "    $obj : TestClass( $id : hField0 == \"val-000\")    // , hiddenField0 == \"0\" )\n" +
-                "then\n" +
-                "    TestTrait tt = don( $obj , TestTrait.class );\n" +
-                "end\n" +
-                "\n" +
-                "rule \"match trait\"\n" +
-                "no-loop\n" +
-                "when\n" +
-                "    $obj : TestTrait( hField0 == \"val-000\" ) //, sField0 == 0)\n" +
-                "then\n" +
-                "    //System.out.println($obj);\n" +
-                "end\n" +
-                "\n" +
-                "";
-        drlHeader = drl;
-    }
-
-    @Override
-    public void prepare(TestCase testCase) {
-
-        int hardFieldNum = testCase.getIntParam("HardFieldNum");
-        int softFieldNum = testCase.getIntParam("SoftFieldNum");
-        int hiddenFieldNum = testCase.getIntParam("HiddenFieldNum");
-        String strClass = "";
-        String strTrait = "";
-        strClass =
-                "\n" +
-                "declare TestClass\n" +
+                "declare InputObject\n" +
                 "@Traitable\n" +
-                "@propertyReactive\n";
-        strTrait =
-                "\n" +
-                "declare trait TestTrait\n" +
-                "@propertyReactive\n" ;
+                "@propertyReactive\n" +
+                "   id : String \n" +
+                "end\n" +
+                "\n" ;
 
-        for(int s=0; s< hardFieldNum; s++)
-        {
-            strClass += "   hField"+s+" : String = \"" + s + "\"\n";
-            strTrait += "   hField"+s+" : String = \"" + s + "\"\n";
-
+        for(int i=0; i<maxStep; i++){
+            drl +=
+                    "declare trait JoinT00"+i+"\n" +
+                    "@propertyReactive\n" +
+                    "end\n" +
+                    "\n" ;
         }
-        for(int hd=0; hd< hiddenFieldNum; hd++)
-        {
-            strClass += "   hiddenField"+hd+" : String = \"" + hd + "\"\n";
+
+        String rule = "";
+
+            rule +=
+                    "rule \"Initiate Joins\"\n" +
+                            "no-loop\n" +
+                            "when\n" +
+                            "    $obj : InputObject( $id : id == \"00A001\" )\n" +
+                            "then\n"+
+                            "    don( $obj, java.util.Arrays.asList(";
+        for(int i=0; i<maxStep; i++){
+            rule += "JoinT00"+i+".class";
+            if(i!=(maxStep-1))
+                rule += ", ";
         }
-        strClass += "end\n";
-        for(int h=0; h< softFieldNum; h++)
-        {
-            strTrait += "   sField"+h+" : Integer = " + h + "\n";
+
+        rule += "));\n" +
+                "end\n";
+
+
+        rule +=
+                "rule \"Highly Join Check\"\n" +
+                        "no-loop\n" +
+                        "when\n" +
+                        "    $obj : InputObject( $id : id == \"00A001\" \n" +
+                        "";
+        for(int i=0; i<maxStep; i++){
+
+            rule +=
+                            ",this isA JoinT00"+i+"\n";
         }
-        strTrait += "end\n" ;
 
-        drl = drlHeader + strClass + strTrait + rule;
-
-//        System.out.println(drl);
-
+        rule += ")\n" +
+                "then\n" +
+//                "   System.out.println(\">>>fired\");\n" +
+                "end\n";
+        drl += rule;
+        System.out.println(drl);
         ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
         TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
         ksession.fireAllRules();
         ksession.getAgenda().clear();
 
+
+
+    }
+
+    @Override
+    public void prepare(TestCase testCase) {
+
         facts = new ArrayList<Object>(maxStep);
 
+        FactType inputObject = ksession.getKnowledgeBase().getFactType( "opencds.test", "InputObject" );
         try {
-            for ( int j = 0; j < maxStep; j++ ) {
-                FactType inputObject = ksession.getKnowledgeBase().getFactType( "drools.traits.benchmarks", "TestClass" );
 
                 Object obj = null;
                 obj = inputObject.newInstance();
-                for(int s = 0; s< hardFieldNum; s++)
-                    inputObject.set(obj,"hField"+s,"val-00"+(0));
+                inputObject.set(obj,"id","00A001");
                 facts.add(obj);
                 ksession.insert(obj);
-
-//                for ( Field fld : inputObject.getFactClass().getFields() ) {
-//                    System.out.println( fld );
-//                }
-            }
         } catch (InstantiationException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         } catch (IllegalAccessException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-
     }
 
     @Override
     public void warmup(TestCase testCase) {
+
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
@@ -163,13 +141,27 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
 
     @Override
     public void run(TestCase testCase) {
+//        System.out.println("Sleeping");
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//        }
 
         int fired = ksession.fireAllRules();
         System.out.println(fired);
+
+//        System.out.println("wake up");
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//        }
     }
 
     @Override
     public void finish(TestCase testCase) {
+
         assertEquals(0, clearVM());
     }
 
@@ -179,12 +171,6 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
         knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
         if ( knowledgeBuilder.hasErrors() ) {
             System.err.print( knowledgeBuilder.getErrors().toString() );
-        }
-        if ( knowledgeBuilder.hasResults(ResultSeverity.INFO) ) {
-            System.err.print( knowledgeBuilder.getResults(ResultSeverity.INFO) );
-        }
-        if ( knowledgeBuilder.hasResults( ResultSeverity.WARNING) ) {
-            System.err.print( knowledgeBuilder.getResults( ResultSeverity.WARNING ) );
         }
         KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
         knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );

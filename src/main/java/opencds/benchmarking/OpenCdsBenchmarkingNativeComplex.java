@@ -35,7 +35,7 @@ import static junit.framework.Assert.assertEquals;
 public class OpenCdsBenchmarkingNativeComplex extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 10;
+    private static int maxStep = 500;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
@@ -53,31 +53,37 @@ public class OpenCdsBenchmarkingNativeComplex extends JapexDriverBase implements
                 "import java.util.*;\n" +
                 "\n" +
                 "declare InputObject\n" +
-//                "@Traitable\n" +
-                "@propertyReactive\n" +
                 "   id : String \n" +
                 "end\n" +
                 "\n" +
                 "declare CA\n" +
-                "@propertyReactive\n" +
                 "   tid : String \n" +
                 "end\n" +
                 "\n" +
                 "declare CB\n" +
-                "@propertyReactive\n" +
                 "   tid : String \n" +
                 "end\n" +
                 "\n" +
                 "declare CC\n" +
-                "@propertyReactive\n" +
                 "   tid : String \n" +
                 "   xid : String \n" +
                 "end\n" +
                 "\n" +
                 "declare CD\n" +
-                "@propertyReactive\n" +
                 "   tid : String \n" +
                 "   sid : String \n" +
+                "end\n" +
+                "\n" +
+                "declare CCA\n" +
+                "   id : String \n" +
+                "end\n" +
+                "\n" +
+                "declare CCB\n" +
+                "   id : String \n" +
+                "end\n" +
+                "\n" +
+                "declare CCC\n" +
+                "   id : String \n" +
                 "end\n" +
                 "";
 
@@ -128,18 +134,52 @@ public class OpenCdsBenchmarkingNativeComplex extends JapexDriverBase implements
                     "    insert( cd );\n" +
                     "end\n" +
                     "\n" +
+                    "rule \"CCA 1001"+i+"\"\n" +
+                    "no-loop\n" +
+                    "when\n" +
+                    "    $obj : InputObject( $id : id == \"00A"+i+"\" )\n" +
+                    "then\n" +
+                    "    CCA ca = new CCA();\n" +
+                    "    ca.setId( $id );\n" +
+                    "    insert( ca );\n" +
+                    "end\n" +
+                    "\n" +
+                    "rule \"CCB 1001"+i+"\"\n" +
+                    "no-loop\n" +
+                    "when\n" +
+                    "    $obj : InputObject( $id : id == \"00B"+i+"\" )\n" +
+                    "then\n" +
+                    "    CCB ca = new CCB();\n" +
+                    "    ca.setId( $id );\n" +
+                    "    insert( ca );\n" +
+                    "end\n" +
+                    "\n" +
+                    "rule \"CCC 1001"+i+"\"\n" +
+                    "no-loop\n" +
+                    "when\n" +
+                    "    $obj : InputObject( $id : id == \"00C"+i+"\" )\n" +
+                    "then\n" +
+                    "    CCC ca = new CCC();\n" +
+                    "    ca.setId( $id );\n" +
+                    "    insert( ca );\n" +
+                    "end\n" +
+                    "\n" +
                     "\n" +
                     "\n" +
                     "rule \"FinalCheck"+i+"\"\n" +
                     "no-loop\n" +
                     "when\n" +
                     "    $x : CA( $ca : tid == \"00A"+i+"\" )\n" +
-                    "    $y : CB( $cb : tid )\n" +
+                    "    $y : CB( $cb : tid == \"00B"+i+"\" )\n" +
                     "    $z : CC( $cc : tid, xid == $cb )\n" +
                     "    $w : CD( sid == $ca, tid == $cb)\n" +
+                    "    $x2 : CCA( $cca : id == \"00CA"+i+"\" )\n" +
+                    "    $y2 : CCB( $ccb : id == \"00CB"+i+"\" )\n" +
+                    "    $z2 : CCC( $ccc : id == \"00CC"+i+"\" )\n" +
                     "then\n" +
                     "      //System.out.println($w);\n"+
-                    "end\n";
+                    "end\n" +
+                    "";
         }
 
         drl += rule;
@@ -185,6 +225,7 @@ public class OpenCdsBenchmarkingNativeComplex extends JapexDriverBase implements
 
     @Override
     public void warmup(TestCase testCase) {
+
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
@@ -204,6 +245,7 @@ public class OpenCdsBenchmarkingNativeComplex extends JapexDriverBase implements
 
     @Override
     public void finish(TestCase testCase) {
+
         assertEquals(0,clearVM());
     }
 

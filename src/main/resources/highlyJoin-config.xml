@@ -7,17 +7,14 @@
     <param name="japex.warmupIterations" value="30"/>
     <param name="japex.runIterations" value="1"/>
 
-    <driver name="OpenCDS with Trait Complex">
-        <param name="japex.driverClass" value="opencds.benchmarking.OpenCdsBenchmarkingTraitComplex"/>
-        <param name="description" value="OpenCDS Trait Driver"/>
+    <driver name="highly used join with Trait">
+        <param name="japex.driverClass" value="drools.traits.benchmarks.HighlyUsedJoinTrait"/>
+        <param name="description" value="Trait Driver"/>
     </driver>
-
-    <driver name="OpenCDS Native Complex">
-        <param name="japex.driverClass" value="opencds.benchmarking.OpenCdsBenchmarkingNativeComplex"/>
-        <param name="description" value="OpenCDS Native Driver"/>
+    <driver name="highly used join Native">
+        <param name="japex.driverClass" value="drools.traits.benchmarks.HighlyUsedJoinNative"/>
+        <param name="description" value="Native Driver"/>
     </driver>
-    <!--
-    -->
 
     <testCase name="test1"/>
     <testCase name="test2"/>

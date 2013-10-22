@@ -33,7 +33,7 @@ import static junit.framework.Assert.assertEquals;
 public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 10;
+    private static int maxStep = 500;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
@@ -128,7 +128,7 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
                             "rule \"FinalCheck"+i+"\"\n" +
                             "no-loop\n" +
                             "when\n" +
-                            "    $x : TA( $ta := id )\n" +
+                            "    $x : TA( $ta := id == \"00A"+i+"\" )\n" +
                             "    $y : TB( $ta, $tc; )\n" +
                             "    $z : TC( $tc := id == \"00C"+i+"\", this isA TD )\n" +
                             "then\n" +
@@ -185,6 +185,7 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
 
     @Override
     public void warmup(TestCase testCase) {
+
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
@@ -204,6 +205,7 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
 
     @Override
     public void finish(TestCase testCase) {
+
         assertEquals(0, clearVM());
     }
 
