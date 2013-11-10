@@ -4,15 +4,15 @@
     <param name="japex.contextClassLoader" value="true"/>
 
     <param name="japex.resultUnit" value="ms"/>
-    <param name="japex.warmupIterations" value="50"/>
+    <param name="japex.warmupIterations" value="100"/>
     <param name="japex.runIterations" value="1"/>
 
-    <driver name="highly used join Trait">
-        <param name="japex.driverClass" value="drools.traits.benchmarks.HighlyUsedJoinTrait"/>
+    <driver name="basic don with multi object">
+        <param name="japex.driverClass" value="drools.traits.benchmarks.BasicDonMultiObject"/>
         <param name="description" value="Trait Driver"/>
     </driver>
-    <driver name="highly used join Native">
-        <param name="japex.driverClass" value="drools.traits.benchmarks.HighlyUsedJoinNative"/>
+    <driver name="basic insert with multi object">
+        <param name="japex.driverClass" value="drools.traits.benchmarks.BasicInsertMultiObject"/>
         <param name="description" value="Native Driver"/>
     </driver>
 

@@ -22,7 +22,81 @@
         </plugins>
     </build>
     -->
+<!--
+    <properties>
+    <jprofiler.workdir>${project.build.directory}/profiler</jprofiler.workdir>
+    </properties>
 
+    <build>
+    <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
+    <testResources>
+        <testResource>
+            <directory>${basedir}/src/test/resources</directory>
+            <filtering>true</filtering>
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+        </testResource>
+    </testResources>
+
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.5</source>
+                <target>1.5</target>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>enforce-jprofiler</id>
+                    <goals>
+                        <goal>enforce</goal>
+                    </goals>
+                    <configuration>
+                        <rules>
+                            <requireProperty>
+                                <property>jprofiler.home</property>
+                                <message>You must specify jprofiler.home!</message>
+                            </requireProperty>
+                            <requireProperty>
+                                <property>jprofiler.license</property>
+                                <message>You must specify jprofiler.license!</message>
+                            </requireProperty>
+                        </rules>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>generate-jprofiler-config</id>
+                    <phase>pre-integration-test</phase>
+                    <goals>
+                        <goal>copy-resources</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>${basedir}/target/profiler</outputDirectory>
+                        <resources>
+                            <resource>
+                                <directory>src/it/profiler</directory>
+                                <filtering>true</filtering>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        </plugins>
+    </build>
+-->
 
     <dependencies>
         <dependency>
@@ -151,6 +225,14 @@
             <groupId>com.sun.japex</groupId>
             <artifactId>japex</artifactId>
             <version>1.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openehr</groupId>
+            <artifactId>jprofiler</artifactId>
+            <version>8.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/agent.jar</systemPath>
         </dependency>
 
     </dependencies>

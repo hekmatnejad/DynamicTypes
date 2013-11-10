@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class BenchmarkUtil {
 
-    private static PipedInputStream pin = new PipedInputStream(10000);
+    private static PipedInputStream pin = new PipedInputStream(10000);//10000
     private static PipedOutputStream out;
 
 
@@ -65,10 +65,12 @@ public class BenchmarkUtil {
         System.out.println(new String(bytes));
         return true;
     }
+    //to use Jprofiler you have to use the below line as vm options
+    //-Xms256m -Xmx1024m -XX:MaxPermSize=256m "-agentpath:I:\FixedPath\jprofiler_windows-x64_8_0_1\jprofiler8\bin\windows-x64\jprofilerti.dll=offline,id=109,config=I:\FixedPath\jprofiler_windows-x64_8_0_1\jprofiler8\bin\config.xml" "-Xbootclasspath/a:I:\FixedPath\jprofiler_windows-x64_8_0_1\bin\agent.jar"
 
     public static void main(String[] args) {
 //        try {
-//            Thread.sleep(7000);
+//            Thread.sleep(10000);
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
 //        }
@@ -76,10 +78,11 @@ public class BenchmarkUtil {
 //        //OpencdsBenchmarking opencdsBenchmarking = new OpencdsBenchmarking();
 //        //benchmarkThisMethod(opencdsBenchmarking,"testOpencdsBenchmark2TraitMethod");
 
-//        openCDSBenchmark();
+        openCDSBenchmark();
 //        openCDSBenchmarkComplex();
 //        traitDonBenchmark();
-        highlyJoinBenchmark();
+//        highlyJoinBenchmark();
+//        BasicMultiObjectBenchmark();
     }
 
     public static void openCDSBenchmark()
@@ -119,6 +122,16 @@ public class BenchmarkUtil {
         japex.setOutputDirectory(new File("japex"));
 //        japex.setOutputWriter( new PrintWriter(System.out));
         japex.run(  ClassLoader.getSystemResource("highlyJoin-config.xml").getPath().replaceAll("%20", " ") );
+
+    }
+
+    public static void BasicMultiObjectBenchmark()
+    {
+        Japex japex = new Japex();
+        japex.setHtml(true);
+        japex.setOutputDirectory(new File("japex"));
+//        japex.setOutputWriter( new PrintWriter(System.out));
+        japex.run(  ClassLoader.getSystemResource("BasicMultiObject-config.xml").getPath().replaceAll("%20", " ") );
 
     }
 }

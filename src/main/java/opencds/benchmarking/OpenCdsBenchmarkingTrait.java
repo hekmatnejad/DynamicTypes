@@ -1,5 +1,6 @@
 package opencds.benchmarking;
 
+import com.jprofiler.api.agent.Controller;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
@@ -18,6 +19,7 @@ import org.opencds.vmr.v1_0.internal.ObservationValue;
 import org.opencds.vmr.v1_0.internal.datatypes.CD;
 
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.UUID;
@@ -210,9 +212,12 @@ public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDr
 
     @Override
     public void run(TestCase testCase) {
-
+//        if(testCase.getName().equalsIgnoreCase("test3"))
+//        startProfiler();
         int fired = ksession.fireAllRules();
         System.out.println(fired);
+//        if(testCase.getName().equalsIgnoreCase("test3"))
+//        stopProfiler(testCase.getName());
     }
 
     @Override
@@ -262,4 +267,15 @@ public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDr
         return ksession.getObjects().size();
     }
 
+    private void startProfiler()
+    {
+        Controller.startCPURecording(true);
+        Controller.addBookmark("Start calculating rule-firing-don");
+    }
+
+    private void stopProfiler(String postfix)
+    {
+        Controller.saveSnapshot(new File("jprofiler/after_list_trait_opencdsbmk_"+postfix+".jps"));
+        Controller.stopCPURecording();
+    }
 }

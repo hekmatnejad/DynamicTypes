@@ -4,7 +4,7 @@
     <param name="japex.contextClassLoader" value="true"/>
 
     <param name="japex.resultUnit" value="ms"/>
-    <param name="japex.warmupIterations" value="30"/>
+    <param name="japex.warmupIterations" value="60"/>
     <param name="japex.runIterations" value="1"/>
 
     <driver name="trait don benchmark on number of fields">

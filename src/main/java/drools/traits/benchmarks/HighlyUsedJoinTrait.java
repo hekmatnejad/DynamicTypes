@@ -1,5 +1,6 @@
 package drools.traits.benchmarks;
 
+import com.jprofiler.api.agent.Controller;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
@@ -15,6 +16,7 @@ import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.rule.FactHandle;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -96,7 +98,7 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
 //                "   System.out.println(\">>>fired\");\n" +
                 "end\n";
         drl += rule;
-        System.out.println(drl);
+//        System.out.println(drl);
         ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
         TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
         ksession.fireAllRules();
@@ -141,22 +143,11 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
 
     @Override
     public void run(TestCase testCase) {
-//        System.out.println("Sleeping");
-//        try {
-//            Thread.sleep(10000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-//        }
 
+//        startProfiler();
         int fired = ksession.fireAllRules();
         System.out.println(fired);
-
-//        System.out.println("wake up");
-//        try {
-//            Thread.sleep(10000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-//        }
+//        stopProfiler(testCase.getName());
     }
 
     @Override
@@ -198,13 +189,16 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
         return ksession.getFactCount();
     }
 
-    private long clearVM2()
+    private void startProfiler()
     {
-        FactHandle c = ksession.insert( "clean-all" );
-        ksession.fireAllRules();
-        ksession.retract( c );
-        ksession.fireAllRules();
-        return ksession.getObjects().size();
+        Controller.startCPURecording(true);
+        Controller.addBookmark("Start calculating rule-firing-don");
+    }
+
+    private void stopProfiler(String postfix)
+    {
+        Controller.saveSnapshot(new File("after_list_trait_update_"+postfix+".jps"));
+        Controller.stopCPURecording();
     }
 
 }

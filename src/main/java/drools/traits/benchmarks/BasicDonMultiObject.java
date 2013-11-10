@@ -1,13 +1,5 @@
 package drools.traits.benchmarks;
 
-/**
- * Created with IntelliJ IDEA.
- * User: mamad
- * Date: 10/7/13
- * Time: 5:16 PM
- * To change this template use File | Settings | File Templates.
- */
-
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
@@ -16,25 +8,33 @@ import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
+import org.drools.common.DefaultFactHandle;
 import org.drools.definition.type.FactType;
 import org.drools.factmodel.traits.TraitFactory;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.rule.FactHandle;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import static junit.framework.Assert.assertEquals;
+import com.jprofiler.api.agent.Controller;
 
-
-public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver {
+/**
+ * Created with IntelliJ IDEA.
+ * User: mamad
+ * Date: 10/30/13
+ * Time: 1:51 PM
+ * To change this template use File | Settings | File Templates.
+ */
+public class BasicDonMultiObject extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 500;
+    private static int maxStep = 100;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
-
 
 
 
@@ -44,59 +44,44 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
 
         drl = "package opencds.test;\n" +
                 "\n" +
+                "import org.drools.factmodel.traits.Traitable;\n" +
                 "import java.util.*;\n" +
                 "\n" +
                 "declare InputObject\n" +
+                "@Traitable\n" +
+                "@propertyReactive\n" +
                 "   id : String \n" +
                 "end\n" +
-                "\n";
+                "\n" ;
+
         for(int i=0; i<maxStep; i++){
             drl +=
-                "declare JoinC00"+i+"\n" +
-                "   hook :  InputObject\n" +
-                "end\n" +
-                "\n" +
-                "";
+                    "declare trait Trait00"+i+"\n" +
+                            "@propertyReactive\n" +
+                            "end\n" +
+                            "\n" ;
         }
 
         String rule = "";
-        for(int i=0; i<maxStep; i++){
-
-            rule +=
-                    "rule \"Initiate Joins"+i+" \"\n" +
-                            "no-loop\n" +
-                            "when\n" +
-                            "    $obj : InputObject( $id : id == \"00A001\" )\n" +
-                            "then\n"+
-                            "    JoinC00"+i+" join"+i+" = new JoinC00"+i+"($obj);\n" +
-                            "    insert( join"+i+" );\n" +
-                            "end\n";
-        }
-
 
         rule +=
-                "rule \"Highly Join Check\"\n" +
+                "rule \"Initiate Traits\"\n" +
                         "no-loop\n" +
                         "when\n" +
                         "    $obj : InputObject( $id : id == \"00A001\" )\n" +
-                        "";
-        for(int i=0; i<maxStep; i++){
+                        "then\n";
+        for(int i=0; i< maxStep; i++)
+            rule +=     "    don( $obj, Trait00"+i+".class );\n";
+        rule += "end\n";
 
-            rule +=
-                    "    JoinC00"+i+"( hook == $obj )\n" ;
-        }
 
-        rule += "then\n" +
-//                "   System.out.println(\">>>fired\");" +
-                "end\n";
         drl += rule;
-
 //        System.out.println(drl);
-
         ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
         TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
         ksession.fireAllRules();
         ksession.getAgenda().clear();
+
 
 
     }
@@ -107,12 +92,11 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
         facts = new ArrayList<Object>(maxStep);
 
         FactType inputObject = ksession.getKnowledgeBase().getFactType( "opencds.test", "InputObject" );
-
         try {
+
             Object obj = null;
             obj = inputObject.newInstance();
             inputObject.set(obj,"id","00A001");
-
             facts.add(obj);
             ksession.insert(obj);
         } catch (InstantiationException e) {
@@ -120,7 +104,6 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
         } catch (IllegalAccessException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-
     }
 
     @Override
@@ -129,24 +112,28 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
-        assertEquals(0,clearVM());
+        assertEquals(0, clearVM());
         for ( Object o : facts ) {
             ksession.insert(o);
         }
-        System.out.println("WT: "+ (System.nanoTime()-start)/1000000 );
+        System.out.println("WT: " + (System.nanoTime() - start) / 1000000);
     }
 
     @Override
     public void run(TestCase testCase) {
 
+        if(testCase.getName().equalsIgnoreCase("test3"))
+        startProfiler();
         int fired = ksession.fireAllRules();
         System.out.println(fired);
+        if(testCase.getName().equalsIgnoreCase("test3"))
+        stopProfiler(testCase.getName());
     }
 
     @Override
     public void finish(TestCase testCase) {
 
-        assertEquals(0,clearVM());
+        assertEquals(0, clearVM());
     }
 
 
@@ -154,7 +141,6 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
         KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
         knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
         if ( knowledgeBuilder.hasErrors() ) {
-//            fail( knowledgeBuilder.getErrors().toString() );
             System.err.print( knowledgeBuilder.getErrors().toString() );
         }
         KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
@@ -165,11 +151,42 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
 
     private long clearVM()
     {
-        Collection<FactHandle> factHandles = ksession.getFactHandles();
-        for(FactHandle factHandle : factHandles){
-            ksession.retract(factHandle);
+        Collection<DefaultFactHandle> factHandles = ksession.getFactHandles();
+        Collection<DefaultFactHandle> cloneFactHandles = new ArrayList<DefaultFactHandle>(factHandles);
+
+        for(DefaultFactHandle factHandle : cloneFactHandles){
+            if(factHandle.isTraitable())
+                ksession.retract(factHandle);
         }
 
+//        if(ksession.getFactCount()!=0)  {
+//            Collection<FactHandle> fh = ksession.getFactHandles();
+//            for(FactHandle factHandle : fh){
+//                System.out.println("ERRRRRRRRRRRRR");
+//                ksession.retract(factHandle);
+//            }
+//        }
         return ksession.getFactCount();
+    }
+
+    private long clearVM2()
+    {
+        FactHandle c = ksession.insert( "clean-all" );
+        ksession.fireAllRules();
+        ksession.retract( c );
+        ksession.fireAllRules();
+        return ksession.getObjects().size();
+    }
+
+    private void startProfiler()
+    {
+        Controller.startCPURecording(true);
+        Controller.addBookmark("Start calculating rule-firing-don");
+    }
+
+    private void stopProfiler(String postfix)
+    {
+        Controller.saveSnapshot(new File("jprofiler/after_don_BasicMulti_"+postfix+".jps"));
+        Controller.stopCPURecording();
     }
 }

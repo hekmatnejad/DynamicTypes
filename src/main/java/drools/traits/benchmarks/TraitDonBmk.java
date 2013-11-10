@@ -1,5 +1,6 @@
 package drools.traits.benchmarks;
 
+import com.jprofiler.api.agent.Controller;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
@@ -16,6 +17,7 @@ import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.rule.FactHandle;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -41,7 +43,7 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
     private static String drlHeader = "";
     private static String drl = "";
     private static String rule = "";
-    private static int maxStep = 200;
+    private static int maxStep = 100;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
@@ -163,8 +165,9 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
 
     @Override
     public void run(TestCase testCase) {
-
+        startProfiler();
         int fired = ksession.fireAllRules();
+        stopProfiler(testCase.getName());
         System.out.println(fired);
     }
 
@@ -221,4 +224,15 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
         return ksession.getObjects().size();
     }
 
+    private void startProfiler()
+    {
+        Controller.startCPURecording(true);
+        Controller.addBookmark("Start calculating rule-firing-don");
+    }
+
+    private void stopProfiler(String postfix)
+    {
+        Controller.saveSnapshot(new File("jprofiler/after_list_trait_Donbmk_"+postfix+".jps"));
+        Controller.stopCPURecording();
+    }
 }
