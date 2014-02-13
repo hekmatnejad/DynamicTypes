@@ -78,11 +78,12 @@ public class BenchmarkUtil {
 //        //OpencdsBenchmarking opencdsBenchmarking = new OpencdsBenchmarking();
 //        //benchmarkThisMethod(opencdsBenchmarking,"testOpencdsBenchmark2TraitMethod");
 
-        openCDSBenchmark();
+//        openCDSBenchmark();
 //        openCDSBenchmarkComplex();
-//        traitDonBenchmark();
+        traitDonBenchmark();
 //        highlyJoinBenchmark();
 //        BasicMultiObjectBenchmark();
+//        isAProfiling();
     }
 
     public static void openCDSBenchmark()
@@ -134,4 +135,15 @@ public class BenchmarkUtil {
         japex.run(  ClassLoader.getSystemResource("BasicMultiObject-config.xml").getPath().replaceAll("%20", " ") );
 
     }
+
+    public static void isAProfiling()
+    {
+        Japex japex = new Japex();
+        japex.setHtml(true);
+        japex.setOutputDirectory(new File("japex"));
+//        japex.setOutputWriter( new PrintWriter(System.out));
+        japex.run(  ClassLoader.getSystemResource("isAProfiler-config.xml").getPath().replaceAll("%20", " ") );
+
+    }
+
 }

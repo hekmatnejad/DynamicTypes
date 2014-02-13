@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSuite name="Trivial Driver case" xmlns="http://www.sun.com/japex/testSuite">
+
+    <param name="japex.contextClassLoader" value="true"/>
+
+    <param name="japex.resultUnit" value="ms"/>
+    <param name="japex.warmupIterations" value="50"/>
+    <param name="japex.runIterations" value="1"/>
+
+    <driver name="isA Trait">
+        <param name="japex.driverClass" value="drools.traits.profiler.IsAProfiling"/>
+        <param name="description" value="IsA Driver"/>
+    </driver>
+
+    <testCase name="test1"/>
+    <testCase name="test2"/>
+    <testCase name="test3"/>
+    <testCase name="test4"/>
+    <testCase name="test5"/>
+    <testCase name="test6"/>
+    <testCase name="test7"/>
+    <testCase name="test8"/>
+    <testCase name="test9"/>
+    <testCase name="test10"/>
+    <testCase name="test11"/>
+    <testCase name="test12"/>
+</testSuite>

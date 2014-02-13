@@ -51,6 +51,7 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
 
     @Override
     public void initializeDriver() {
+        maxStep = Integer.parseInt(getParam("maxStep"));
         System.out.println("\ninitializeDriver");
 
         drl = "package drools.traits.benchmarks;\n" +
@@ -67,7 +68,8 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
                 "when\n" +
                 "    $obj : TestClass( $id : hField0 == \"val-000\")    // , hiddenField0 == \"0\" )\n" +
                 "then\n" +
-                "    TestTrait tt = don( $obj , TestTrait.class );\n" +
+//                "    TestTrait tt = don( $obj , TestTrait.class );\n" +
+                        "don( $obj , TestTrait.class );\n" +
                 "end\n" +
                 "\n" +
                 "rule \"match trait\"\n" +
@@ -84,7 +86,6 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
 
     @Override
     public void prepare(TestCase testCase) {
-
         int hardFieldNum = testCase.getIntParam("HardFieldNum");
         int softFieldNum = testCase.getIntParam("SoftFieldNum");
         int hiddenFieldNum = testCase.getIntParam("HiddenFieldNum");
@@ -165,9 +166,11 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
 
     @Override
     public void run(TestCase testCase) {
-        startProfiler();
+//        if(testCase.getName().equals("test3"))
+//        startProfiler();
         int fired = ksession.fireAllRules();
-        stopProfiler(testCase.getName());
+//        if(testCase.getName().equals("test3"))
+//        stopProfiler(getParam("maxStep")+testCase.getName());
         System.out.println(fired);
     }
 

@@ -1,8 +1,10 @@
-package drools.traits.benchmarks;
+package drools.traits.profiler;
 
+import com.jprofiler.api.agent.Controller;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
+import org.drools.FactHandle;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.KnowledgeBuilder;
@@ -13,23 +15,22 @@ import org.drools.definition.type.FactType;
 import org.drools.factmodel.traits.TraitFactory;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.FactHandle;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import static junit.framework.Assert.assertEquals;
-import com.jprofiler.api.agent.Controller;
 
 /**
  * Created with IntelliJ IDEA.
  * User: mamad
- * Date: 10/30/13
- * Time: 1:51 PM
+ * Date: 11/12/13
+ * Time: 6:42 PM
  * To change this template use File | Settings | File Templates.
  */
-public class BasicDonMultiObject extends JapexDriverBase implements JapexDriver {
+
+public class IsAProfiling extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
     private static int maxStep = 100;
@@ -42,7 +43,7 @@ public class BasicDonMultiObject extends JapexDriverBase implements JapexDriver 
     public void initializeDriver() {
         System.out.println("\ninitializeDriver");
 
-        drl = "package opencds.test;\n" +
+        drl = "package drools.traits.profiler;\n" +
                 "\n" +
                 "import org.drools.factmodel.traits.Traitable;\n" +
                 "import java.util.*;\n" +
@@ -56,7 +57,7 @@ public class BasicDonMultiObject extends JapexDriverBase implements JapexDriver 
 
         for(int i=0; i<maxStep; i++){
             drl +=
-                    "declare trait Trait00"+i+"\n" +
+                    "declare trait JoinT00"+i+"\n" +
                             "@propertyReactive\n" +
                             "end\n" +
                             "\n" ;
@@ -65,16 +66,39 @@ public class BasicDonMultiObject extends JapexDriverBase implements JapexDriver 
         String rule = "";
 
         rule +=
-                "rule \"Initiate Traits\"\n" +
+                "rule \"Initiate Joins\"\n" +
                         "no-loop\n" +
                         "when\n" +
                         "    $obj : InputObject( $id : id == \"00A001\" )\n" +
-                        "then\n";
-        for(int i=0; i< maxStep; i++)
-            rule +=     "    don( $obj, Trait00"+i+".class );\n";
-        rule += "end\n";
+                        "then\n"+
+                        "    don( $obj, java.util.Arrays.asList(";
+        for(int i=0; i<maxStep; i++){
+            rule += "JoinT00"+i+".class";
+            if(i!=(maxStep-1))
+                rule += ", ";
+        }
+
+        rule += "));\n" +
+                "end\n";
 
 
+        rule +=
+                "rule \"Highly Join Check\"\n" +
+                        "no-loop\n" +
+                        "when\n" +
+                        "    String( this == \"start\" )\n" +
+                        "    $obj : InputObject( $id : id == \"00A001\" \n" +
+                        "";
+        for(int i=0; i<maxStep; i++){
+
+            rule +=
+                    ",this isA JoinT00"+i+"\n";
+        }
+
+        rule += ")\n" +
+                "then\n" +
+//                "   System.out.println(\">>>fired\");\n" +
+                "end\n";
         drl += rule;
 //        System.out.println(drl);
         ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
@@ -91,7 +115,7 @@ public class BasicDonMultiObject extends JapexDriverBase implements JapexDriver 
 
         facts = new ArrayList<Object>(maxStep);
 
-        FactType inputObject = ksession.getKnowledgeBase().getFactType( "opencds.test", "InputObject" );
+        FactType inputObject = ksession.getKnowledgeBase().getFactType( "drools.traits.profiler", "InputObject" );
         try {
 
             Object obj = null;
@@ -111,23 +135,25 @@ public class BasicDonMultiObject extends JapexDriverBase implements JapexDriver 
 
 //        System.out.println("warmup");
         long start = System.nanoTime();
+        ksession.insert(new String( "start" ));
         ksession.fireAllRules();
         assertEquals(0, clearVM());
         for ( Object o : facts ) {
             ksession.insert(o);
         }
-        System.out.println("WT: " + (System.nanoTime() - start) / 1000000);
+        int fired = ksession.fireAllRules();
+        ksession.insert(new String( "start" ));
+        System.out.println( "WT: " + (System.nanoTime() - start) / 1000000 );
     }
 
     @Override
     public void run(TestCase testCase) {
-
-//        if(testCase.getName().equalsIgnoreCase("test3"))
-//        startProfiler();
+        if(testCase.getName().equalsIgnoreCase("test3"))
+        startProfiler();
         int fired = ksession.fireAllRules();
         System.out.println(fired);
-//        if(testCase.getName().equalsIgnoreCase("test3"))
-//        stopProfiler(testCase.getName());
+        if(testCase.getName().equalsIgnoreCase("test3"))
+        stopProfiler(testCase.getName());
     }
 
     @Override
@@ -159,23 +185,14 @@ public class BasicDonMultiObject extends JapexDriverBase implements JapexDriver 
                 ksession.retract(factHandle);
         }
 
-//        if(ksession.getFactCount()!=0)  {
-//            Collection<FactHandle> fh = ksession.getFactHandles();
-//            for(FactHandle factHandle : fh){
+        if(ksession.getFactCount()!=0)  {
+            Collection<FactHandle> fh = ksession.getFactHandles();
+            for(FactHandle factHandle : fh){
 //                System.out.println("ERRRRRRRRRRRRR");
-//                ksession.retract(factHandle);
-//            }
-//        }
+                ksession.retract(factHandle);
+            }
+        }
         return ksession.getFactCount();
-    }
-
-    private long clearVM2()
-    {
-        FactHandle c = ksession.insert( "clean-all" );
-        ksession.fireAllRules();
-        ksession.retract( c );
-        ksession.fireAllRules();
-        return ksession.getObjects().size();
     }
 
     private void startProfiler()
@@ -186,7 +203,9 @@ public class BasicDonMultiObject extends JapexDriverBase implements JapexDriver 
 
     private void stopProfiler(String postfix)
     {
-        Controller.saveSnapshot(new File("jprofiler/after_don_BasicMulti_"+postfix+".jps"));
+        Controller.saveSnapshot(new File("jprofiler/after_list_trait_isA_"+postfix+".jps"));
         Controller.stopCPURecording();
     }
+
 }
+

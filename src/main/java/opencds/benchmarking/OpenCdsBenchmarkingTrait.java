@@ -37,7 +37,7 @@ import static junit.framework.Assert.fail;
 public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 100;
+    private static int maxStep = 500;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
@@ -81,15 +81,15 @@ public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDr
 
             trait +=
 
-                            "" +
-                            "declare trait " + "autoTrait001" + i + "  extends opencdsConcept\n" +
-                            "@propertyReactive\n" +
-                            "    openCdsConceptCode : String = \"C001" + i + "\"\n" +
-                            "end\n"  +
+                    "" +
+                    "declare trait " + "autoTrait001" + i + "  extends opencdsConcept\n" +
+                    "@propertyReactive\n" +
+                    "    openCdsConceptCode : String = \"C001" + i + "\"\n" +
+                    "end\n"  +
                     "declare trait " + "autoTrait002" + i + "  extends opencdsConcept\n" +
-                            "@propertyReactive\n" +
-                            "    openCdsConceptCode : String = \"C002" + i + "\"\n" +
-                            "end\n";
+                    "@propertyReactive\n" +
+                    "    openCdsConceptCode : String = \"C002" + i + "\"\n" +
+                    "end\n";
         }
 
         String rule = "";
@@ -138,17 +138,17 @@ public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDr
 
         }
 
-        rule += "rule \"Clean\"\n" +
-                "salience -999"+
-                "when\n" +
-                "  $s : String()\n" +
-                "  $o : Object( this != $s )\n" +
-                "then\n" +
-                "  if ( ! $o.getClass().getName().contains( \"Initial\" ) ) { \n" +
-                "   retract( $o );\n" +
-                "  } \n" +
-                "  //System.out.println(\"removed\");\n"+
-                "end  ";
+//        rule += "rule \"Clean\"\n" +
+//                "salience -999"+
+//                "when\n" +
+//                "  $s : String()\n" +
+//                "  $o : Object( this != $s )\n" +
+//                "then\n" +
+//                "  if ( ! $o.getClass().getName().contains( \"Initial\" ) ) { \n" +
+//                "   retract( $o );\n" +
+//                "  } \n" +
+//                "  //System.out.println(\"removed\");\n"+
+//                "end  ";
 
         drl += trait + rule;
 
@@ -203,7 +203,7 @@ public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDr
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
-        assertEquals(0, clearVM2());
+        assertEquals(0, clearVM());
         for ( Object o : facts ) {
             ksession.insert(o);
         }
@@ -222,7 +222,7 @@ public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDr
 
     @Override
     public void finish(TestCase testCase) {
-        assertEquals(0, clearVM2());
+        assertEquals(0, clearVM());
     }
 
 

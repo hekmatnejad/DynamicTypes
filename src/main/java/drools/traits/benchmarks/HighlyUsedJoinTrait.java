@@ -32,14 +32,21 @@ import static junit.framework.Assert.assertEquals;
 public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 500;
+    private static int maxStep = 1000;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
+    double[][] warmups;
+    int wCounter = 0;
+    int WC = 0;
+    int tCounter = -1;
+    int TN = 12;
 
 
 
     @Override
     public void initializeDriver() {
+        WC = Integer.parseInt(getParam("japex.warmupIterations"));
+        warmups = new double[TN][WC];
         System.out.println("\ninitializeDriver");
 
         drl = "package opencds.test;\n" +
@@ -126,6 +133,8 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
         } catch (IllegalAccessException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
+        wCounter = 0;
+        tCounter++;
     }
 
     @Override
@@ -134,6 +143,7 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
+        warmups[tCounter][wCounter++] += (System.nanoTime()-start)/(double)1e6;
         assertEquals(0, clearVM());
         for ( Object o : facts ) {
             ksession.insert(o);
@@ -143,10 +153,11 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
 
     @Override
     public void run(TestCase testCase) {
-
+//        if(testCase.getName().equalsIgnoreCase("test3"))
 //        startProfiler();
         int fired = ksession.fireAllRules();
         System.out.println(fired);
+//        if(testCase.getName().equalsIgnoreCase("test3"))
 //        stopProfiler(testCase.getName());
     }
 
@@ -154,6 +165,14 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
     public void finish(TestCase testCase) {
 
         assertEquals(0, clearVM());
+        if(testCase.getName().equals("test12"))
+        {
+            System.out.println("warmups: ");
+            for(int j=0; j<TN; j++)
+                for(int i=0; i< WC ; i+=1) {
+                    System.out.println(warmups[j][i]);
+                }
+        }
     }
 
 
@@ -197,7 +216,7 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
 
     private void stopProfiler(String postfix)
     {
-        Controller.saveSnapshot(new File("after_list_trait_update_"+postfix+".jps"));
+        Controller.saveSnapshot(new File("jprofiler/after_list_trait_highlyJoin_"+postfix+".jps"));
         Controller.stopCPURecording();
     }
 

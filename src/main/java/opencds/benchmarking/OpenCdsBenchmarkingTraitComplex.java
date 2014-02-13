@@ -35,14 +35,21 @@ import static junit.framework.Assert.assertEquals;
 public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 500;
+    private static int maxStep = 100;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
+    double[][] warmups;
+    int wCounter = 0;
+    int WC = 0;
+    int tCounter = -1;
+    int TN = 12;
 
 
 
     @Override
     public void initializeDriver() {
+        WC = Integer.parseInt(getParam("japex.warmupIterations"));
+        warmups = new double[TN][WC];
         System.out.println("\ninitializeDriver");
 
         drl = "package opencds.test;\n" +
@@ -183,6 +190,8 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
         } catch (IllegalAccessException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
+        wCounter = 0;
+        tCounter++;
     }
 
     @Override
@@ -191,6 +200,7 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
+        warmups[tCounter][wCounter++] += (System.nanoTime()-start)/(double)1e6;
         assertEquals(0, clearVM());
         for ( Object o : facts ) {
             ksession.insert(o);
@@ -209,6 +219,14 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
     public void finish(TestCase testCase) {
 
         assertEquals(0, clearVM());
+        if(testCase.getName().equals("test12"))
+        {
+            System.out.println("warmups: ");
+            for(int j=0; j<TN; j++)
+            for(int i=0; i< WC ; i+=4) {
+                System.out.println(warmups[j][i]);
+            }
+        }
     }
 
 

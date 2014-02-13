@@ -4,43 +4,84 @@
     <param name="japex.contextClassLoader" value="true"/>
 
     <param name="japex.resultUnit" value="ms"/>
-    <param name="japex.warmupIterations" value="60"/>
+    <param name="japex.warmupIterations" value="100"/>
     <param name="japex.runIterations" value="1"/>
 
-    <driver name="trait don benchmark on number of fields">
+    <driver name="trait don benchmark on number of fields 1">
         <param name="japex.driverClass" value="drools.traits.benchmarks.TraitDonBmk"/>
         <param name="description" value="trait Don Driver"/>
+        <param name="maxStep" value="100"/>
+    </driver>
+    <driver name="trait don benchmark on number of fields 2">
+        <param name="japex.driverClass" value="drools.traits.benchmarks.TraitDonBmk"/>
+        <param name="description" value="trait Don Driver"/>
+        <param name="maxStep" value="500"/>
     </driver>
 
 
+    <testCase name="test0">
+        <param name="HardFieldNum" value="1"></param>
+        <param name="SoftFieldNum" value="1"></param>
+        <param name="HiddenFieldNum" value="32"></param>            <!--1724-->
+    </testCase>
     <testCase name="test1">
+        <param name="HardFieldNum" value="1"></param>
+        <param name="SoftFieldNum" value="1"></param>
+        <param name="HiddenFieldNum" value="32"></param>            <!--1724-->
+    </testCase>
+    <testCase name="test2">
         <param name="HardFieldNum" value="1"></param>
         <param name="SoftFieldNum" value="1"></param>
         <param name="HiddenFieldNum" value="62"></param>            <!--1724-->
     </testCase>
-    <testCase name="test2">
-        <param name="HardFieldNum" value="1"></param>
-        <param name="SoftFieldNum" value="31"></param>
-        <param name="HiddenFieldNum" value="32"></param>
-    </testCase>
     <testCase name="test3">
-        <param name="HardFieldNum" value="16"></param>
+        <param name="HardFieldNum" value="1"></param>
         <param name="SoftFieldNum" value="16"></param>
-        <param name="HiddenFieldNum" value="32"></param>
+        <param name="HiddenFieldNum" value="16"></param>
     </testCase>
     <testCase name="test4">
-        <param name="HardFieldNum" value="31"></param>
-        <param name="SoftFieldNum" value="1"></param>
-        <param name="HiddenFieldNum" value="0"></param>
-    </testCase>
-    <testCase name="test5">
         <param name="HardFieldNum" value="1"></param>
         <param name="SoftFieldNum" value="31"></param>
+        <param name="HiddenFieldNum" value="32"></param>
+    </testCase>
+    <testCase name="test5">
+        <param name="HardFieldNum" value="8"></param>
+        <param name="SoftFieldNum" value="8"></param>
         <param name="HiddenFieldNum" value="0"></param>
     </testCase>
     <testCase name="test6">
         <param name="HardFieldNum" value="16"></param>
         <param name="SoftFieldNum" value="16"></param>
+        <param name="HiddenFieldNum" value="0"></param>
+    </testCase>
+    <testCase name="test7">
+        <param name="HardFieldNum" value="8"></param>
+        <param name="SoftFieldNum" value="8"></param>
+        <param name="HiddenFieldNum" value="16"></param>
+    </testCase>
+    <testCase name="test8">
+        <param name="HardFieldNum" value="16"></param>
+        <param name="SoftFieldNum" value="16"></param>
+        <param name="HiddenFieldNum" value="32"></param>
+    </testCase>
+    <testCase name="test9">
+        <param name="HardFieldNum" value="16"></param>
+        <param name="SoftFieldNum" value="1"></param>
+        <param name="HiddenFieldNum" value="0"></param>
+    </testCase>
+    <testCase name="test10">
+        <param name="HardFieldNum" value="31"></param>
+        <param name="SoftFieldNum" value="1"></param>
+        <param name="HiddenFieldNum" value="0"></param>
+    </testCase>
+    <testCase name="test11">
+        <param name="HardFieldNum" value="1"></param>
+        <param name="SoftFieldNum" value="16"></param>
+        <param name="HiddenFieldNum" value="0"></param>
+    </testCase>
+    <testCase name="test12">
+        <param name="HardFieldNum" value="1"></param>
+        <param name="SoftFieldNum" value="31"></param>
         <param name="HiddenFieldNum" value="0"></param>
     </testCase>
 </testSuite>

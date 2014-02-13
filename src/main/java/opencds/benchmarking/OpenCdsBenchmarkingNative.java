@@ -36,7 +36,7 @@ import static junit.framework.Assert.fail;
 public class OpenCdsBenchmarkingNative extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 100;
+    private static int maxStep = 500;
     private static StatefulKnowledgeSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
@@ -95,16 +95,16 @@ public class OpenCdsBenchmarkingNative extends JapexDriverBase implements JapexD
                             "end\n";
         }
 
-        rule += "rule \"Clean\"\n" +
-                "salience -999"+
-                "when\n" +
-                "  $s : String()\n" +
-                "  $o : Object( this != $s )\n" +
-                "then\n" +
-                "  if ( ! $o.getClass().getName().contains( \"Initial\" ) ) { \n" +
-                "   retract( $o );\n" +
-                "  } \n" +
-                "end  ";
+//        rule += "rule \"Clean\"\n" +
+//                "salience -999"+
+//                "when\n" +
+//                "  $s : String()\n" +
+//                "  $o : Object( this != $s )\n" +
+//                "then\n" +
+//                "  if ( ! $o.getClass().getName().contains( \"Initial\" ) ) { \n" +
+//                "   retract( $o );\n" +
+//                "  } \n" +
+//                "end  ";
 
         drl += rule;
 
@@ -150,7 +150,7 @@ public class OpenCdsBenchmarkingNative extends JapexDriverBase implements JapexD
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
-        assertEquals(0,clearVM2());
+        assertEquals(0,clearVM());
         for ( Object o : facts ) {
             ksession.insert(o);
         }
@@ -166,7 +166,7 @@ public class OpenCdsBenchmarkingNative extends JapexDriverBase implements JapexD
 
     @Override
     public void finish(TestCase testCase) {
-        assertEquals(0,clearVM2());
+        assertEquals(0,clearVM());
     }
 
 
