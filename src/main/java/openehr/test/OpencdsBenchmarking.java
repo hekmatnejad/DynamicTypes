@@ -454,7 +454,7 @@ public class OpencdsBenchmarking{
                 "import org.opencds.vmr.v1_0.internal.concepts.*;\n" +
                 "import java.util.*;\n" +
                 "\n";
-        int maxStep =1000;
+        int maxStep =10;
         String rule = "";
         System.out.println("Making DRL file.");
         for(int i=0; i<=maxStep; i++){

@@ -5,212 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42210602-7845-4e94-9639-b87199252aa8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/profiler/IsAProfiling.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/isAProfiler-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicDonMultiObject.java" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicDonMultiObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BenchmarkUtil.java" afterPath="$PROJECT_DIR$/src/main/java/BenchmarkUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/DefaultKnowledgeHelper.java" afterPath="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/DefaultKnowledgeHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinNative.java" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinNative.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinTrait.java" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinTrait.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_drools_knowledge_api_5_6_0_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_drools_knowledge_api_5_6_0_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_drools_knowledge_internal_api_5_6_0_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_drools_knowledge_internal_api_5_6_0_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNative.java" afterPath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNative.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java" afterPath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTrait.java" afterPath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTrait.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTraitComplex.java" afterPath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTraitComplex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCDS.iml" afterPath="$PROJECT_DIR$/openCDS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../drools/drools-core/pom.xml" afterPath="$PROJECT_DIR$/../drools/drools-core/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/traitDon-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/traitDon-config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/openehrRule.drl" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_3_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_runtime_3_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_stringtemplate_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_drools_knowledge_api_5_6_0_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_drools_knowledge_internal_api_5_6_0_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jdt_core_compiler_ecj_3_5_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mvel_mvel2_2_1_5_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openCDS.iml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_opencds_common_1_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_opencds_vmr_1_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_cds_core_1_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_commons_lang_2_4_1_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_core_1_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_domain_1_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_joda_time_1_3_1_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_terminology_service_1_1_0.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java" afterPath="$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="openCDS.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1392229594708" ignored="false" />
-    <file path="/TraitTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383947896590" ignored="false" />
-    <file path="/testTraitIsA.drl" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380566977459" ignored="false" />
-    <file path="/a.dummy" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381399029599" ignored="false" />
-    <file path="/fragment.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384126390409" ignored="false" />
-    <file path="/tstMapMemberTrait.drl" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380677226631" ignored="false" />
-    <file path="/drools-216.drl" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380677718084" ignored="false" />
-    <file path="/drools-217.drl" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380677740647" ignored="false" />
-    <file path="/drools-218.drl" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380677755598" ignored="false" />
-    <file path="/drools-219.drl" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380678807285" ignored="false" />
-    <file path="/OpencdsBenchmarking.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180916190" ignored="false" />
-    <file path="/testTraitMapAlias.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380753024996" ignored="false" />
-    <file path="/testTraitLogical.drl" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380757972115" ignored="false" />
-    <file path="/LogicalTraitTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380789331828" ignored="false" />
-    <file path="/LogicalMapTraitTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380910376992" ignored="false" />
-    <file path="/BenchmarkUtil.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384307613180" ignored="false" />
-    <file path="/TraitMapCoreTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1380932471321" ignored="false" />
-    <file path="/pom.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383181168332" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/builder/KnowledgeBuilderConfigurationTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180402062" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/org/drools/droolsjbpm-parent/5.6.0-SNAPSHOT/droolsjbpm-parent-5.6.0-SNAPSHOT.pom" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384375017781" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/EntryPointNode.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180402033" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/ObjectSinkPropagator.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180402033" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/ObjectSource.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180402033" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/LeftTupleSinkPropagator.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180402033" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/impl/KnowledgeBaseImpl.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180402035" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/LeftTupleSource.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180402038" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/ReteooRuleBase.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180402040" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-decisiontables/pom.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180402047" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/spi/KnowledgeHelper.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381180402053" ignored="false" />
-    <file path="/opencdsBmkConfig.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381185766564" ignored="false" />
-    <file path="/opencdsBnkInput1.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381186295174" ignored="false" />
-    <file path="/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381530529730" ignored="false" />
-    <file path="/TrivialDriver.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381187973207" ignored="false" />
-    <file path="/OpenCdsBenchmarking.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381190464758" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_51/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/japex/2013_10_07_17_13/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_43/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_44/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_48/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_51/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_42/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_53/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_52/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_34/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_34/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_38/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352222" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_38/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_48/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_46/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_42/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/japex/2013_10_07_17_13/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_53/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_43/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_55/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_44/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_46/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_52/report.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="$PROJECT_DIR$/reports/2013_10_07_16_55/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381191352223" ignored="false" />
-    <file path="/OpenCdsBenchmarkingNative.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381382520083" ignored="false" />
-    <file path="/OpenCdsBenchmarkingTrait.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384374691285" ignored="false" />
-    <file path="$PROJECT_DIR$/japex/2013_10_09_16_35/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381361784361" ignored="false" />
-    <file path="/AbstractWorkingMemory.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381385316782" ignored="false" />
-    <file path="$PROJECT_DIR$/japex/2013_10_09_23_45/opencdsBnk-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381387551645" ignored="false" />
-    <file path="/NamedEntryPoint.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381457843795" ignored="false" />
-    <file path="/openehrRule.drl" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381539809773" ignored="false" />
-    <file path="/OpenehrTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381539580400" ignored="false" />
-    <file path="/opencdsRule.drl" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381808782867" ignored="false" />
-    <file path="/opencdsBnk-configComplex.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1382392990511" ignored="false" />
-    <file path="/OpenCdsBenchmarkingNativeComplex.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384392130406" ignored="false" />
-    <file path="/OpenCdsBenchmarkingTraitComplex.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384392205848" ignored="false" />
-    <file path="/TraitDonBmk.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1392232715869" ignored="false" />
-    <file path="$PROJECT_DIR$/japex/2013_10_16_14_09/traitDon-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1381957785841" ignored="false" />
-    <file path="/traitDon-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384388320042" ignored="false" />
-    <file path="/highlyJoin-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383605832752" ignored="false" />
-    <file path="/HighlyUsedJoinNative.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1382120247573" ignored="false" />
-    <file path="/HighlyUsedJoinTrait.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384137934251" ignored="false" />
-    <file path="/BasicMultiObject-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384045108918" ignored="false" />
-    <file path="/BasicDonMultiObject.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384045166451" ignored="false" />
-    <file path="/BasicInsertMultiObject.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383168033883" ignored="false" />
-    <file path="/TraitTypeMap.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384129375698" ignored="false" />
-    <file path="/AbstractCodedHierarchyImpl.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383873254648" ignored="false" />
-    <file path="/AbstractBitwiseHierarchyImpl.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384123200917" ignored="false" />
-    <file path="/TypeHierarchy.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384129566829" ignored="false" />
-    <file path="/CoreVal.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383946292991" ignored="false" />
-    <file path="/Key.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383385137219" ignored="false" />
-    <file path="/BitmaskKey.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383355066892" ignored="false" />
-    <file path="/HierNode.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383604520242" ignored="false" />
-    <file path="/CodedHierarchy.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383801645541" ignored="false" />
-    <file path="/AbstractCodedHierarchy.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383816483363" ignored="false" />
-    <file path="/TypeLattice.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383816342143" ignored="false" />
-    <file path="/BitMaskKey.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383612372151" ignored="false" />
-    <file path="/service.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383464080612" ignored="false" />
-    <file path="/service.xsd" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383463342513" ignored="false" />
-    <file path="/TraitField.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383946894067" ignored="false" />
-    <file path="/IndexedTypeHierarchy.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383800095588" ignored="false" />
-    <file path="/TraitObjectTypeNode.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383955947436" ignored="false" />
-    <file path="/HierarchyTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383605245044" ignored="false" />
-    <file path="/CodedHierarchyImpl.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383797642448" ignored="false" />
-    <file path="/HierarchyEncoderImpl.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383800943854" ignored="false" />
-    <file path="/Thing.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383804571739" ignored="false" />
-    <file path="/DefaultKnowledgeHelper.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384372071386" ignored="false" />
-    <file path="/TraitFieldDefaultValue.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383946553461" ignored="false" />
-    <file path="/TraitFieldsAndLegacyClassesTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1383954361455" ignored="false" />
-    <file path="/IsAProfiling.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384308311849" ignored="false" />
-    <file path="/isAProfiler-config.xml" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384307760437" ignored="false" />
-    <file path="/EvaluatorConstraint.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310234158" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/VariableRestriction.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589672" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/spi/AlphaNodeFieldConstraint.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589672" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/spi/Evaluator.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589672" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/spi/FieldValue.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589672" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/ValueType.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589674" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/BaseEvaluator.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589674" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/LeftTuple.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844496" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/util/AbstractCodedHierarchyImpl.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589675" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/util/AbstractBitwiseHierarchyImpl.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/evaluators/EvaluatorRegistry.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589675" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/evaluators/Operator.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589675" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/util/AbstractHashTable.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589677" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/InternalRuleBase.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589680" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/InternalWorkingMemory.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844505" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/MutableTypeConstraint.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589682" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/Declaration.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/IndexableConstraint.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589683" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/spi/InternalReadAccessor.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589683" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/InternalFactHandle.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/spi/ReadAccessor.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589684" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/time/Interval.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589674" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/evaluators/EvaluatorDefinition.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589675" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/ContextEntry.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384310589683" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/constraint/EvaluatorConstraint.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384368710559" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/constraint/MvelConstraint.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384368710559" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/Rule.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844488" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/DefaultLogicTransformerFactory.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844489" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/spi/Activation.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844489" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/RuleTerminalNode.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844489" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/spi/Tuple.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844490" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/ObjectTypeConf.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844491" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/ReteooComponentFactory.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844492" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/concurrent/DefaultExecutorService.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844494" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/DefaultKnowledgeHelperFactory.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844495" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/time/impl/DefaultJobHandle.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844496" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/marshalling/impl/DefaultMarshaller.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844496" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/TraitObjectTypeNode.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/DefaultConsequenceExceptionHandler.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-templates/src/main/java/org/drools/template/parser/DefaultGenerator.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/builder/DefaultNodeFactory.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-templates/src/test/java/org/drools/template/parser/DefaultGeneratorTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/lang/dsl/DefaultDSLMapping.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/lang/dsl/DSLMappingEntry.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/lang/dsl/DefaultExpanderResolver.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/lang/dsl/DefaultExpander.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/command/impl/DefaultCommandService.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844497" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/event/DefaultAgendaEventListener.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844498" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/util/LinkedList.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844499" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/util/LinkedListEntry.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844500" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/util/LinkedListNode.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844501" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/util/AbstractBaseLinkedListNode.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844502" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/world/impl/WorldImpl.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844502" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/util/debug/DefaultNetworkNodeVisitor.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844503" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/ActivationNode.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844503" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/util/debug/DefaultNodeInfo.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844503" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/AgendaItem.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844503" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/rule/builder/DefaultConstraintBuilderFactory.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844504" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/InternalKnowledgeRuntime.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844506" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/AbstractRuleBase.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844506" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/InternalWorkingMemoryActions.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844506" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/test/java/org/drools/common/DefaultBetaConstraintsTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/DefaultFactHandle.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/DefaultAgenda.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/InternalWorkingMemoryEntryPoint.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/ActivationGroupNode.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/LogicalDependency.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/DefaultBetaConstraints.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/GroupElement.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/TypeDeclaration.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/runtime/rule/impl/DefaultConsequenceExceptionHandler.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/AbstractWorkingMemory.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/test/java/org/drools/reteoo/DefaultFactHandleFactoryTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/InternalRuleFlowGroup.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/lang/dsl/DefaultExpanderTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/DefaultAgendaFactory.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/spi/ProcessContext.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844508" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/compiler/PackageBuilderTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844782" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/TraitProxyObjectTypeNode.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844495" ignored="false" />
-    <file path="$PROJECT_DIR$/../drools/drools-core/src/test/java/org/drools/common/AgendaItemTest.java" changelist="42210602-7845-4e94-9639-b87199252aa8" time="1384371844507" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,218 +50,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/TraitObjectTypeNode.java" line="91" class="org.drools.reteoo.TraitObjectTypeNode" package="org.drools.reteoo">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/factmodel/IndexedTypeHierarchy.java" line="36" class="org.drools.factmodel.IndexedTypeHierarchy" package="org.drools.factmodel">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/factmodel/IndexedTypeHierarchy.java" line="39" class="org.drools.factmodel.IndexedTypeHierarchy" package="org.drools.factmodel">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java" line="785" class="org.drools.factmodel.traits.TraitMapCoreTest" package="org.drools.factmodel.traits">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java" line="853" class="org.drools.factmodel.traits.TraitMapCoreTest" package="org.drools.factmodel.traits">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java" line="910" class="org.drools.factmodel.traits.TraitMapCoreTest" package="org.drools.factmodel.traits">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java" line="960" class="org.drools.factmodel.traits.TraitMapCoreTest" package="org.drools.factmodel.traits">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java" line="1101" class="org.drools.factmodel.traits.TraitMapCoreTest" package="org.drools.factmodel.traits">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java" line="1174" class="org.drools.factmodel.traits.TraitMapCoreTest" package="org.drools.factmodel.traits">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java" line="1250" class="org.drools.factmodel.traits.TraitMapCoreTest" package="org.drools.factmodel.traits">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java" line="563" class="org.drools.factmodel.traits.TraitMapCoreTest" package="org.drools.factmodel.traits">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java" line="565" class="org.drools.factmodel.traits.TraitMapCoreTest" package="org.drools.factmodel.traits">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/TraitObjectTypeNode.java" line="69" class="org.drools.reteoo.TraitObjectTypeNode" package="org.drools.reteoo">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="( (ClassObjectType) this.getObjectType() ).getClassName().contains(&quot;StudentWorker&quot;)&#13;&#13;JAVA" />
-        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/util/AbstractBitwiseHierarchyImpl.java" line="466" class="org.drools.util.AbstractBitwiseHierarchyImpl" package="org.drools.util">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -473,6 +86,53 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/TraitObjectTypeNode.java" line="91" class="org.drools.reteoo.TraitObjectTypeNode" package="org.drools.reteoo">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/TraitObjectTypeNode.java" line="69" class="org.drools.reteoo.TraitObjectTypeNode" package="org.drools.reteoo">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="( (ClassObjectType) this.getObjectType() ).getClassName().contains(&quot;StudentWorker&quot;)&#13;&#13;JAVA" />
+        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java" line="71" class="openehr.test.OpenEHR" package="openehr.test">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
@@ -483,29 +143,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BenchmarkUtil.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BenchmarkUtil.java">
+      <file leaf-file-name="OpenehrArchetype.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/openehr/util/OpenehrArchetype.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="19" selection-start="2818" selection-end="2818" vertical-scroll-proportion="0.0">
+            <state line="21" column="52" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2159">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#829#830#0" expanded="false" />
+                <element signature="e#865#866#0" expanded="false" />
+                <element signature="e#908#909#0" expanded="false" />
+                <element signature="e#942#943#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpenEHR.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="18" selection-start="949" selection-end="949" vertical-scroll-proportion="0.36756757" vertical-offset="0" max-vertical-offset="1700">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="traitDon-config.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/traitDon-config.xml">
+      <file leaf-file-name="opencdsRule.drl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule.drl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="38" selection-start="583" selection-end="583" vertical-scroll-proportion="-1.3333334">
+            <state line="38" column="17" selection-start="1178" selection-end="1194" vertical-scroll-proportion="62.46154" vertical-offset="2270" max-vertical-offset="3145">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TraitDonBmk.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java">
+      <file leaf-file-name="openehrRule.drl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/openehrRule.drl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="207" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
+            <state line="169" column="1" selection-start="5003" selection-end="5003" vertical-scroll-proportion="0.0" vertical-offset="4460" max-vertical-offset="5015">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BackwardChainingTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/integrationtests/BackwardChainingTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="98" column="29" selection-start="2345" selection-end="4249" vertical-scroll-proportion="-25.576923" vertical-offset="83" max-vertical-offset="56525">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeclarativeAgendaTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/integrationtests/DeclarativeAgendaTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="30" selection-start="4669" selection-end="4669" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="16813">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TraitMapCoreTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="46" selection-start="2301" selection-end="2394" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="21250">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#2515#2531#0" expanded="false" />
+                <element signature="e#9867#9883#0" expanded="false" />
+                <element signature="e#12559#12575#0" expanded="false" />
+                <element signature="e#14874#14890#0" expanded="false" />
+                <element signature="e#33434#33450#0" expanded="false" />
+                <element signature="e#35799#35815#0" expanded="false" />
+                <element signature="e#37870#37886#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -518,6 +229,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="SYNC_SETTING" value="DONT" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
@@ -541,24 +253,33 @@
         <option value="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java" />
         <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinNative.java" />
         <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinTrait.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BenchmarkUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/traitDon-config.xml" />
         <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/BenchmarkUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java" />
+        <option value="$PROJECT_DIR$/src/test/java/openehr/test/test/OpenEHR.java" />
+        <option value="$PROJECT_DIR$/src/test/java/openehr/test/OpenEHR.java" />
+        <option value="$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/compiler/PackageBuilder.java" />
+        <option value="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/impl/KnowledgeBaseImpl.java" />
+        <option value="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/AbstractRuleBase.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/openehrRule.drl" />
+        <option value="$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="checksumPolicy" value="FAIL" />
+        <option name="failureBehavior" value="FAST" />
+        <option name="pluginUpdatePolicy" value="UPDATE" />
+        <option name="usePluginRegistry" value="true" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="openCDS" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
       <PATH>
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
@@ -615,6 +336,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -780,290 +502,6 @@
               <option name="myItemId" value="openehr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DynamicTypes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DynamicTypes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="traits" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DynamicTypes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="traits" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="benchmarks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factmodel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factmodel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="traits" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-compiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-compiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -1078,8 +516,50 @@
               <option name="myItemId" value="drools" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="drools-compiler" />
+              <option name="myItemId" value="openCDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drools-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openCDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drools-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openCDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drools-core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1087,15 +567,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openCDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drools-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1114,60 +612,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="drools-compiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="traits" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-compiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1191,15 +635,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="135" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="152" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
@@ -1207,7 +650,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="156" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CODES/Hierarchy/src/main/java/ConceptRelationModel.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/test-classes/openehr/test" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="159" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="823" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="831" />
@@ -1225,7 +668,8 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="project.propCompiler" />
+    <property name="SearchEverywhereHistory" value="" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -1234,84 +678,35 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="openehr.test" />
       <recent name="drools.traits.benchmarks" />
       <recent name="opencds.benchmarking" />
-      <recent name="openehr.test" />
       <recent name="org.drools.factmodel.traits" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\src\main\resources" />
       <recent name="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\src\main\resources" />
       <recent name="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\src\test\resources\openehr\test" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\src\test\java\openehr\test" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="openehr.test" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.BenchmarkUtil">
-    <configuration default="false" name="TraitTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="drools-compiler" />
+  <component name="RunManager" selected="JUnit.OpenEHR.testTraitOpenehr">
+    <configuration default="false" name="OpenEHR" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="openCDS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.drools.factmodel.traits" />
-      <option name="MAIN_CLASS_NAME" value="org.drools.factmodel.traits.TraitTest" />
-      <option name="METHOD_NAME" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="openehr.test" />
+      <option name="MAIN_CLASS_NAME" value="openehr.test.OpenEHR" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="LogicalTraitTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="drools-compiler" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.drools.factmodel.traits" />
-      <option name="MAIN_CLASS_NAME" value="org.drools.factmodel.traits.LogicalTraitTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TraitMapCoreTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="drools-compiler" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.drools.factmodel.traits" />
-      <option name="MAIN_CLASS_NAME" value="org.drools.factmodel.traits.TraitMapCoreTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -1323,39 +718,17 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="TraitFieldsAndLegacyClassesTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="drools-compiler" />
+    <configuration default="false" name="OpenEHR.testTraitOpenehr" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="openCDS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.drools.factmodel.traits" />
-      <option name="MAIN_CLASS_NAME" value="org.drools.factmodel.traits.TraitFieldsAndLegacyClassesTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TraitTest.testTraitEncoding" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="drools-compiler" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.drools.factmodel.traits" />
-      <option name="MAIN_CLASS_NAME" value="org.drools.factmodel.traits.TraitTest" />
-      <option name="METHOD_NAME" value="testTraitEncoding" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="openehr.test" />
+      <option name="MAIN_CLASS_NAME" value="openehr.test.OpenEHR" />
+      <option name="METHOD_NAME" value="testTraitOpenehr" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../../CODES/Hierarchy/src/test/java" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -1373,10 +746,74 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="false" name="OpencdsBenchmarking.testTraitOpencdsBenchmark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="openCDS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="openehr.test" />
+      <option name="MAIN_CLASS_NAME" value="openehr.test.OpencdsBenchmarking" />
+      <option name="METHOD_NAME" value="testTraitOpencdsBenchmark" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -1385,6 +822,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -1412,19 +862,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1459,6 +896,25 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="false" name="BenchmarkUtil" type="Application" factoryName="Application">
@@ -1571,25 +1027,21 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="10">
+    <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Application.BenchmarkUtil" />
       <item index="1" class="java.lang.String" itemvalue="Application.BenchmarkUtil-JProfiler" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.OpencdsBenchmarking.testTraitOpencdsBenchmark3" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.OpencdsBenchmarking.testTraitOpencdsBenchmark2Native" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.OpencdsBenchmarking.testOpencdsBenchmark2TraitMethod" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.TraitTest" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.LogicalTraitTest" />
-      <item index="7" class="java.lang.String" itemvalue="JUnit.TraitMapCoreTest" />
-      <item index="8" class="java.lang.String" itemvalue="JUnit.TraitFieldsAndLegacyClassesTest" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.TraitTest.testTraitEncoding" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.OpenEHR" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.OpenEHR.testTraitOpenehr" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.OpencdsBenchmarking.testTraitOpencdsBenchmark" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.LogicalTraitTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TraitTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TraitMapCoreTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TraitFieldsAndLegacyClassesTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TraitTest.testTraitEncoding" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.OpenEHR.testTraitOpenehr" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.OpenEHR" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.OpencdsBenchmarking.testTraitOpencdsBenchmark" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1685,7 +1137,11 @@
       <created>1384129912577</created>
       <updated>1384129912577</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="using for paper benchmarking results">
+      <created>1392255986235</created>
+      <updated>1392255986235</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1712,86 +1168,46 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279396" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55025554" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39693356" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42601627" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39655173" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257821" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24242425" sideWeight="0.10567297" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.89432704" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2734139" sideWeight="0.6712095" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3247734" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28694713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
-      <value>
-        <are-packages-shown value="false" />
-        <are-modules-shown value="false" />
-        <flatten-packages value="false" />
-        <is-autoscroll-to-source value="false" />
-      </value>
+      <TodoPanelSettings />
     </option>
-    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
-    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
-    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
-    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
-    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
-    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
-    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
-    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
-    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
-    <option name="LIMIT_HISTORY" value="true" />
-    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
-    <option name="UPDATE_FILTER_SCOPE_NAME" />
-    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
-    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
-    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
-    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="cache added for mostspecifictraits" />
-    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
-    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
-    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ACTIVE_VCS_NAME" />
-    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
-    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
-    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
-    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="some map trait tests are added" />
     <MESSAGE value="mapcore trait with trait matching possibilities" />
     <MESSAGE value="retract is updated for removing all fact handles outside the DRL" />
@@ -1807,6 +1223,8 @@
     <MESSAGE value="runtime optimization with lattice network" />
     <MESSAGE value="new benchmarks with using japex and jprofiler" />
     <MESSAGE value="cache added for mostspecifictraits" />
+    <MESSAGE value="using for paper benchmarking results" />
+    <option name="LAST_COMMIT_MESSAGE" value="using for paper benchmarking results" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1816,106 +1234,290 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/DefaultKnowledgeHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="784" column="54" selection-start="31229" selection-end="31275" vertical-scroll-proportion="-3.76" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/factmodel/traits/TraitTypeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="47" selection-start="6597" selection-end="6597" vertical-scroll-proportion="0.54545456" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/openEHR-EHR-EVALUATION.problem-diagnosis.v1.adl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule00.drl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicDonMultiObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="958" selection-end="958" vertical-scroll-proportion="-1.224">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTraitComplex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="239" column="49" selection-start="8891" selection-end="8891" vertical-scroll-proportion="0.019906323">
-          <folding />
-        </state>
+        <state line="239" column="49" selection-start="8891" selection-end="8891" vertical-scroll-proportion="0.019906323" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTrait.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="0" selection-start="5282" selection-end="5282" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="129" column="0" selection-start="5282" selection-end="5282" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNative.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="34" selection-start="4449" selection-end="4449" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="100" column="34" selection-start="4449" selection-end="4449" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="260" column="38" selection-start="9211" selection-end="9211" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="260" column="38" selection-start="9211" selection-end="9211" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/opencdsBnk-configComplex.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="3" selection-start="812" selection-end="812" vertical-scroll-proportion="0.42628774">
-          <folding />
-        </state>
+        <state line="21" column="3" selection-start="812" selection-end="812" vertical-scroll-proportion="0.42628774" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinNative.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="54" selection-start="4726" selection-end="4726" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="158" column="54" selection-start="4726" selection-end="4726" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/highlyJoin-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BenchmarkUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="19" selection-start="2818" selection-end="2818" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinTrait.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="84" selection-start="4618" selection-end="4618" vertical-scroll-proportion="2.356243">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="207" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="145" column="84" selection-start="4618" selection-end="4618" vertical-scroll-proportion="2.356243" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/traitDon-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="583" selection-end="583" vertical-scroll-proportion="-1.3333334">
+        <state line="12" column="38" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="207" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="224" column="24" selection-start="8316" selection-end="8316" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.023339318" vertical-offset="13" max-vertical-offset="3621" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-clips/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="33" selection-start="473" selection-end="473" vertical-scroll-proportion="0.36624774" vertical-offset="0" max-vertical-offset="557" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/ObjectTypeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="30" selection-start="804" selection-end="804" vertical-scroll-proportion="0.21261261" vertical-offset="18" max-vertical-offset="12767" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/drools/knowledge-api/5.6.0-SNAPSHOT/knowledge-api-5.6.0-20131113.051325-80.jar!/org/drools/util/CompositeClassLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="158" selection-end="158" vertical-scroll-proportion="-3.4" vertical-offset="0" max-vertical-offset="1530" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/ReteooRuleBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="510" column="4" selection-start="19576" selection-end="19576" vertical-scroll-proportion="8.385135" vertical-offset="0" max-vertical-offset="7667" />
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/java7/jdk/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="22" selection-start="6777" selection-end="6777" vertical-scroll-proportion="0.34056762" vertical-offset="1836" max-vertical-offset="36499" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/drools/knowledge-api/5.6.0-SNAPSHOT/knowledge-api-5.6.0-SNAPSHOT-sources.jar!/org/drools/util/CompositeClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="46" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.26109216" vertical-offset="0" max-vertical-offset="5712" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/drools-216.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.4213115" vertical-offset="867" max-vertical-offset="1479" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/openehrRule02.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.402339" vertical-offset="4619" max-vertical-offset="5474" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/openehrRuleSample.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.4821854" vertical-offset="2932" max-vertical-offset="3774" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/testTraitLogical.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/tstMapMemberTrait.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1904" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="19" selection-start="420" selection-end="420" vertical-scroll-proportion="0.35843372" vertical-offset="17" max-vertical-offset="1649" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="25" selection-start="2400" selection-end="2400" vertical-scroll-proportion="0.35843372" vertical-offset="612" max-vertical-offset="1224" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="0.46448088" vertical-offset="0" max-vertical-offset="366" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicDonMultiObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="13" selection-start="958" selection-end="958" vertical-scroll-proportion="-1.0" vertical-offset="1088" max-vertical-offset="3026" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="58" selection-start="2081" selection-end="2081" vertical-scroll-proportion="-1.0346457" vertical-offset="1201" max-vertical-offset="1836" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/io/impl/ClassPathResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="0" selection-start="1724" selection-end="1724" vertical-scroll-proportion="0.0" vertical-offset="421" max-vertical-offset="4760" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/io/impl/ResourceFactoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="0" selection-start="1886" selection-end="1886" vertical-scroll-proportion="0.0" vertical-offset="506" max-vertical-offset="2040" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/drools/knowledge-api/5.6.0-SNAPSHOT/knowledge-api-5.6.0-SNAPSHOT-sources.jar!/org/drools/io/ResourceFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="23" selection-start="3657" selection-end="3657" vertical-scroll-proportion="0.0" vertical-offset="1322" max-vertical-offset="2482" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/builder/impl/KnowledgeBuilderImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1345" selection-end="1345" vertical-scroll-proportion="0.314578" vertical-offset="132" max-vertical-offset="1666" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="164" column="53" selection-start="5240" selection-end="5247" vertical-scroll-proportion="-0.09563758" vertical-offset="2845" max-vertical-offset="4692" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/impl/KnowledgeBaseImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="285" column="8" selection-start="11739" selection-end="11739" vertical-scroll-proportion="5.247244" vertical-offset="0" max-vertical-offset="5321" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/AbstractRuleBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1408" column="8" selection-start="55122" selection-end="55122" vertical-scroll-proportion="0.7322835" vertical-offset="21992" max-vertical-offset="22627" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BenchmarkUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="21" selection-start="453" selection-end="453" vertical-scroll-proportion="0.19256757" vertical-offset="67" max-vertical-offset="2550" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/openehrRule.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="257" column="21" selection-start="8291" selection-end="8291" vertical-scroll-proportion="-20.08" vertical-offset="3867" max-vertical-offset="4743" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/compiler/PackageBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3458" column="23" selection-start="153933" selection-end="153940" vertical-scroll-proportion="0.33294663" vertical-offset="55830" max-vertical-offset="64991" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/openehr-cds-core-0.9.jar!/se/cambio/cds/model/facade/execution/vo/ElementInstance.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="182" selection-end="182" vertical-scroll-proportion="0.14237855" vertical-offset="0" max-vertical-offset="1156" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/openehr-rm-core-1.0.2.jar!/org/openehr/rm/datatypes/text/DvCodedText.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="19" selection-start="178" selection-end="178" vertical-scroll-proportion="0.14237855" vertical-offset="0" max-vertical-offset="748" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/openehr-cds-core-0.9.jar!/se/cambio/cds/model/facade/execution/vo/ContainerInstance.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="11" selection-start="427" selection-end="427" vertical-scroll-proportion="0.2847571" vertical-offset="0" max-vertical-offset="597" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="46" selection-start="2301" selection-end="2394" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="21250">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2515#2531#0" expanded="false" />
+            <element signature="e#9867#9883#0" expanded="false" />
+            <element signature="e#12559#12575#0" expanded="false" />
+            <element signature="e#14874#14890#0" expanded="false" />
+            <element signature="e#33434#33450#0" expanded="false" />
+            <element signature="e#35799#35815#0" expanded="false" />
+            <element signature="e#37870#37886#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule00.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="17" selection-start="1178" selection-end="1194" vertical-scroll-proportion="62.46154" vertical-offset="2270" max-vertical-offset="3145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/tstDrools.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4947">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/integrationtests/DeclarativeAgendaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="30" selection-start="4669" selection-end="4669" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="16813">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/openehr/util/OpenehrArchetype.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="52" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2159">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#829#830#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#942#943#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/integrationtests/BackwardChainingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="29" selection-start="2345" selection-end="4249" vertical-scroll-proportion="-25.576923" vertical-offset="83" max-vertical-offset="56525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/openehrRule.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="1" selection-start="5003" selection-end="5003" vertical-scroll-proportion="0.0" vertical-offset="4460" max-vertical-offset="5015">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="18" selection-start="949" selection-end="949" vertical-scroll-proportion="0.36756757" vertical-offset="0" max-vertical-offset="1700">
           <folding />
         </state>
       </provider>
@@ -1988,7 +1590,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
