@@ -5,33 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42210602-7845-4e94-9639-b87199252aa8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/openehrRule.drl" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_3_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_runtime_3_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_stringtemplate_3_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_drools_knowledge_api_5_6_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_drools_knowledge_internal_api_5_6_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jdt_core_compiler_ecj_3_5_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mvel_mvel2_2_1_5_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCDS.iml" afterPath="" />
-      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_opencds_common_1_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_opencds_vmr_1_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_cds_core_1_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_commons_lang_2_4_1_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_core_1_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_domain_1_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_joda_time_1_3_1_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_openehr_terminology_service_1_1_0.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java" afterPath="$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JPADroolsFlow.h2.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/agent.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/btm1.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/conditional_inclusion.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/btm2.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule_used_poster.drl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="openCDS.iws" />
@@ -668,7 +647,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="project.propCompiler" />
+    <property name="options.lastSelected" value="settings.github" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -1141,7 +1120,11 @@
       <created>1392255986235</created>
       <updated>1392255986235</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="openEHR minor changes for the JAMIA poster">
+      <created>1398211938950</created>
+      <updated>1398211938950</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1176,7 +1159,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279396" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42601627" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39655173" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39512196" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257821" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1185,7 +1168,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2734139" sideWeight="0.6712095" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3247734" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3247734" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28694713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -1224,7 +1207,8 @@
     <MESSAGE value="new benchmarks with using japex and jprofiler" />
     <MESSAGE value="cache added for mostspecifictraits" />
     <MESSAGE value="using for paper benchmarking results" />
-    <option name="LAST_COMMIT_MESSAGE" value="using for paper benchmarking results" />
+    <MESSAGE value="openEHR minor changes for the JAMIA poster" />
+    <option name="LAST_COMMIT_MESSAGE" value="openEHR minor changes for the JAMIA poster" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
