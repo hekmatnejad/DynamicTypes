@@ -11,16 +11,11 @@ package drools.traits.benchmarks;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
-import org.drools.definition.type.FactType;
-import org.drools.factmodel.traits.TraitFactory;
-import org.drools.io.ResourceFactory;
-import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.FactHandle;
+import drools.traits.util.KBLoader;
+
+import org.kie.api.definition.type.FactType;
+import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.FactHandle;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,7 +27,7 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
 
     private static String drl = "";
     private static int maxStep = 1000;
-    private static StatefulKnowledgeSession ksession = null;
+    private static KieSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
     double[][] warmups;
     int wCounter = 0;
@@ -49,7 +44,7 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
         warmups = new double[TN][WC];
         System.out.println("\ninitializeDriver");
 
-        drl = "package opencds.test;\n" +
+        drl = "package drools.traits.benchmarks;\n" +
                 "\n" +
                 "import java.util.*;\n" +
                 "\n" +
@@ -100,8 +95,7 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
 
 //        System.out.println(drl);
 
-        ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        ksession = KBLoader.createKBfromDrlSource(drl);
         ksession.fireAllRules();
         ksession.getAgenda().clear();
 
@@ -113,7 +107,7 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
 
         facts = new ArrayList<Object>(maxStep);
 
-        FactType inputObject = ksession.getKnowledgeBase().getFactType( "opencds.test", "InputObject" );
+        FactType inputObject = ksession.getKieBase().getFactType( "drools.traits.benchmarks", "InputObject" );
 
         try {
             Object obj = null;
@@ -168,18 +162,6 @@ public class HighlyUsedJoinNative extends JapexDriverBase implements JapexDriver
     }
 
 
-    private KnowledgeBase loadKnowledgeBaseFromString( String drlSource ){
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-//            fail( knowledgeBuilder.getErrors().toString() );
-            System.err.print( knowledgeBuilder.getErrors().toString() );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-
-    }
 
     private long clearVM()
     {

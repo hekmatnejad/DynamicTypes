@@ -5,12 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42210602-7845-4e94-9639-b87199252aa8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JPADroolsFlow.h2.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/agent.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/btm1.tlog" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/conditional_inclusion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/btm2.tlog" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule_used_poster.drl" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__com_thoughtworks_xstream_xstream_1_4_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_antlr_antlr_3_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_antlr_antlr_runtime_3_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_antlr_stringtemplate_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_drools_knowledge_api_5_6_0_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_drools_knowledge_internal_api_5_6_0_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_eclipse_jdt_core_compiler_ecj_3_5_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_mvel_mvel2_2_1_5_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\.idea\libraries\Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicDonMultiObject.java" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicDonMultiObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicInsertMultiObject.java" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicInsertMultiObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BenchmarkUtil.java" afterPath="$PROJECT_DIR$/src/main/java/BenchmarkUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinNative.java" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinNative.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinTrait.java" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinTrait.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/drools/traits/profiler/IsAProfiling.java" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/profiler/IsAProfiling.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/compiler/integrationtests/KnowledgeBuilderTest.java" afterPath="$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/compiler/integrationtests/KnowledgeBuilderTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/compiler/integrationtests/Misc2Test.java" afterPath="$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/compiler/integrationtests/Misc2Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNative.java" afterPath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNative.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java" afterPath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTrait.java" afterPath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTrait.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTraitComplex.java" afterPath="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTraitComplex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java" afterPath="$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java" afterPath="$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java" afterPath="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCDS.iml" afterPath="$PROJECT_DIR$/openCDS.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/opencdsBnk-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/opencdsBnk-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/opencdsBnk-configComplex.xml" afterPath="$PROJECT_DIR$/src/main/resources/opencdsBnk-configComplex.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/openehrRule.drl" afterPath="$PROJECT_DIR$/src/main/resources/openehrRule.drl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/openehr/test/openehrRule.drl" afterPath="$PROJECT_DIR$/src/test/resources/openehr/test/openehrRule.drl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="openCDS.iws" />
@@ -65,53 +93,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/TraitObjectTypeNode.java" line="91" class="org.drools.reteoo.TraitObjectTypeNode" package="org.drools.reteoo">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/TraitObjectTypeNode.java" line="69" class="org.drools.reteoo.TraitObjectTypeNode" package="org.drools.reteoo">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="( (ClassObjectType) this.getObjectType() ).getClassName().contains(&quot;StudentWorker&quot;)&#13;&#13;JAVA" />
-        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java" line="71" class="openehr.test.OpenEHR" package="openehr.test">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
@@ -122,79 +104,94 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OpenehrArchetype.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/openehr/util/OpenehrArchetype.java">
+      <file leaf-file-name="KBLoader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/util/KBLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="52" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2159">
+            <state line="0" column="26" selection-start="8" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2482">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BenchmarkUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BenchmarkUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="51" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="2635">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpenCdsBenchmarkingTraitComplex.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTraitComplex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="151" column="36" selection-start="5776" selection-end="5776" vertical-scroll-proportion="-1.2869718" vertical-offset="2958" max-vertical-offset="4573">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BetaMemory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/reteoo/BetaMemory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="144" column="33" selection-start="4218" selection-end="4218" vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="2975">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SegmentMemory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/reteoo/SegmentMemory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="176" column="16" selection-start="5786" selection-end="5786" vertical-scroll-proportion="0.0" vertical-offset="2992" max-vertical-offset="9469">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LICENSE-ASL-2.0.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../drools/LICENSE-ASL-2.0.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3536">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../drools/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="43" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1530">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="156" column="128" selection-start="4767" selection-end="4767" vertical-scroll-proportion="0.0" vertical-offset="2652" max-vertical-offset="4794">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpenCdsBenchmarkingNativeComplex.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="225" column="11" selection-start="8058" selection-end="8058" vertical-scroll-proportion="0.0" vertical-offset="3825" max-vertical-offset="5406">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="opencdsBnk-configComplex.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/opencdsBnk-configComplex.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="680">
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#829#830#0" expanded="false" />
-                <element signature="e#865#866#0" expanded="false" />
-                <element signature="e#908#909#0" expanded="false" />
-                <element signature="e#942#943#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OpenEHR.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="18" selection-start="949" selection-end="949" vertical-scroll-proportion="0.36756757" vertical-offset="0" max-vertical-offset="1700">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="opencdsRule.drl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule.drl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="17" selection-start="1178" selection-end="1194" vertical-scroll-proportion="62.46154" vertical-offset="2270" max-vertical-offset="3145">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="openehrRule.drl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/openehrRule.drl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="169" column="1" selection-start="5003" selection-end="5003" vertical-scroll-proportion="0.0" vertical-offset="4460" max-vertical-offset="5015">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BackwardChainingTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/integrationtests/BackwardChainingTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="29" selection-start="2345" selection-end="4249" vertical-scroll-proportion="-25.576923" vertical-offset="83" max-vertical-offset="56525">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeclarativeAgendaTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/integrationtests/DeclarativeAgendaTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="30" selection-start="4669" selection-end="4669" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="16813">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TraitMapCoreTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="46" selection-start="2301" selection-end="2394" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="21250">
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2515#2531#0" expanded="false" />
-                <element signature="e#9867#9883#0" expanded="false" />
-                <element signature="e#12559#12575#0" expanded="false" />
-                <element signature="e#14874#14890#0" expanded="false" />
-                <element signature="e#33434#33450#0" expanded="false" />
-                <element signature="e#35799#35815#0" expanded="false" />
-                <element signature="e#37870#37886#0" expanded="false" />
+                <marker date="1421199080347" expanded="true" signature="375:559" placeholder="..." />
+                <marker date="1421199080347" expanded="true" signature="606:788" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -221,29 +218,43 @@
       <list>
         <option value="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/constraint/MvelConstraint.java" />
         <option value="$PROJECT_DIR$/src/main/resources/isAProfiler-config.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/drools/traits/profiler/IsAProfiling.java" />
         <option value="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/rule/constraint/EvaluatorConstraint.java" />
         <option value="$PROJECT_DIR$/../drools/drools-core/pom.xml" />
         <option value="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/base/DefaultKnowledgeHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNative.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/opencdsBnk-configComplex.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTraitComplex.java" />
-        <option value="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTrait.java" />
-        <option value="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java" />
-        <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinNative.java" />
-        <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinTrait.java" />
         <option value="$PROJECT_DIR$/src/main/resources/traitDon-config.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/BenchmarkUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java" />
         <option value="$PROJECT_DIR$/src/test/java/openehr/test/test/OpenEHR.java" />
         <option value="$PROJECT_DIR$/src/test/java/openehr/test/OpenEHR.java" />
         <option value="$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/compiler/PackageBuilder.java" />
         <option value="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/impl/KnowledgeBaseImpl.java" />
         <option value="$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/AbstractRuleBase.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/openehrRule.drl" />
+        <option value="$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/compiler/compiler/RuleBaseLoader.java" />
+        <option value="$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/compiler/compiler/PackageBuilderConfiguration.java" />
+        <option value="$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/compiler/compiler/PackageBuilder.java" />
+        <option value="$PROJECT_DIR$/../drools/drools-compiler/pom.xml" />
+        <option value="$PROJECT_DIR$/../drools/drools-persistence-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/compiler/integrationtests/KnowledgeBuilderTest.java" />
+        <option value="$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/compiler/integrationtests/Misc2Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/openehr/test/openehrRule.drl" />
+        <option value="$PROJECT_DIR$/src/main/resources/test.drl" />
+        <option value="$PROJECT_DIR$/src/main/java/drools/traits/util/KBLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java" />
+        <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicInsertMultiObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicDonMultiObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/OpenCdsBenchmarkingTrait.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/opencdsBnk-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNative.java" />
+        <option value="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTrait.java" />
+        <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinNative.java" />
+        <option value="$PROJECT_DIR$/src/main/java/drools/traits/profiler/IsAProfiling.java" />
+        <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinTrait.java" />
+        <option value="$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BenchmarkUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/opencdsBnk-configComplex.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTraitComplex.java" />
+        <option value="$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java" />
       </list>
     </option>
   </component>
@@ -252,13 +263,29 @@
       <MavenGeneralSettings>
         <option name="checksumPolicy" value="FAIL" />
         <option name="failureBehavior" value="FAST" />
+        <option name="mavenHome" value="F:\ASU Researches\Davide Sottara\software applications\apache-maven-3.2.3" />
         <option name="pluginUpdatePolicy" value="UPDATE" />
         <option name="usePluginRegistry" value="true" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="openCDS" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
       <PATH>
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
@@ -316,6 +343,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -451,10 +479,6 @@
               <option name="myItemId" value="openehr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -492,75 +516,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-core" />
+              <option name="myItemId" value="DynamicTypes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -576,7 +532,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
+              <option name="myItemId" value="benchmarking" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -586,35 +542,92 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-compiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCDS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drools-compiler" />
+              <option name="myItemId" value="DynamicTypes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="traits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openCDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DynamicTypes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="traits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="profiler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openCDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DynamicTypes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="traits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="benchmarks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -629,7 +642,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="156" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/test-classes/openehr/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CODES/BPMN MG/BPMN .02/BPMN" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="159" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="823" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="831" />
@@ -647,7 +660,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="settings.github" />
+    <property name="options.lastSelected" value="MavenSettings" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -663,18 +676,36 @@
       <recent name="org.drools.factmodel.traits" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\src\main\java\drools\traits\benchmarks" />
       <recent name="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\src\main\resources" />
       <recent name="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\src\main\resources" />
       <recent name="I:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\src\test\resources\openehr\test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\src\main\resources" />
       <recent name="F:\ASU Researches\Davide Sottara\GitHub\DynamicTypes\src\test\java\openehr\test" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="openehr.test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OpenEHR.testTraitOpenehr">
+  <component name="RunManager" selected="Application.BenchmarkUtil-JProfiler">
+    <configuration default="false" name="KBLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="drools.traits.util.KBLoader" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="openCDS" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="false" name="OpenEHR" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="openCDS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -693,7 +724,13 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -725,17 +762,39 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="OpencdsBenchmarking.testTraitOpencdsBenchmark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="KBLoader.testDSLExpansion_MessageImplNPE" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="openCDS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="openehr.test" />
-      <option name="MAIN_CLASS_NAME" value="openehr.test.OpencdsBenchmarking" />
-      <option name="METHOD_NAME" value="testTraitOpencdsBenchmark" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="drools.traits.util" />
+      <option name="MAIN_CLASS_NAME" value="drools.traits.util.KBLoader" />
+      <option name="METHOD_NAME" value="testDSLExpansion_MessageImplNPE" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="KBLoader.testDSLExpansion_NoExpansion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="openCDS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="drools.traits.util" />
+      <option name="MAIN_CLASS_NAME" value="drools.traits.util.KBLoader" />
+      <option name="METHOD_NAME" value="testDSLExpansion_NoExpansion" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -920,7 +979,7 @@
     </configuration>
     <configuration default="false" name="BenchmarkUtil-JProfiler" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="BenchmarkUtil" />
-      <option name="VM_PARAMETERS" value="-Xms256m -Xmx1024m -XX:MaxPermSize=256m &quot;-agentpath:I:\FixedPath\jprofiler_windows-x64_8_0_1\jprofiler8\bin\windows-x64\jprofilerti.dll=offline,id=109,config=I:\FixedPath\jprofiler_windows-x64_8_0_1\jprofiler8\bin\config.xml&quot; &quot;-Xbootclasspath/a:I:\FixedPath\jprofiler_windows-x64_8_0_1\bin\agent.jar&quot;" />
+      <option name="VM_PARAMETERS" value="-Xms256m -Xmx1024m -XX:MaxPermSize=256m &quot;-agentpath:F:\FixedPath\jprofiler8\bin\windows-x64\jprofilerti.dll=offline,id=1009,config=F:\FixedPath\jprofiler8\bin\config.xml&quot; &quot;-Xbootclasspath/a:F:\FixedPath\jprofiler8\bin\agent.jar&quot;" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1006,21 +1065,25 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="8">
+    <list size="10">
       <item index="0" class="java.lang.String" itemvalue="Application.BenchmarkUtil" />
       <item index="1" class="java.lang.String" itemvalue="Application.BenchmarkUtil-JProfiler" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.OpencdsBenchmarking.testTraitOpencdsBenchmark3" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.OpencdsBenchmarking.testTraitOpencdsBenchmark2Native" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.OpencdsBenchmarking.testOpencdsBenchmark2TraitMethod" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.OpenEHR" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.OpenEHR.testTraitOpenehr" />
-      <item index="7" class="java.lang.String" itemvalue="JUnit.OpencdsBenchmarking.testTraitOpencdsBenchmark" />
+      <item index="5" class="java.lang.String" itemvalue="Application.KBLoader" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.OpenEHR" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.OpenEHR.testTraitOpenehr" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.KBLoader.testDSLExpansion_MessageImplNPE" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.KBLoader.testDSLExpansion_NoExpansion" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.OpenEHR.testTraitOpenehr" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.OpenEHR" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.OpencdsBenchmarking.testTraitOpencdsBenchmark" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.KBLoader.testDSLExpansion_MessageImplNPE" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.KBLoader.testDSLExpansion_NoExpansion" />
+        <item index="3" class="java.lang.String" itemvalue="Application.KBLoader" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.OpenEHR" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1029,6 +1092,11 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -1124,7 +1192,11 @@
       <created>1398211938950</created>
       <updated>1398211938950</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="openEHR minor changes for the JAMIA poster&#10;">
+      <created>1398212726020</created>
+      <updated>1398212726020</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1149,34 +1221,34 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279396" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42601627" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42439646" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39512196" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257821" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2734139" sideWeight="0.6712095" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20113085" sideWeight="0.6712095" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3247734" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28694713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23867069" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13636364" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4917673" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3219512" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935413" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1208,7 +1280,8 @@
     <MESSAGE value="cache added for mostspecifictraits" />
     <MESSAGE value="using for paper benchmarking results" />
     <MESSAGE value="openEHR minor changes for the JAMIA poster" />
-    <option name="LAST_COMMIT_MESSAGE" value="openEHR minor changes for the JAMIA poster" />
+    <MESSAGE value="openEHR minor changes for the JAMIA poster&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="openEHR minor changes for the JAMIA poster&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1218,290 +1291,318 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/openEHR-EHR-EVALUATION.problem-diagnosis.v1.adl">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsBenchmark2.drl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTraitComplex.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRuleSample.drl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="239" column="49" selection-start="8891" selection-end="8891" vertical-scroll-proportion="0.019906323" vertical-offset="0" max-vertical-offset="0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.4340909" vertical-offset="2142" max-vertical-offset="3026" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTrait.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule02.drl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="0" selection-start="5282" selection-end="5282" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state line="19" column="38" selection-start="484" selection-end="508" vertical-scroll-proportion="-2.728409" vertical-offset="2724" max-vertical-offset="3604" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNative.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule_used_poster.drl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="34" selection-start="4449" selection-end="4449" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="260" column="38" selection-start="9211" selection-end="9211" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/opencdsBnk-configComplex.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="3" selection-start="812" selection-end="812" vertical-scroll-proportion="0.42628774" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinNative.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="54" selection-start="4726" selection-end="4726" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/highlyJoin-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinTrait.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="84" selection-start="4618" selection-end="4618" vertical-scroll-proportion="2.356243" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/traitDon-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="207" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="24" selection-start="8316" selection-end="8316" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state line="163" column="71" selection-start="5323" selection-end="5337" vertical-scroll-proportion="0.0" vertical-offset="2771" max-vertical-offset="3145" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../drools/drools-core/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.023339318" vertical-offset="13" max-vertical-offset="3621" />
+        <state line="178" column="22" selection-start="6209" selection-end="6209" vertical-scroll-proportion="0.305618" vertical-offset="2754" max-vertical-offset="4947" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-clips/pom.xml">
+    <entry file="file://$PROJECT_DIR$/../drools/drools-persistence-jpa/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="33" selection-start="473" selection-end="473" vertical-scroll-proportion="0.36624774" vertical-offset="0" max-vertical-offset="557" />
+        <state line="236" column="135" selection-start="7716" selection-end="7716" vertical-scroll-proportion="4.4528303" vertical-offset="0" max-vertical-offset="4318" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/ObjectTypeNode.java">
+    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/compiler/integrationtests/KnowledgeBuilderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="30" selection-start="804" selection-end="804" vertical-scroll-proportion="0.21261261" vertical-offset="18" max-vertical-offset="12767" />
+        <state line="45" column="27" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="8483" />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/drools/knowledge-api/5.6.0-SNAPSHOT/knowledge-api-5.6.0-20131113.051325-80.jar!/org/drools/util/CompositeClassLoader.class">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="158" selection-end="158" vertical-scroll-proportion="-3.4" vertical-offset="0" max-vertical-offset="1530" />
+        <state line="109" column="35" selection-start="3927" selection-end="3927" vertical-scroll-proportion="0.18534961" vertical-offset="1686" max-vertical-offset="4233">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/reteoo/ReteooRuleBase.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/internal/runners/model/EachTestNotifier.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="510" column="4" selection-start="19576" selection-end="19576" vertical-scroll-proportion="8.385135" vertical-offset="0" max-vertical-offset="7667" />
+        <state line="12" column="16" selection-start="490" selection-end="490" vertical-scroll-proportion="0.3879668" vertical-offset="0" max-vertical-offset="482" />
       </provider>
     </entry>
     <entry file="jar://D:/Program Files/java7/jdk/src.zip!/java/lang/ClassLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="22" selection-start="6777" selection-end="6777" vertical-scroll-proportion="0.34056762" vertical-offset="1836" max-vertical-offset="36499" />
+        <state line="355" column="0" selection-start="13513" selection-end="13513" vertical-scroll-proportion="0.3195266" vertical-offset="4921" max-vertical-offset="36499" />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/drools/knowledge-api/5.6.0-SNAPSHOT/knowledge-api-5.6.0-SNAPSHOT-sources.jar!/org/drools/util/CompositeClassLoader.java">
+    <entry file="jar://D:/Program Files/java7/jdk/jre/lib/rt.jar!/sun/misc/Launcher.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="46" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.26109216" vertical-offset="0" max-vertical-offset="5712" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/drools-216.drl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.4213115" vertical-offset="867" max-vertical-offset="1479" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/openehrRule02.drl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.402339" vertical-offset="4619" max-vertical-offset="5474" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/openehrRuleSample.drl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.4821854" vertical-offset="2932" max-vertical-offset="3774" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/testTraitLogical.drl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/tstMapMemberTrait.drl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1904" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="19" selection-start="420" selection-end="420" vertical-scroll-proportion="0.35843372" vertical-offset="17" max-vertical-offset="1649" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="25" selection-start="2400" selection-end="2400" vertical-scroll-proportion="0.35843372" vertical-offset="612" max-vertical-offset="1224" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="0.46448088" vertical-offset="0" max-vertical-offset="366" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicDonMultiObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="958" selection-end="958" vertical-scroll-proportion="-1.0" vertical-offset="1088" max-vertical-offset="3026" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="58" selection-start="2081" selection-end="2081" vertical-scroll-proportion="-1.0346457" vertical-offset="1201" max-vertical-offset="1836" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/io/impl/ClassPathResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="1724" selection-end="1724" vertical-scroll-proportion="0.0" vertical-offset="421" max-vertical-offset="4760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/io/impl/ResourceFactoryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="1886" selection-end="1886" vertical-scroll-proportion="0.0" vertical-offset="506" max-vertical-offset="2040" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/drools/knowledge-api/5.6.0-SNAPSHOT/knowledge-api-5.6.0-SNAPSHOT-sources.jar!/org/drools/io/ResourceFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="23" selection-start="3657" selection-end="3657" vertical-scroll-proportion="0.0" vertical-offset="1322" max-vertical-offset="2482" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/builder/impl/KnowledgeBuilderImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1345" selection-end="1345" vertical-scroll-proportion="0.314578" vertical-offset="132" max-vertical-offset="1666" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="53" selection-start="5240" selection-end="5247" vertical-scroll-proportion="-0.09563758" vertical-offset="2845" max-vertical-offset="4692" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/impl/KnowledgeBaseImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="285" column="8" selection-start="11739" selection-end="11739" vertical-scroll-proportion="5.247244" vertical-offset="0" max-vertical-offset="5321" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/common/AbstractRuleBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1408" column="8" selection-start="55122" selection-end="55122" vertical-scroll-proportion="0.7322835" vertical-offset="21992" max-vertical-offset="22627" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BenchmarkUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="21" selection-start="453" selection-end="453" vertical-scroll-proportion="0.19256757" vertical-offset="67" max-vertical-offset="2550" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/openehrRule.drl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="21" selection-start="8291" selection-end="8291" vertical-scroll-proportion="-20.08" vertical-offset="3867" max-vertical-offset="4743" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/compiler/PackageBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3458" column="23" selection-start="153933" selection-end="153940" vertical-scroll-proportion="0.33294663" vertical-offset="55830" max-vertical-offset="64991" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/openehr-cds-core-0.9.jar!/se/cambio/cds/model/facade/execution/vo/ElementInstance.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="182" selection-end="182" vertical-scroll-proportion="0.14237855" vertical-offset="0" max-vertical-offset="1156" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/openehr-rm-core-1.0.2.jar!/org/openehr/rm/datatypes/text/DvCodedText.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="178" selection-end="178" vertical-scroll-proportion="0.14237855" vertical-offset="0" max-vertical-offset="748" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/openehr-cds-core-0.9.jar!/se/cambio/cds/model/facade/execution/vo/ContainerInstance.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="11" selection-start="427" selection-end="427" vertical-scroll-proportion="0.2847571" vertical-offset="0" max-vertical-offset="597" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/factmodel/traits/TraitMapCoreTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="46" selection-start="2301" selection-end="2394" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="21250">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2515#2531#0" expanded="false" />
-            <element signature="e#9867#9883#0" expanded="false" />
-            <element signature="e#12559#12575#0" expanded="false" />
-            <element signature="e#14874#14890#0" expanded="false" />
-            <element signature="e#33434#33450#0" expanded="false" />
-            <element signature="e#35799#35815#0" expanded="false" />
-            <element signature="e#37870#37886#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule00.drl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
-          <folding />
-        </state>
+        <state line="32" column="31" selection-start="1321" selection-end="1321" vertical-scroll-proportion="0.3195266" vertical-offset="365" max-vertical-offset="1275" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/opencdsRule.drl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="17" selection-start="1178" selection-end="1194" vertical-scroll-proportion="62.46154" vertical-offset="2270" max-vertical-offset="3145">
+        <state line="26" column="39" selection-start="874" selection-end="890" vertical-scroll-proportion="0.6949686" vertical-offset="0" max-vertical-offset="3145" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/kie/kie-internal/6.3.0-SNAPSHOT/kie-internal-6.3.0-20141211.063721-126.jar!/org/kie/internal/utils/KieHelper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="1623" selection-end="1623" vertical-scroll-proportion="0.84024894" vertical-offset="156" max-vertical-offset="663" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/main/java/org/drools/compiler/kie/builder/impl/KieBuilderImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="181" column="0" selection-start="7040" selection-end="7040" vertical-scroll-proportion="0.33333334" vertical-offset="2109" max-vertical-offset="9622" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/drools-216.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="207" selection-end="320" vertical-scroll-proportion="0.2672956" vertical-offset="0" max-vertical-offset="1479" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/tstTrait.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2839" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/openehr/test/openehrRule.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4760" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/test.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="-6.8" vertical-offset="0" max-vertical-offset="289" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="25" selection-start="2400" selection-end="2400" vertical-scroll-proportion="-6.76" vertical-offset="562" max-vertical-offset="1224" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1649" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="50" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1717">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/opencds/test/tstDrools.drl">
+    <entry file="file://$PROJECT_DIR$/src/main/java/openehr/test/OpencdsBenchmarking.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4947">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/integrationtests/DeclarativeAgendaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="30" selection-start="4669" selection-end="4669" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="16813">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/openehr/util/OpenehrArchetype.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="52" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2159">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#865#866#0" expanded="false" />
-            <element signature="e#908#909#0" expanded="false" />
-            <element signature="e#942#943#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/integrationtests/BackwardChainingTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="29" selection-start="2345" selection-end="4249" vertical-scroll-proportion="-25.576923" vertical-offset="83" max-vertical-offset="56525">
+        <state line="605" column="32" selection-start="23448" selection-end="23448" vertical-scroll-proportion="6.230769" vertical-offset="6053" max-vertical-offset="10948">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/openehrRule.drl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="1" selection-start="5003" selection-end="5003" vertical-scroll-proportion="0.0" vertical-offset="4460" max-vertical-offset="5015">
+        <state line="18" column="23" selection-start="665" selection-end="670" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5032" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sun/japex/japex/1.2.4/japex-1.2.4.jar!/com/sun/japex/Japex.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.866782" vertical-offset="128" max-vertical-offset="731" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/BasicMultiObject-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/openehr/test/OpenEHR.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sun/japex/japex/1.2.4/japex-1.2.4.jar!/com/sun/japex/Engine.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="18" selection-start="949" selection-end="949" vertical-scroll-proportion="0.36756757" vertical-offset="0" max-vertical-offset="1700">
+        <state line="52" column="0" selection-start="2194" selection-end="2194" vertical-scroll-proportion="0.86371684" vertical-offset="379" max-vertical-offset="969" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/TrivialDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="301" selection-end="301" vertical-scroll-proportion="0.31011608" vertical-offset="0" max-vertical-offset="603">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTrait.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="34" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.0" vertical-offset="141" max-vertical-offset="4607">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/opencdsBnk-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="0.32922536" vertical-offset="0" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/traitDon-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="40" selection-start="850" selection-end="853" vertical-scroll-proportion="0.77850163" vertical-offset="50" max-vertical-offset="1581">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/src/test/java/org/drools/compiler/integrationtests/Misc2Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="260" column="19" selection-start="10186" selection-end="10186" vertical-scroll-proportion="0.5207207" vertical-offset="1972" max-vertical-offset="113390" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/util/KBLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="26" selection-start="8" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2482">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/isAProfiler-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.122" vertical-offset="61" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinNative.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="91" selection-start="3070" selection-end="3070" vertical-scroll-proportion="-1.448" vertical-offset="2373" max-vertical-offset="2873">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicDonMultiObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="40" selection-start="1164" selection-end="1164" vertical-scroll-proportion="-3.726" vertical-offset="2305" max-vertical-offset="2805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/BasicInsertMultiObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="49" selection-start="2127" selection-end="2127" vertical-scroll-proportion="-1.856" vertical-offset="1965" max-vertical-offset="2465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/HighlyUsedJoinTrait.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="36" selection-start="4712" selection-end="4712" vertical-scroll-proportion="0.0" vertical-offset="2832" max-vertical-offset="3332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/benchmarks/TraitDonBmk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="165" column="25" selection-start="5411" selection-end="5411" vertical-scroll-proportion="0.0" vertical-offset="3002" max-vertical-offset="3502">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/drools/traits/profiler/IsAProfiling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="0" selection-start="4322" selection-end="4583" vertical-scroll-proportion="0.578" vertical-offset="2244" max-vertical-offset="3366">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/LICENSE-ASL-2.0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3536">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="43" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-compiler/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="128" selection-start="4767" selection-end="4767" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4794">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNative.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="34" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="3264">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/highlyJoin-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="80" selection-start="457" selection-end="457" vertical-scroll-proportion="0.29929578" vertical-offset="0" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BenchmarkUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="51" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="2550">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/reteoo/BetaMemory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="33" selection-start="4218" selection-end="4218" vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="2975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../drools/drools-core/src/main/java/org/drools/core/reteoo/SegmentMemory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="16" selection-start="5786" selection-end="5786" vertical-scroll-proportion="0.0" vertical-offset="2242" max-vertical-offset="8364">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/opencdsBnk-configComplex.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <folding>
+            <marker date="1421199080347" expanded="true" signature="375:559" placeholder="..." />
+            <marker date="1421199080347" expanded="true" signature="606:788" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingNativeComplex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="225" column="11" selection-start="8058" selection-end="8058" vertical-scroll-proportion="0.0" vertical-offset="2417" max-vertical-offset="5100">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/opencds/benchmarking/OpenCdsBenchmarkingTraitComplex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="36" selection-start="5776" selection-end="5776" vertical-scroll-proportion="-1.2869718" vertical-offset="2958" max-vertical-offset="4573">
           <folding />
         </state>
       </provider>
@@ -1574,6 +1675,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

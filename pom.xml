@@ -102,7 +102,12 @@
         <dependency>
             <groupId>org.drools</groupId>
             <artifactId>drools-compiler</artifactId>
-            <version>5.6.0-SNAPSHOT</version>
+            <version>6.3.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-api</artifactId>
+            <version>6.3.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>

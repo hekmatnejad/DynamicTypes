@@ -3,16 +3,45 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/src/test/resources/openehr/test/testTraitLogical.drl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-beliefs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools/drools-clips" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools/drools-compiler" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools/drools-core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools/drools-decisiontables" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools/drools-examples" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api/default-kiesession" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api/default-kiesession-from-file" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api/kie-module-from-multiple-files" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api/kiebase-inclusion" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api/kiecontainer-from-kierepo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api/kiefilesystem-example" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api/kiemodulemodel-example" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api/multiple-kbases" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api/named-kiesession" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-api/named-kiesession-from-file" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-cdi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-cdi/cdi-example" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-examples-cdi/cdi-example-with-inclusion" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools/drools-jsr94" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools/drools-persistence-jpa" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-pmml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-reteoo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools/drools-scorecards" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools/drools-templates" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../drools/drools-verifier" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-workbench-models" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-workbench-models/drools-workbench-models-commons" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-workbench-models/drools-workbench-models-datamodel-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-workbench-models/drools-workbench-models-guided-dtable" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-workbench-models/drools-workbench-models-guided-dtree" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-workbench-models/drools-workbench-models-guided-scorecard" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-workbench-models/drools-workbench-models-guided-template" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/drools-workbench-models/drools-workbench-models-test-scenarios" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/kie-ci" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/kie-ci-osgi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/kie-maven-plugin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../drools/knowledge-api-legacy5-adapter" charset="UTF-8" />
   </component>
 </project>
 

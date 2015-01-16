@@ -1,15 +1,18 @@
 package openehr.test;
 
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
-import org.drools.factmodel.traits.TraitFactory;
-import org.drools.io.ResourceFactory;
-import org.drools.runtime.StatefulKnowledgeSession;
+
+import drools.traits.util.KBLoader;
+import org.drools.core.factmodel.traits.TraitFactory;
+import org.drools.core.factmodel.traits.VirtualPropertyMode;
 import org.junit.Test;
 
+import org.kie.api.KieServices;
+import org.kie.api.builder.Message;
+import org.kie.api.builder.Results;
+import org.kie.api.io.ResourceType;
+import org.kie.api.runtime.KieSession;
+import org.kie.internal.io.ResourceFactory;
+import org.kie.internal.utils.KieHelper;
 import org.openehr.rm.datatypes.text.DvCodedText;
 import org.openehr.rm.datatypes.text.DvText;
 import se.cambio.cds.model.facade.execution.vo.ArchetypeReference;
@@ -32,12 +35,33 @@ public class OpenEHR {
 
         System.out.println(System.getProperty("user.dir"));
 
-//        KnowledgeBase kBase = buildKB("openehr/test/openehrRule.drl");
-        KnowledgeBase kBase = buildKB("openehrRule.drl");
-        StatefulKnowledgeSession ksession = kBase.newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        KieHelper helper = new KieHelper();
+        helper.addResource( KieServices.Factory.get().getResources()
+                .newClassPathResource("openehrRule.drl"), ResourceType.DRL );
 
-        ArchetypeReference arRespiration = new ArchetypeReference("EHR","openEHR-EHR-OBSERVATION.respiration.v1","","LAST");
+        //helper.addResource(ResourceFactory.newClassPathResource("test.drl"),ResourceType.DRL);
+
+        Results res = helper.verify();
+        if ( res.hasMessages( Message.Level.ERROR ) ) {
+
+        }
+        KieSession ksession = helper.build().newKieSession();
+        TraitFactory.setMode(VirtualPropertyMode.MAP, ksession.getKieBase());
+        /*
+        String strDrl = "\n" +
+                "declare FactA\n" +
+                "    fieldB: FactB\n" +
+                "end\n" +
+                "declare FactB extends FactA end\n" +
+                "rule R1 when\n" +
+                "   $a : FactA( )\n" +
+                "   $b : FactB( this == $a.fieldB )\n" +
+                "then\n" +
+                "end";
+        KieSession ksession = KBLoader.createKBfromDrlSource(strDrl);
+        //java.lang.RuntimeException: Unknown resource type: ResourceType = 'Drools Business Rule Language'
+          */
+                ArchetypeReference arRespiration = new ArchetypeReference("EHR","openEHR-EHR-OBSERVATION.respiration.v1","","LAST");
         DvCodedText dv = new DvCodedText("Acute Respiratory Failure","local","at0057");
         ElementInstance elRespiration = new ElementInstance(
                 "openEHR-EHR-OBSERVATION.respiration.v1/data[at0001]/events[at0002]/data[at0003]/items[at0009]",
@@ -66,31 +90,6 @@ public class OpenEHR {
 
     }
 
-
-    private KnowledgeBase buildKB( String drlPath ) {
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newClassPathResource(drlPath), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-            fail( knowledgeBuilder.getErrors().toString() );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-    }
-
-    private KnowledgeBase loadKnowledgeBaseFromString( String drlSource ){
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-            fail( knowledgeBuilder.getErrors().toString() );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-
-    }
-
-
 /*
 ule "openehr-respiratory-failure/gt0005"
 salience 1
@@ -109,5 +108,9 @@ then
    modify($gt0008){};
 end
 */
+public static void main(String[] args) {
+    OpenEHR openEHR = new OpenEHR();
+    openEHR.testTraitOpenehr();
+}
 
 }

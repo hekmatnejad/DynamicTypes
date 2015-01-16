@@ -11,8 +11,7 @@
         <param name="japex.driverClass" value="opencds.benchmarking.OpenCdsBenchmarkingTrait"/>
         <param name="description" value="OpenCDS Trait Driver"/>
     </driver>
-
-        <driver name="OpenCDS Native">
+    <driver name="OpenCDS Native">
         <param name="japex.driverClass" value="opencds.benchmarking.OpenCdsBenchmarkingNative"/>
         <param name="description" value="OpenCDS Native Driver"/>
     </driver>

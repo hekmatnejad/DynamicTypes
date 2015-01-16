@@ -11,16 +11,10 @@ package opencds.benchmarking;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
-import org.drools.definition.type.FactType;
-import org.drools.factmodel.traits.TraitFactory;
-import org.drools.io.ResourceFactory;
-import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.FactHandle;
+
+import drools.traits.util.KBLoader;
+import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.FactHandle;
 import org.opencds.vmr.v1_0.internal.ObservationResult;
 import org.opencds.vmr.v1_0.internal.ObservationValue;
 import org.opencds.vmr.v1_0.internal.datatypes.CD;
@@ -31,13 +25,14 @@ import java.util.UUID;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.fail;
+import drools.traits.util.KBLoader;
 
 
 public class OpenCdsBenchmarkingNative extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 500;
-    private static StatefulKnowledgeSession ksession = null;
+    private static int maxStep = 100;
+    private static KieSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
 
@@ -47,7 +42,7 @@ public class OpenCdsBenchmarkingNative extends JapexDriverBase implements JapexD
     public void initializeDriver() {
         System.out.println("\ninitializeDriver");
 
-        drl = "package opencds.test;\n" +
+        drl = "package opencds.benchmarking;\n" +
                 "\n" +
                 "import org.opencds.vmr.v1_0.internal.*;\n" +
                 "import org.opencds.vmr.v1_0.internal.concepts.*;\n" +
@@ -108,8 +103,7 @@ public class OpenCdsBenchmarkingNative extends JapexDriverBase implements JapexD
 
         drl += rule;
 
-        ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        ksession = KBLoader.createKBfromDrlSource(drl);
         ksession.fireAllRules();
         ksession.getAgenda().clear();
 
@@ -169,19 +163,6 @@ public class OpenCdsBenchmarkingNative extends JapexDriverBase implements JapexD
         assertEquals(0,clearVM());
     }
 
-
-    private KnowledgeBase loadKnowledgeBaseFromString( String drlSource ){
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-//            fail( knowledgeBuilder.getErrors().toString() );
-            System.err.print( knowledgeBuilder.getErrors().toString() );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-
-    }
 
     private long clearVM()
     {

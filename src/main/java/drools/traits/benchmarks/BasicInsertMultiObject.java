@@ -11,17 +11,12 @@ package drools.traits.benchmarks;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
-import org.drools.common.DefaultFactHandle;
-import org.drools.definition.type.FactType;
-import org.drools.factmodel.traits.TraitFactory;
-import org.drools.io.ResourceFactory;
-import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.FactHandle;
+import drools.traits.util.KBLoader;
+import org.drools.core.common.DefaultFactHandle;
+import org.kie.api.definition.type.FactType;
+import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.FactHandle;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import static junit.framework.Assert.assertEquals;
@@ -30,7 +25,7 @@ public class BasicInsertMultiObject extends JapexDriverBase implements JapexDriv
 
     private static String drl = "";
     private static int maxStep = 100;
-    private static StatefulKnowledgeSession ksession = null;
+    private static KieSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
 
@@ -75,8 +70,7 @@ public class BasicInsertMultiObject extends JapexDriverBase implements JapexDriv
 
         drl += rule;
 //        System.out.println(drl);
-        ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        ksession = KBLoader.createKBfromDrlSource(drl);
         ksession.fireAllRules();
         ksession.getAgenda().clear();
 
@@ -89,7 +83,7 @@ public class BasicInsertMultiObject extends JapexDriverBase implements JapexDriv
 
         facts = new ArrayList<Object>(maxStep);
 
-        FactType inputObject = ksession.getKnowledgeBase().getFactType( "opencds.test", "InputObject" );
+        FactType inputObject = ksession.getKieBase().getFactType( "opencds.test", "InputObject" );
         try {
 
             Object obj = null;
@@ -131,18 +125,6 @@ public class BasicInsertMultiObject extends JapexDriverBase implements JapexDriv
         assertEquals(0, clearVM());
     }
 
-
-    private KnowledgeBase loadKnowledgeBaseFromString( String drlSource ){
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-            System.err.print( knowledgeBuilder.getErrors().toString() );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-
-    }
 
     private long clearVM()
     {

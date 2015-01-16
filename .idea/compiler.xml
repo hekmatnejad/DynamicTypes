@@ -23,30 +23,85 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="drools-clips" />
+        <module name="cdi-example" />
+        <module name="cdi-example-with-inclusion" />
+        <module name="default-kiesession" />
+        <module name="default-kiesession-from-file" />
+        <module name="drools-beliefs" />
         <module name="drools-compiler" />
         <module name="drools-core" />
         <module name="drools-decisiontables" />
         <module name="drools-examples" />
         <module name="drools-jsr94" />
         <module name="drools-persistence-jpa" />
+        <module name="drools-pmml" />
+        <module name="drools-reteoo" />
         <module name="drools-scorecards" />
         <module name="drools-templates" />
         <module name="drools-verifier" />
+        <module name="drools-workbench-models-commons" />
+        <module name="drools-workbench-models-datamodel-api" />
+        <module name="drools-workbench-models-guided-dtable" />
+        <module name="drools-workbench-models-guided-dtree" />
+        <module name="drools-workbench-models-guided-scorecard" />
+        <module name="drools-workbench-models-guided-template" />
+        <module name="drools-workbench-models-test-scenarios" />
+        <module name="kie-ci" />
+        <module name="kie-ci-osgi" />
+        <module name="kie-maven-plugin" />
+        <module name="kie-module-from-multiple-files" />
+        <module name="kiebase-inclusion" />
+        <module name="kiecontainer-from-kierepo" />
+        <module name="kiefilesystem-example" />
+        <module name="kiemodulemodel-example" />
+        <module name="knowledge-api" />
+        <module name="multiple-kbases" />
+        <module name="named-kiesession" />
+        <module name="named-kiesession-from-file" />
         <module name="openCDS" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cdi-example" target="1.6" />
+      <module name="cdi-example-with-inclusion" target="1.6" />
+      <module name="default-kiesession" target="1.6" />
+      <module name="default-kiesession-from-file" target="1.6" />
+      <module name="drools-beliefs" target="1.6" />
       <module name="drools-clips" target="1.5" />
-      <module name="drools-compiler" target="1.5" />
-      <module name="drools-core" target="1.5" />
-      <module name="drools-decisiontables" target="1.5" />
-      <module name="drools-examples" target="1.5" />
-      <module name="drools-jsr94" target="1.5" />
-      <module name="drools-persistence-jpa" target="1.5" />
-      <module name="drools-scorecards" target="1.5" />
-      <module name="drools-templates" target="1.5" />
-      <module name="drools-verifier" target="1.5" />
+      <module name="drools-compiler" target="1.6" />
+      <module name="drools-core" target="1.6" />
+      <module name="drools-decisiontables" target="1.6" />
+      <module name="drools-examples" target="1.6" />
+      <module name="drools-examples-api" target="1.6" />
+      <module name="drools-examples-cdi" target="1.6" />
+      <module name="drools-jsr94" target="1.6" />
+      <module name="drools-multiproject" target="1.6" />
+      <module name="drools-persistence-jpa" target="1.6" />
+      <module name="drools-pmml" target="1.6" />
+      <module name="drools-reteoo" target="1.6" />
+      <module name="drools-scorecards" target="1.6" />
+      <module name="drools-templates" target="1.6" />
+      <module name="drools-verifier" target="1.6" />
+      <module name="drools-workbench-models" target="1.6" />
+      <module name="drools-workbench-models-commons" target="1.6" />
+      <module name="drools-workbench-models-datamodel-api" target="1.6" />
+      <module name="drools-workbench-models-guided-dtable" target="1.6" />
+      <module name="drools-workbench-models-guided-dtree" target="1.6" />
+      <module name="drools-workbench-models-guided-scorecard" target="1.6" />
+      <module name="drools-workbench-models-guided-template" target="1.6" />
+      <module name="drools-workbench-models-test-scenarios" target="1.6" />
+      <module name="kie-ci" target="1.6" />
+      <module name="kie-ci-osgi" target="1.6" />
+      <module name="kie-maven-plugin" target="1.6" />
+      <module name="kie-module-from-multiple-files" target="1.6" />
+      <module name="kiebase-inclusion" target="1.6" />
+      <module name="kiecontainer-from-kierepo" target="1.6" />
+      <module name="kiefilesystem-example" target="1.6" />
+      <module name="kiemodulemodel-example" target="1.6" />
+      <module name="knowledge-api" target="1.6" />
+      <module name="multiple-kbases" target="1.6" />
+      <module name="named-kiesession" target="1.6" />
+      <module name="named-kiesession-from-file" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

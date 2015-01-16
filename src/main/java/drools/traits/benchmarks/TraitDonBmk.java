@@ -4,18 +4,11 @@ import com.jprofiler.api.agent.Controller;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
-import org.drools.builder.ResultSeverity;
-import org.drools.common.DefaultFactHandle;
-import org.drools.definition.type.FactType;
-import org.drools.factmodel.traits.TraitFactory;
-import org.drools.io.ResourceFactory;
-import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.FactHandle;
+import drools.traits.util.KBLoader;
+import org.drools.core.common.DefaultFactHandle;
+import org.kie.api.definition.type.FactType;
+import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.FactHandle;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -44,7 +37,7 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
     private static String drl = "";
     private static String rule = "";
     private static int maxStep = 100;
-    private static StatefulKnowledgeSession ksession = null;
+    private static KieSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
 
@@ -56,7 +49,7 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
 
         drl = "package drools.traits.benchmarks;\n" +
                 "\n" +
-                "import org.drools.factmodel.traits.Traitable;\n" +
+                "import org.drools.core.factmodel.traits.Traitable;\n" +
                 "" +
                 "";
 
@@ -122,8 +115,7 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
 
 //        System.out.println(drl);
 
-        ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        ksession = KBLoader.createKBfromDrlSource(drl);
         ksession.fireAllRules();
         ksession.getAgenda().clear();
 
@@ -131,7 +123,7 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
 
         try {
             for ( int j = 0; j < maxStep; j++ ) {
-                FactType inputObject = ksession.getKnowledgeBase().getFactType( "drools.traits.benchmarks", "TestClass" );
+                FactType inputObject = ksession.getKieBase().getFactType( "drools.traits.benchmarks", "TestClass" );
 
                 Object obj = null;
                 obj = inputObject.newInstance();
@@ -166,11 +158,11 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
 
     @Override
     public void run(TestCase testCase) {
-//        if(testCase.getName().equals("test3"))
-//        startProfiler();
+        if(testCase.getName().equals("test3"))
+        startProfiler();
         int fired = ksession.fireAllRules();
-//        if(testCase.getName().equals("test3"))
-//        stopProfiler(getParam("maxStep")+testCase.getName());
+        if(testCase.getName().equals("test3"))
+        stopProfiler(getParam("maxStep")+testCase.getName());
         System.out.println(fired);
     }
 
@@ -179,24 +171,6 @@ public class TraitDonBmk extends JapexDriverBase implements JapexDriver {
         assertEquals(0, clearVM());
     }
 
-
-    private KnowledgeBase loadKnowledgeBaseFromString( String drlSource ){
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-            System.err.print( knowledgeBuilder.getErrors().toString() );
-        }
-        if ( knowledgeBuilder.hasResults(ResultSeverity.INFO) ) {
-            System.err.print( knowledgeBuilder.getResults(ResultSeverity.INFO) );
-        }
-        if ( knowledgeBuilder.hasResults( ResultSeverity.WARNING) ) {
-            System.err.print( knowledgeBuilder.getResults( ResultSeverity.WARNING ) );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-
-    }
 
     private long clearVM()
     {

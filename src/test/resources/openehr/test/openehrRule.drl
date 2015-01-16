@@ -15,7 +15,8 @@ import org.opencds.vmr.v1_0.internal.*;
 import org.opencds.vmr.v1_0.internal.concepts.*;
 
 import openehr.util.OpenehrArchetype;
-import org.drools.factmodel.traits.*;
+//import org.drools.factmodel.traits.*;
+import org.drools.core.factmodel.traits.*
 
 declare ElementInstance
 @Traitable(logical = true)

@@ -4,17 +4,12 @@ import com.jprofiler.api.agent.Controller;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
-import org.drools.common.DefaultFactHandle;
-import org.drools.definition.type.FactType;
-import org.drools.factmodel.traits.TraitFactory;
-import org.drools.io.ResourceFactory;
-import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.FactHandle;
+
+import drools.traits.util.KBLoader;
+import org.drools.core.common.DefaultFactHandle;
+import org.kie.api.definition.type.FactType;
+import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.FactHandle;
 import org.opencds.vmr.v1_0.internal.ObservationValue;
 import org.opencds.vmr.v1_0.internal.datatypes.CD;
 
@@ -26,6 +21,8 @@ import java.util.UUID;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.fail;
+import drools.traits.util.KBLoader;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,8 +34,8 @@ import static junit.framework.Assert.fail;
 public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 500;
-    private static StatefulKnowledgeSession ksession = null;
+    private static int maxStep = 100;
+    private static KieSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
 
 
@@ -47,12 +44,12 @@ public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDr
     public void initializeDriver() {
         System.out.println("\ninitializeDriver");
 
-        drl = "package opencds.test;\n" +
+        drl = "package opencds.benchmarking;\n" +
                 "\n" +
                 "import org.opencds.vmr.v1_0.internal.*;\n" +
                 "import org.opencds.vmr.v1_0.internal.concepts.*;\n" +
                 "import org.opencds.vmr.v1_0.internal.datatypes.*;\n" +
-                "import org.drools.factmodel.traits.Traitable;\n" +
+                "import org.drools.core.factmodel.traits.Traitable;\n" +
 //                "import org.drools.factmodel.traits.Thing;\n" +
                 "import java.util.*;\n" +
                 "\n" +
@@ -152,8 +149,7 @@ public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDr
 
         drl += trait + rule;
 
-        ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        ksession = KBLoader.createKBfromDrlSource(drl);
         ksession.fireAllRules();
         ksession.getAgenda().clear();
 
@@ -166,7 +162,7 @@ public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDr
 
         facts = new ArrayList<Object>(maxStep);
 
-        FactType observationResult = ksession.getKnowledgeBase().getFactType( "opencds.test", "ObservationResult2" );
+        FactType observationResult = ksession.getKieBase().getFactType( "opencds.benchmarking", "ObservationResult2" );
         try {
             for ( int j = 0; j < maxStep; j++ ) {
 
@@ -225,18 +221,6 @@ public class OpenCdsBenchmarkingTrait extends JapexDriverBase implements JapexDr
         assertEquals(0, clearVM());
     }
 
-
-    private KnowledgeBase loadKnowledgeBaseFromString( String drlSource ){
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-            System.err.print( knowledgeBuilder.getErrors().toString() );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-
-    }
 
     private long clearVM()
     {

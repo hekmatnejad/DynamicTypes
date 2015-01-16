@@ -7,15 +7,15 @@
     <param name="japex.warmupIterations" value="30"/>
     <param name="japex.runIterations" value="1"/>
 
+    <driver name="OpenCDS Native Complex">
+        <param name="japex.driverClass" value="opencds.benchmarking.OpenCdsBenchmarkingNativeComplex"/>
+        <param name="description" value="OpenCDS Native Driver"/>
+    </driver>
     <driver name="OpenCDS with Trait Complex">
         <param name="japex.driverClass" value="opencds.benchmarking.OpenCdsBenchmarkingTraitComplex"/>
         <param name="description" value="OpenCDS Trait Driver"/>
     </driver>
 
-    <driver name="OpenCDS Native Complex">
-        <param name="japex.driverClass" value="opencds.benchmarking.OpenCdsBenchmarkingNativeComplex"/>
-        <param name="description" value="OpenCDS Native Driver"/>
-    </driver>
     <!--
     -->
 

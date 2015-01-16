@@ -79,8 +79,8 @@ public class BenchmarkUtil {
 //        //benchmarkThisMethod(opencdsBenchmarking,"testOpencdsBenchmark2TraitMethod");
 
 //        openCDSBenchmark();
-//        openCDSBenchmarkComplex();
-        traitDonBenchmark();
+        openCDSBenchmarkComplex();
+//        traitDonBenchmark();
 //        highlyJoinBenchmark();
 //        BasicMultiObjectBenchmark();
 //        isAProfiling();

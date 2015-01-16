@@ -4,17 +4,14 @@ import com.jprofiler.api.agent.Controller;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
-import org.drools.common.DefaultFactHandle;
-import org.drools.definition.type.FactType;
-import org.drools.factmodel.traits.TraitFactory;
-import org.drools.io.ResourceFactory;
-import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.FactHandle;
+
+import drools.traits.util.KBLoader;
+import org.drools.core.common.DefaultFactHandle;
+import org.drools.core.factmodel.traits.TraitFactory;
+import org.kie.api.definition.type.FactType;
+import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.FactHandle;
+import org.kie.internal.runtime.StatefulKnowledgeSession;
 import org.opencds.vmr.v1_0.internal.ObservationValue;
 import org.opencds.vmr.v1_0.internal.datatypes.CD;
 
@@ -35,8 +32,8 @@ import static junit.framework.Assert.assertEquals;
 public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements JapexDriver {
 
     private static String drl = "";
-    private static int maxStep = 100;
-    private static StatefulKnowledgeSession ksession = null;
+    private static int maxStep = 500;
+    private static KieSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
     double[][] warmups;
     int wCounter = 0;
@@ -52,12 +49,12 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
         warmups = new double[TN][WC];
         System.out.println("\ninitializeDriver");
 
-        drl = "package opencds.test;\n" +
+        drl = "package opencds.benchmarking;\n" +
                 "\n" +
                 "import org.opencds.vmr.v1_0.internal.*;\n" +
                 "import org.opencds.vmr.v1_0.internal.concepts.*;\n" +
                 "import org.opencds.vmr.v1_0.internal.datatypes.*;\n" +
-                "import org.drools.factmodel.traits.Traitable;\n" +
+                "import org.drools.core.factmodel.traits.Traitable;\n" +
                 "import java.util.*;\n" +
                 "" +
                 "declare InputObject\n" +
@@ -151,8 +148,7 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
 
         drl += rule;
 
-        ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        ksession = KBLoader.createKBfromDrlSource(drl);
         ksession.fireAllRules();
         ksession.getAgenda().clear();
 
@@ -164,8 +160,7 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
     public void prepare(TestCase testCase) {
 
         facts = new ArrayList<Object>(maxStep);
-
-        FactType inputObject = ksession.getKnowledgeBase().getFactType( "opencds.test", "InputObject" );
+        FactType inputObject = ksession.getKieBase().getFactType( "opencds.benchmarking", "InputObject" );
         try {
             for ( int j = 0; j < maxStep; j++ ) {
 
@@ -173,17 +168,17 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
                 obj = inputObject.newInstance();
                 inputObject.set(obj,"id","00A"+j);
                 facts.add(obj);
-                ksession.insert(obj);
+//                ksession.insert(obj);
                 obj = inputObject.newInstance();
                 inputObject.set(obj,"id","00B"+j);
                 inputObject.set(obj,"sID","00A"+j);
                 inputObject.set(obj,"tID","00C"+j);
                 facts.add(obj);
-                ksession.insert(obj);
+//                ksession.insert(obj);
                 obj = inputObject.newInstance();
                 inputObject.set(obj,"id","00C"+j);
                 facts.add(obj);
-                ksession.insert(obj);
+//                ksession.insert(obj);
             }
         } catch (InstantiationException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -196,23 +191,38 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
 
     @Override
     public void warmup(TestCase testCase) {
+            for ( Object obj:facts ) {
+
+                ksession.insert(obj);
+            }
 
 //        System.out.println("warmup");
         long start = System.nanoTime();
         ksession.fireAllRules();
         warmups[tCounter][wCounter++] += (System.nanoTime()-start)/(double)1e6;
         assertEquals(0, clearVM());
-        for ( Object o : facts ) {
-            ksession.insert(o);
-        }
+//        for ( Object o : facts ) {
+//            ksession.insert(o);
+//        }
         System.out.println("WT: " + (System.nanoTime() - start) / 1000000);
     }
 
     @Override
     public void run(TestCase testCase) {
+//        if(testCase.getName().equalsIgnoreCase("test3"))
+//            startProfiler();
+        for ( Object obj:facts ) {
 
+            ksession.insert(obj);
+        }
         int fired = ksession.fireAllRules();
         System.out.println(fired);
+
+        assertEquals(0, clearVM());
+//        if(testCase.getName().equalsIgnoreCase("test3"))  {
+//            stopProfiler(testCase.getName());
+//            System.out.println(">>>Profiling is completed!!!");
+//        }
     }
 
     @Override
@@ -230,19 +240,7 @@ public class OpenCdsBenchmarkingTraitComplex extends JapexDriverBase implements 
     }
 
 
-    private KnowledgeBase loadKnowledgeBaseFromString( String drlSource ){
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-            System.err.print( knowledgeBuilder.getErrors().toString() );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-
-    }
-
-    private long clearVM()
+     private long clearVM()
     {
         Collection<DefaultFactHandle> factHandles = ksession.getFactHandles();
         Collection<DefaultFactHandle> cloneFactHandles = new ArrayList<DefaultFactHandle>(factHandles);

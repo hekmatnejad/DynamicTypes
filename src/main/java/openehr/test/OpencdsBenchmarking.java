@@ -2,27 +2,21 @@ package openehr.test;
 
 import com.sun.japex.JapexDriver;
 import com.sun.japex.TestCase;
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseFactory;
-import org.drools.base.ClassObjectType;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
-import org.drools.common.AgendaItem;
-import org.drools.common.InternalFactHandle;
-import org.drools.common.NamedEntryPoint;
-import org.drools.common.PropagationContextImpl;
-import org.drools.definition.type.FactType;
-import org.drools.factmodel.traits.TraitFactory;
-import org.drools.impl.KnowledgeBaseImpl;
-import org.drools.io.ResourceFactory;
-import org.drools.reteoo.*;
-import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.FactHandle;
-import org.drools.spi.KnowledgeHelper;
-import org.drools.spi.PropagationContext;
+
+import drools.traits.util.KBLoader;
+import org.drools.core.base.ClassObjectType;
+import org.drools.core.common.InternalFactHandle;
+import org.drools.core.common.NamedEntryPoint;
+import org.drools.core.impl.KnowledgeBaseImpl;
+import org.drools.core.reteoo.*;
+import org.drools.core.spi.KnowledgeHelper;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.kie.api.definition.type.FactType;
+import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.FactHandle;
+import org.kie.api.runtime.rule.PropagationContext;
+import org.kie.internal.runtime.StatefulKnowledgeSession;
 import org.opencds.vmr.v1_0.internal.ObservationResult;
 import org.opencds.vmr.v1_0.internal.ObservationValue;
 import org.opencds.vmr.v1_0.internal.datatypes.CD;
@@ -49,9 +43,8 @@ public class OpencdsBenchmarking{
 //        if(true) return;
 
 //        KnowledgeBase kBase = buildKB( "opencds/test/opencdsTraitBenchmark.drl" );
-        KnowledgeBase kBase = buildKB( "opencds/test/opencdsBenchmark.drl" );
+        KieSession knowledgeSession = KBLoader.createKBfromDrlFile("opencds/test/opencdsBenchmark.drl");
 
-        StatefulKnowledgeSession knowledgeSession = kBase.newStatefulKnowledgeSession();
 
 
         for ( int j = 0; j < 20; j++ ) {
@@ -187,8 +180,7 @@ public class OpencdsBenchmarking{
         System.out.println("Initializing KB.");
         long st2 = System.currentTimeMillis();
 
-        StatefulKnowledgeSession ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        KieSession ksession = KBLoader.createKBfromDrlFile(drl);
         ksession.fireAllRules();
         ksession.getAgenda().clear();
         long ed2 = System.currentTimeMillis();
@@ -231,7 +223,7 @@ public class OpencdsBenchmarking{
         ksession.fireAllRules();
         FactHandle handle = ksession.insert("clean-all");
         ksession.fireAllRules();
-        ksession.retract( handle );
+        ksession.retract(handle);
         ksession.fireAllRules();
         assertEquals(0, ksession.getObjects().size());
 
@@ -371,8 +363,7 @@ public class OpencdsBenchmarking{
         System.out.println("Initializing KB.");
         long st2 = System.nanoTime();
 
-        StatefulKnowledgeSession ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        KieSession ksession = KBLoader.createKBfromDrlFile(drl);
         ksession.fireAllRules();
         ksession.getAgenda().clear();
         long ed2 = System.nanoTime();
@@ -381,7 +372,7 @@ public class OpencdsBenchmarking{
 
         Collection<FactHandle> handles = new ArrayList<FactHandle>(maxStep);
         Collection<Object> facts = new ArrayList<Object>(maxStep);
-        FactType observationResult = ksession.getKnowledgeBase().getFactType( "opencds.test", "ObservationResult2" );
+        FactType observationResult = ksession.getKieBase().getFactType( "opencds.test", "ObservationResult2" );
         for ( int j = 0; j < maxStep; j++ ) {
 
             Object obs = observationResult.newInstance();
@@ -513,8 +504,7 @@ public class OpencdsBenchmarking{
         System.out.println("Initializing KB.");
         long st2 = System.nanoTime();
 
-        StatefulKnowledgeSession ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        KieSession ksession = KBLoader.createKBfromDrlFile(drl);
         ksession.fireAllRules();
         ksession.getAgenda().clear();
         long ed2 = System.nanoTime();
@@ -613,14 +603,14 @@ public class OpencdsBenchmarking{
                 "";
 
 
-        StatefulKnowledgeSession ks = loadKnowledgeBaseFromString( source ).newStatefulKnowledgeSession();
+        KieSession ks = KBLoader.createKBfromDrlSource(source);
         ks.fireAllRules();
         FactHandle handle = ks.insert( "Foo" );
 
         KnowledgeHelper helper = (KnowledgeHelper) ks.getGlobal( "helper" );
 
         assertNotNull( helper );
-
+         /*
         ReteooRuleBase rb = ((ReteooRuleBase) ((KnowledgeBaseImpl) ks.getKnowledgeBase()).getRuleBase());
         EntryPointNode epn = rb.getAddedEntryNodeCache().iterator().next();
         ObjectTypeNode otn = epn.getObjectTypeNodes().get( new ClassObjectType( Integer.class ) );
@@ -665,31 +655,9 @@ public class OpencdsBenchmarking{
         System.out.println( "Starting done " + ( System.nanoTime() - now )*1e-6 );
         System.out.println( ks.getGlobal( "counter" ) );
 
-
+           */
     }
 
-    private KnowledgeBase buildKB( String drlPath ) {
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newClassPathResource(drlPath), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-            fail( knowledgeBuilder.getErrors().toString() );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-    }
-
-    private KnowledgeBase loadKnowledgeBaseFromString( String drlSource ){
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-            fail( knowledgeBuilder.getErrors().toString() );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-
-    }
 
 
 }

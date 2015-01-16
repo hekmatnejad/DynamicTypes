@@ -15,7 +15,8 @@ import org.opencds.vmr.v1_0.internal.*;
 import org.opencds.vmr.v1_0.internal.concepts.*;
 
 import openehr.util.OpenehrArchetype;
-import org.drools.factmodel.traits.*;
+//import org.drools.factmodel.traits.*;
+import org.drools.core.factmodel.traits.*
 
 
 
@@ -218,7 +219,7 @@ when
 then
     Object z = don(  $elm, TAcuteRespiratoryFailure.class);
     //$mp.put($ut.getItemName($code), z);
-    update($mp);  //!!!! we shouldn't need this update but it doesn't work without this update
+    update($mp);
     System.out.println("><><2><><" + "donned with TAcuteRespiratoryFailure " + $ut.getItemName($code));
 end
 

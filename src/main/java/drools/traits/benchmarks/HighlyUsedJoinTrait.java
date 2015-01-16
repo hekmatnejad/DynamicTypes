@@ -4,17 +4,10 @@ import com.jprofiler.api.agent.Controller;
 import com.sun.japex.JapexDriver;
 import com.sun.japex.JapexDriverBase;
 import com.sun.japex.TestCase;
-import org.drools.KnowledgeBase;
-import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
-import org.drools.common.DefaultFactHandle;
-import org.drools.definition.type.FactType;
-import org.drools.factmodel.traits.TraitFactory;
-import org.drools.io.ResourceFactory;
-import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.rule.FactHandle;
+import drools.traits.util.KBLoader;
+import org.drools.core.common.DefaultFactHandle;
+import org.kie.api.definition.type.FactType;
+import org.kie.api.runtime.KieSession;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -33,7 +26,7 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
 
     private static String drl = "";
     private static int maxStep = 1000;
-    private static StatefulKnowledgeSession ksession = null;
+    private static KieSession ksession = null;
     static Collection<Object> facts = new ArrayList<Object>(maxStep);
     double[][] warmups;
     int wCounter = 0;
@@ -49,9 +42,9 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
         warmups = new double[TN][WC];
         System.out.println("\ninitializeDriver");
 
-        drl = "package opencds.test;\n" +
+        drl = "package drools.traits.benchmarks;\n" +
                 "\n" +
-                "import org.drools.factmodel.traits.Traitable;\n" +
+                "import org.drools.core.factmodel.traits.Traitable;\n" +
                 "import java.util.*;\n" +
                 "\n" +
                 "declare InputObject\n" +
@@ -106,8 +99,7 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
                 "end\n";
         drl += rule;
 //        System.out.println(drl);
-        ksession = loadKnowledgeBaseFromString(drl).newStatefulKnowledgeSession();
-        TraitFactory.setMode(TraitFactory.VirtualPropertyMode.MAP, ksession.getKnowledgeBase());
+        ksession = KBLoader.createKBfromDrlSource(drl);
         ksession.fireAllRules();
         ksession.getAgenda().clear();
 
@@ -120,7 +112,7 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
 
         facts = new ArrayList<Object>(maxStep);
 
-        FactType inputObject = ksession.getKnowledgeBase().getFactType( "opencds.test", "InputObject" );
+        FactType inputObject = ksession.getKieBase().getFactType( "drools.traits.benchmarks", "InputObject" );
         try {
 
                 Object obj = null;
@@ -153,12 +145,12 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
 
     @Override
     public void run(TestCase testCase) {
-//        if(testCase.getName().equalsIgnoreCase("test3"))
-//        startProfiler();
+        if(testCase.getName().equalsIgnoreCase("test3"))
+        startProfiler();
         int fired = ksession.fireAllRules();
         System.out.println(fired);
-//        if(testCase.getName().equalsIgnoreCase("test3"))
-//        stopProfiler(testCase.getName());
+        if(testCase.getName().equalsIgnoreCase("test3"))
+        stopProfiler(testCase.getName());
     }
 
     @Override
@@ -175,18 +167,6 @@ public class HighlyUsedJoinTrait extends JapexDriverBase implements JapexDriver 
         }
     }
 
-
-    private KnowledgeBase loadKnowledgeBaseFromString( String drlSource ){
-        KnowledgeBuilder knowledgeBuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        knowledgeBuilder.add( ResourceFactory.newByteArrayResource(drlSource.getBytes()), ResourceType.DRL );
-        if ( knowledgeBuilder.hasErrors() ) {
-            System.err.print( knowledgeBuilder.getErrors().toString() );
-        }
-        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
-        knowledgeBase.addKnowledgePackages( knowledgeBuilder.getKnowledgePackages() );
-        return knowledgeBase;
-
-    }
 
     private long clearVM()
     {
